@@ -99,8 +99,9 @@ The following tech stack was used in the development of the ‘Pesky Pooch’ we
 
 ### Application Architecture Diagram (AAD)
 
-*** …… ***
+The below AAD Diagram was created using 'Edraw Max' Software:
 
+![Pesky Pooch Application Architecture Diagram](docs/Diagrams/Pesky_Pooch_AAD_Diagram.png)
 
 
 ## Project Management & Planning Methodology :heavy_check_mark:
@@ -117,20 +118,9 @@ The following tech stack was used in the development of the ‘Pesky Pooch’ we
 
 ### Trello Board Screenshots
 
-<details>
-<summary>Dale</summary>
- 
- ![Dale Trello Screenshot 1](docs/Trello_screenshot_1.png)
- ![Dale Trello Screenshot 2](docs/Trello_screenshot_2.png)
- 
-</details>
 
-<details>
-<summary>Coen</summary>
-</details>
-
-<details>
-<summary>Nick</summary>
+View Trello Board Screenshots [Here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/TRELLO.pdf)
+ 
 </details>
 
 ### Source control Process
