@@ -30,6 +30,11 @@ modified: '2020-01-15T00:49:36.545Z'
   * [Source control Process](#Source-control-Process) *(insert description about our GIT workflow here)*
 
 ---
+## Project Context
+
+As budding full stack developers, it is important for us to be able to communicate and demonstrate our abilities to prospective employers. We need to be able to demonstrate our competence in building a complete application from design through to deployment **for a commercial client,** using appropiate tools and methodologies.
+
+Welcome to 'Pesky Pooch', a slick, full stack MERN web application built for the Pesky Pooch business located on the Gold Coast. :zap:
 
 ## Deployed App
 
