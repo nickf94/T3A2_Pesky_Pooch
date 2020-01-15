@@ -120,8 +120,8 @@ The following tech stack was used in the development of the ‘Pesky Pooch’ we
 <details>
 <summary>Dale</summary>
  
- ![Dale Trello Screenshot 1](docs/Trello_screenshot_1.png)
- ![Dale Trello Screenshot 2](docs/Trello_screenshot_2.png)
+ ![Dale Trello Screenshot 1](docs/Trello_screenshots/Trello_screenshot_1.png)
+ ![Dale Trello Screenshot 2](docs/Trello_screenshots/Trello_screenshot_2.png)
  
 </details>
 
