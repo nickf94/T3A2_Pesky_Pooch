@@ -117,10 +117,8 @@ The following tech stack was used in the development of the ‘Pesky Pooch’ we
 
 ### Trello Board Screenshots
 
-<details>
-<summary>View Trello Board Screenshots Here</summary>
- 
-You can view screenshots of our 'Trello' project management process here: [Trello Screenshot Directory](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/TRELLO.pdf)
+
+View Trello Board Screenshots [Here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/TRELLO.pdf)
  
 </details>
 
