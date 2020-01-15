@@ -118,19 +118,10 @@ The following tech stack was used in the development of the ‘Pesky Pooch’ we
 ### Trello Board Screenshots
 
 <details>
-<summary>Dale</summary>
+<summary>View Trello Board Screenshots Here</summary>
  
- ![Dale Trello Screenshot 1](docs/Trello_screenshots/Trello_screenshot_1.png)
- ![Dale Trello Screenshot 2](docs/Trello_screenshots/Trello_screenshot_2.png)
+ ![Trello Screenshot 1](docs/Trello Screenshots/TRELLO.pdf)
  
-</details>
-
-<details>
-<summary>Coen</summary>
-</details>
-
-<details>
-<summary>Nick</summary>
 </details>
 
 ### Source control Process
