@@ -101,7 +101,7 @@ The following tech stack was used in the development of the ‘Pesky Pooch’ we
 
 The below AAD Diagram was created using 'Edraw Max' Software:
 
-![Pesky Pooch Application Architecture Diagram](Pesky_Pooch_AAD_Diagram.png)
+![Pesky Pooch Application Architecture Diagram](docs/Diagrams/Pesky_Pooch_AAD_Diagram.png)
 
 
 ## Project Management & Planning Methodology :heavy_check_mark:
