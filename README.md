@@ -40,7 +40,7 @@ Welcome to 'Pesky Pooch', a slick, full stack MERN web application built for the
 
 *** Insert link to deployed Application Here ***
 
-Github Repository Link: [Pesky Pooch Github Repo](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master)
+Github Repository Link: [Pesky Pooch Github Repo](https://github.com/Coencidental/T3A2_Pesky_Pooch)
 
 ## Application Description
 
