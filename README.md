@@ -103,6 +103,9 @@ The below AAD Diagram was created using 'Edraw Max' Software:
 
 ![Pesky Pooch Application Architecture Diagram](docs/Diagrams/Pesky_Pooch_AAD_Diagram.png)
 
+In addition, a direct relationship AAD was made to map the interactions of data within the application.
+
+![Pesky Pooch Architectural Interaction Diagram](docs/Diagrams/Interactions AAD.png)
 
 ## Project Management & Planning Methodology :heavy_check_mark:
 
