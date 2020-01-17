@@ -197,28 +197,28 @@ To map out how we expected the different interactions may look in the final appl
 <details>
 <summary>Events DFD</summary>
 
-![Events DFD](docs/Diagrams/Events_DFD.png)
+![Events DFD](docs/Diagrams/Events_DFD.pdf)
 
 </details>
 
 <details>
 <summary>Testimonials DFD</summary>
 
-![Testimonials DFD](docs/Diagrams/Testimonials_DFD.png)
+![Testimonials DFD](docs/Diagrams/Testimonials_DFD.pdf)
 
 </details>
 
 <details>
 <summary>Dashboard DFD</summary>
 
-![Dashboard DFD](docs/Diagrams/Dashboard_DFD.png)
+![Dashboard DFD](docs/Diagrams/Dashboard_DFD.pdf)
 
 </details>
 
 <details>
 <summary>Contact DFD</summary>
 
-![Contact DFD](docs/Diagrams/Contact_DFD.png)
+![Contact DFD](docs/Diagrams/Contact_DFD.pdf)
 
 </details>
 ### Application Architecture Diagram (AAD)
