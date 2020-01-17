@@ -113,11 +113,13 @@ When first approaching the design process, approaching the client with a rigorou
 
 ### Style Manual
 
-*** Insert google docs file containing reference to our: font families, font-weights and colour palette here ***
+The basic design notes/manual can be found at the following Google document:
+
+- https://docs.google.com/document/d/1Kof6ZJUm8JeKSyZyyg-zjGnP7jh7KN5-GgS9XBHiYEI/edit?usp=sharing
 
 ### User Stories
 
-Customer:
+#### Customer:
 
 - As a visitor to Pesky Pooch, I should be able to browse all information relevant to the brand so that I can decide whether I would like to purchase services or not.
   - In order to view all the information related to the Pesky Pooch brand, several pages will be required:
@@ -130,10 +132,7 @@ Customer:
 - As a visitor to Pesky Pooch, I should ALWAYS be able to easily access a method of contacting the brand, so that if I wish to purchase any services I am efficiently able to do so.
 - As a particularly locally focused business, a large amount of the traffic to the website will be mobile, and as such the user experience of Pesky Pooch should be oriented around mobile use.
 
-
-
-
-Operator (Business Owner):
+#### Operator (Business Owner):
 
 - As an operator of Pesky Pooch, I should be able to update all dynamic content as required.
   - For this, it's important to analyse what the actual sources of dynamic content will be.  In the case of Pesky Pooch, I have thus far thought of the following:
@@ -142,7 +141,7 @@ Operator (Business Owner):
 - As an operator of Pesky Pooch, I should require authorization so that I can ensure the safety and security of access to the website's control features.
 - As an operator of Pesky Pooch, I should be able to access a control dashboard that lists all received contact forms, and allows for their removal, so that the relevance of information on this dashboard is relevant to present business.  As an extra feature, these could feature a 'seen' value so that once seen, they are retained but are no longer visible.
 
-Administrator (Development Team):
+#### Administrator (Development Team):
 
 - As an administrator of Pesky Pooch, once authorized I should be able to access an administrator dashboard which displays all received contact forms and allows for the removal of entries so that the database can be kept slim and relevant.
 
@@ -153,38 +152,75 @@ After reaching a concensus on colour decisions and the functionality requirement
 
 Research was done to decide upon the best screen sizes to do wireframes for, and based on the popularity of particular screen dimensions, a phone, tablet, and computer dimension wireframe was done simultaneously for each page/component of the desired application.
 
-*** Insert screenshots of our wireframes here - In drop down ***
 
-Home Page wireframes:
 <details>
+<summary>Home Page wireframes</summary>
+
 ![Home Page Wireframe](docs/Design/Wireframes/Home_Page.png)
+
 </details>
 
-About Us Page wireframes:
 <details>
-![About Us Wireframe](docs/Design/Wireframes/About_Us_Page.png)
+<summary>About Us Page wireframes</summary>
+
+![About Us Page Wireframe](docs/Design/Wireframes/About_Us_Page.png)
+
 </details>
 
-Services Page wireframes:
 <details>
-![Home Page Wireframe](docs/Design/Wireframes/Services_Page.png)
+<summary>Services Page wireframes</summary>
+
+![Services Page Wireframe](docs/Design/Wireframes/Services_Page.png)
+
 </details>
 
-Contact Page wireframes:
 <details>
+<summary>Contact Page wireframes</summary>
+
 ![Contact Page Wireframe](docs/Design/Wireframes/Contact_Page.png)
+
 </details>
 
 ### Sitemap
 
-*** Insert screenshots of our completed application here - In drop down ***
+<details>
+<summary>Site Map</summary>
+
+![Sitemap](docs/Diagrams/Site_Map.png)
+
+</details>
 
 ### Data Flow Diagrams
 
 To map out how we expected the different interactions may look in the final application, Data Flow Diagrams (DFDs) were completed.
 
 <details>
+<summary>Events DFD</summary>
 
+![Events DFD](docs/Diagrams/Events_DFD.png)
+
+</details>
+
+<details>
+<summary>Testimonials DFD</summary>
+
+![Testimonials DFD](docs/Diagrams/Testimonials_DFD.png)
+
+</details>
+
+<details>
+<summary>Dashboard DFD</summary>
+
+![Dashboard DFD](docs/Diagrams/Dashboard_DFD.png)
+
+</details>
+
+<details>
+<summary>Contact DFD</summary>
+
+![Contact DFD](docs/Diagrams/Contact_DFD.png)
+
+</details>
 ### Application Architecture Diagram (AAD)
 
 The below AAD Diagram was created using 'Edraw Max' Software:
@@ -201,6 +237,10 @@ The initial stages of project management and planning were largely disordered.  
 
 Despite the 'buzzword' nature of it, Agile methodology is hugely important in a task such as this.  As our first group technology task, we had the opportunity to approach it in an ordered but misinformed (and narrowly scoped) manner, or to analyse our skillsets both independently as well as together, and to allocate tasks appropriately, as required, in a more effective and suited manner.
 
+The first step in appropriately following an Agile methodology was implementing task delegation across the team, and opening up clear channels of communication amongst us.  The former was done through the use of Trello and lists/cards, and the latter with a team Slack message channel and daily meetings where we discussed our concerns and opinions on the project and it's progress.  Expression of discomfort or inability was crucial in knowing where to share efforts and coordinate the completion of crucial tasks.
+
+For each team member three 'operational' lists were maintained: 'TODO', 'In Progress', and 'Completed'.  With this, and the history tracking that Trello does automatically, the task allocation, it's progress, and the timeframe of this was simple to keep an archive of.
+
 ### Task Delegation
 
 As the technical team leader, Coen was responsible for *overseeing* task delegation amongst the group.
@@ -211,7 +251,7 @@ Nick displayed comfortability with React and UI/UX design especially, so it was 
 
 Dale displayed relative comfortability across both front and back end, focused in front end at the start of the design stage, but he demonstrated the wish to improve his back-end abilities and to, in the weekend break between design and building, to catch up these required skills so that he could contribute more meaningfully to the back end development of the 'Pesky Pooch' application.
 
-Coen was comfortable with both front and back end work, and was especially interested in overseeing both the client side and server side building processes.  For workflow, he opted to take charge of the building of the back end, due to the fact if issues emerge in the front end, it can be relatively easily rebuilt, but if issues emerge in the backend, it could be a much more obscured process.
+Coen was comfortable with both front and back end work, and was especially interested in overseeing both the client side and server side building processes.  For workflow, he opted to take charge of the building of the back end, due to the fact if issues emerge in the front end, it can be rebuilt relatively quickly, but if issues emerge in the backend, it could be a much more time-consuming process.
 
 ### Trello Board Screenshots
 
@@ -224,5 +264,11 @@ View Trello Board Screenshots [here](https://github.com/Coencidental/T3A2_Pesky_
 
 As the singular most vulnerable point of failure of the formal application development process, and being one that each member of our group was extremely uncomfortable doing passively, as a group we got assistance and performed independent practise exercises/research on source control with GitHub, and by the end of the design and planning process, (the first week), we were much more equipped to being a proper development process than before seeking assistance.
 
-
+The process we followed by the end of the design phase, even in committing documentation to the repository, was as follows:
+- Synchronization with master branch on central repository was ensured before anything
+- Required work was done on project
+- An accompanying branch was created, to which this local work was committed
+- This was then pushed to GitHub with the upstream flag, to an accordingly named matching branch on the remote repository.
+  - If either Dale or Nick, the synchronization with the upstream master repository branch had to be ensured before any further steps could be taken.
+- When satisfied, a pull request was put through, and if approved by another team member, merged with the master branch of the same repository.  In the downstream repository cases, (Dale and Nick), this master then had to be pushed to the central master repository branch.  
 
