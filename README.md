@@ -138,9 +138,9 @@ In addition, a direct relationship AAD was made to map the interactions of data 
 
 ## Project Management & Planning Methodology :heavy_check_mark:
 
-### Client diary and communication
+The initial stages of project management and planning were largely disordered.  It took a few days of adjustment to be able to begin methodically breaking down the tasks to be completed and the scope of the issue we would need to tackle.
 
-*** this is all you Coen, mention how you got feedback on the design/colour-palette, here ***
+Despite the 'buzzword' nature of it, Agile methodology is hugely important in a task such as this.  As our first group technology task, we had the opportunity to approach it in an ordered but misinformed (and narrowly scoped) manner, or to analyse our skillsets both independently as well as together, and to allocate tasks appropriately, as required, in a more effective and suited manner.
 
 ### Task Delegation
 
@@ -157,7 +157,10 @@ Coen was comfortable with both front and back end work, and was especially inter
 ### Trello Board Screenshots
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0712aad98d569134a8ba410f2294a4ecf48f96fe
 Trello screenshots were taken on a daily/semi-daily basis, and saved to 'docs/Trello Screenshots'
 
 
