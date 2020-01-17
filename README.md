@@ -146,7 +146,7 @@ Despite the 'buzzword' nature of it, Agile methodology is hugely important in a 
 
 As the technical team leader, Coen was responsible for *overseeing* task delegation amongst the group.
 
-The most important aspet of task delegation during the initial stages of the project was communication as a team, and honesty in comfortability.  Team meetings leading into the beginning of the build stage of the project were crucial in determining the skillsets we each held, as well as where our motivations were focused during this project.
+The most important aspect of task delegation during the initial stages of the project was communication as a team, and honesty in comfortability.  Team meetings leading into the beginning of the build stage of the project were crucial in determining the skillsets we each held, as well as where our motivations were focused during this project.
 
 Nick displayed comfortability with React and UI/UX design especially, so it was decided he would take charge of the initial development stage of the front end.
 
@@ -156,19 +156,10 @@ Coen was comfortable with both front and back end work, and was especially inter
 
 ### Trello Board Screenshots
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0712aad98d569134a8ba410f2294a4ecf48f96fe
 Trello screenshots were taken on a daily/semi-daily basis, and saved to 'docs/Trello Screenshots'
 
-
->>>>>>> 0712aad98d569134a8ba410f2294a4ecf48f96fe
 View Trello Board Screenshots [Here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/TRELLO.pdf)
  
-</details>
-
 ### Source Control Process
 
 As the singular most vulnerable point of failure of the formal application development process, and being one that each member of our group was extremely uncomfortable doing passively, as a group we got assistance and performed independent practise exercises/research on source control with GitHub, and by the end of the design and planning process, (the first week), we were much more equipped to being a proper development process than before seeking assistance.
