@@ -114,8 +114,6 @@ In addition, a direct relationship AAD was made to map the interactions of data 
 
 ## Project Management & Planning Methodology :heavy_check_mark:
 
-*** Insert short description about our approach to project management & planning here ***
-
 ### Client diary and communication
 
 *** this is all you Coen, mention how you got feedback on the design/colour-palette, here ***
@@ -125,7 +123,6 @@ In addition, a direct relationship AAD was made to map the interactions of data 
 *** Insert short description of how tasks were delegated here) (ensure it describes and adheres to an agile approach - board/tickets/iterations ***
 
 ### Trello Board Screenshots
-
 
 View Trello Board Screenshots [Here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/TRELLO.pdf)
  
