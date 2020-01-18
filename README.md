@@ -275,7 +275,7 @@ https://docs.google.com/document/d/1H6AIpIEyyg5wbgshtlzzCJEhqaLVrXGQSa0Ce25KzCg/
 
 Trello screenshots were taken on a daily/semi-daily basis during work periods, and saved to 'docs/Trello Screenshots'.
 
-View Trello Board Screenshots [here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/)
+View all Trello Board Screenshots [here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/)
 
 ### Source Control Process
 
