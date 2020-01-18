@@ -18,7 +18,7 @@
   * [Wireframes](#Wireframes) 
   * [Sitemap](#Sitemap)
   * [Data Flow Diagram](#Data-Flow-Diagrams)
-  * [Application Architecture Diagram (AAD)](#Application-Architecture-Diagram-AAD)
+  * [Application Architecture Diagram (AAD)](#Application-Architecture-Diagram)
 * [Project Management & Planning Methodology](#Project-Management--Planning-Methodology-heavy_check_mark)
   * [Task Delegation](#Task-Delegation) 
   * [Client Communication Diary](#Client-Diary)
@@ -233,7 +233,8 @@ To map out how we expected the different interactions may look in the final appl
 ![Login DFD](docs/Diagrams/Login_DFD.pdf)
 
 </details>
-### Application Architecture Diagram (AAD)
+
+### Application Architecture Diagram
 
 The below AAD Diagram was created using 'Edraw Max' Software:
 
