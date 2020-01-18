@@ -13,10 +13,10 @@
   * [Target Audience](#Target-audience)
   * [Tech stack :computer:](#Tech-stack-computer) 
 * [Design Process :art:](#Design-Process-art)
-  * [Style Manual](#Style-Manual) *(Insert google docs file containing reference to our: font families, font-weights and colour palette here)*
+  * [Style Manual](#Style-Manual) 
   * [User Stories](#User-Stories)
-  * [Wireframes](#Wireframes) *(Insert screenshots of our wireframes here - In drop down)*
-  * [Sitemap](#Sitemap) *(Insert screenshots of our completed application here - In drop down)*
+  * [Wireframes](#Wireframes) 
+  * [Sitemap](#Sitemap)
   * [Data Flow Diagram](#Data-Flow-Diagram)
   * [Application Architecture Diagram (AAD)](#Application-Architecture-Diagram-AAD)
 * [Project Management & Planning Methodology](#Project-Management--Planning-Methodology-heavy_check_mark)
@@ -58,8 +58,9 @@ Both the MVP (minimal viable product) and full production scopes of functionalit
 #### MVP Page Components Division (react-router-dom):
 
 - **Home Page**
-  - **Testimonials Section,** where users can input reviews for the ‘Pesky Pooch’ business. This feature includes live updating through the use of React. When users input a testimonial it is immediately available for display on the website. In addition to this, because ‘Pesky Pooch’ has accumulated a wealth of already existing testimonials to date. We will be including these already existing reviews into this features section via a web scraper Coen has built.
+  - **Testimonials Section,** where users can see reviews for the ‘Pesky Pooch’ business. This feature includes live updating through the use of React. When a user inputs a testimonial on Facebook, it becomes immediately available for display on the 'Pesky Pooch' website. In addition to this, all currently present reviews that have accumulated over time will be included into this testimonials section via a Facebook API reviews service, seeing as the only location these reviews can currently be made is Facebook.
 - **About Page**
+  - Synopsis of 'Pesky Pooch' brand, values, and a general FAQ section.
 - **Contact Page**
   - **Customer Enquiry Form**: this is the most essential feature of the application, an input form to allow users to send customer enquiries. This form is attached to the clients email server where she will receive the enquiries in her inbox. In addition to using an Email API Service, we have also decided to save these 'customer enquiry forms' to our applications database, for archiving and recording purposes. Thus, ensuring the highest level of data security.
 - **Services Page**
@@ -69,6 +70,11 @@ Both the MVP (minimal viable product) and full production scopes of functionalit
 - **Authorization**:
   - **JWT Authentication** for the ‘operator account’ (client stays logged in for a reasonable period of time after successful authentication).
   - **Operator Account:** this account is intended for use by the operator (which is the website/business owner. I.e - our client). This feature was created with usability/UX in mind. The client can easily access the account by clicking on the copyright symbol in the websites footer. Once clicked, the client is redirected to a simple login form (thus eliminating the need for the client to memorize a specific URL). Here the client can login securely with ‘OAuth’ verification. Upon login, the client receives full CRUD capabilities to allow the deletion of testimonials/reviews.
+
+#### Potential Extensible Features:
+
+- **About Page Live Questions**:
+  - An extensible component could be created and incorporated into the 'About Page' that allows visitors (unauthorized, but potentially with email verification, not displayed alongside the question) to ask questions that are immediately included in the 'FAQ' section, which an authorized account (admin or operator) can delete, or (exclusively operator) answer the questions.  
 
 ### Target audience
 
@@ -255,10 +261,9 @@ Coen was comfortable with both front and back end work, and was especially inter
 
 ### Trello Board Screenshots
 
-Trello screenshots were taken on a daily/semi-daily basis, and saved to 'docs/Trello Screenshots'
+Trello screenshots were taken on a daily/semi-daily basis during work periods, and saved to 'docs/Trello Screenshots'.
 
-
-View Trello Board Screenshots [here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/TRELLO.pdf)
+View Trello Board Screenshots [here](https://github.com/Coencidental/T3A2_Pesky_Pooch/blob/master/docs/Trello%20Screenshots/)
 
 ### Source Control Process
 
@@ -270,5 +275,6 @@ The process we followed by the end of the design phase, even in committing docum
 - An accompanying branch was created, to which this local work was committed
 - This was then pushed to GitHub with the upstream flag, to an accordingly named matching branch on the remote repository.
   - If either Dale or Nick, the synchronization with the upstream master repository branch had to be ensured before any further steps could be taken.
-- When satisfied, a pull request was put through, and if approved by another team member, merged with the master branch of the same repository.  In the downstream repository cases, (Dale and Nick), this master then had to be pushed to the central master repository branch.  
+- When satisfied, a pull request was put through, and if approved by another team member, merged with the master branch of the same repository.  In the downstream repository cases, (Dale and Nick), this master then had to be pushed to the central master repository branch.
 
+By following this process from the beginning of the project, some level of familiarity was established coming into the build process.
