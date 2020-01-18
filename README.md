@@ -39,8 +39,6 @@ The React client application is hosted on Netlify, and the Node.js API backend o
 - Front-End: {Netlify Link}
 - Back-End: {Heroku Link with basic back end display page for non-sensitive data}
 
-*** Insert link to deployed Application Here ***
-
 Github Repository Link: [Pesky Pooch Github Repo](https://github.com/Coencidental/T3A2_Pesky_Pooch)
 
 ## Application Description
