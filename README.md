@@ -227,6 +227,13 @@ To map out how we expected the different interactions may look in the final appl
 ![Contact DFD](docs/Diagrams/Contact_DFD.pdf)
 
 </details>
+
+<details>
+<summary>Login DFD</summary>
+
+![Contact DFD](docs/Diagrams/Login_DFD.pdf)
+
+</details>
 ### Application Architecture Diagram (AAD)
 
 The below AAD Diagram was created using 'Edraw Max' Software:
