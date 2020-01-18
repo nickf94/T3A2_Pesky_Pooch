@@ -9,21 +9,21 @@
 * [Project Context](#project-context)
 * [Application Description :pencil:](#application-description)
   * [Purpose](#purpose)
-  * [Functionality / Features](#functionality--features)
+  * [Functionality / Features](#Functionality--Features)
   * [Target Audience](#Target-audience)
-  * [Tech stack :computer:](#Tech-stack-computer) 
+  * [Tech Stack :computer:](#Tech-Stack) 
 * [Design Process :art:](#Design-Process-art)
   * [Style Manual](#Style-Manual) 
   * [User Stories](#User-Stories)
   * [Wireframes](#Wireframes) 
   * [Sitemap](#Sitemap)
-  * [Data Flow Diagram](#Data-Flow-Diagram)
+  * [Data Flow Diagram](#Data-Flow-Diagrams)
   * [Application Architecture Diagram (AAD)](#Application-Architecture-Diagram-AAD)
 * [Project Management & Planning Methodology](#Project-Management--Planning-Methodology-heavy_check_mark)
   * [Task Delegation](#Task-Delegation) 
   * [Client Communication Diary](#Client-Diary)
   * [Trello Board Screenshots](#Trello-Board-Screenshots)
-  * [Source Control Process](#Source-control-Process)
+  * [Source Control Process](#Source-Control-Process)
 
 ---
 ## Project Context
@@ -45,13 +45,13 @@ Github Repository Link: [Pesky Pooch Github Repo](https://github.com/Coencidenta
 
 ## Application Description
 
-### Purpose / Problem to be solved
+### Purpose
 
 The problem to be solved by creating this application is that the brand in question, "Pesky Pooch", when approached for this project had no form of unified online presence, and no modern website.  In order to remedy this, a new application was designed and built to facilitate customer enquiries for services offered by the brand (in the form of a contact page), and in general, to improve the availability and relevance of all information relating to the brand, it's services, it's values, and all other aspects of the brand important for customer confidence.  As a flow on effect, the presence of a custom-built and updated web application with three-dimensional functionality gives a business such as 'Pesky Pooch' and edge in the modern market.  
 
 The general purpose of this web application is to provide the client a platform to clearly and concisely to promote their service/brand to current and potential customers.
 
-### Functionality / features
+### Functionality / Features
 
 Both the MVP (minimal viable product) and full production scopes of functionality and features of the ‘Pesky Pooch’ web application was decided through the combination of user stories and communication with the client. While less than technologically fluent, said client was still able to offer incredibly valuable feedback on the role the application would fill, and the requirements it would take for this.  Such functionality/features that were recognised as necessary for the MVP are listed out below.
 
@@ -77,7 +77,7 @@ Both the MVP (minimal viable product) and full production scopes of functionalit
 - **About Page Live Questions**:
   - An extensible component could be created and incorporated into the 'About Page' that allows visitors (unauthorized, but potentially with email verification, not displayed alongside the question) to ask questions that are immediately included in the 'FAQ' section, which an authorized account (admin or operator) can delete, or (exclusively operator) answer the questions.  
 
-### Target audience
+### Target Audience
 
 In broad terms, the intended target audience for the ‘Pesky Pooch’ web application is the current or prospective clientele of the ‘Pesky Pooch’ business, as well as anyone seeking canine behavioural remediation, grooming, sitting, and therapeutic/tTouch massage services. 
 
@@ -85,7 +85,7 @@ In broad terms, the intended target audience for the ‘Pesky Pooch’ web appli
 
 As a geographically reliant service, 'Pesky Pooch' is only going to be available/viable for those in the general vicinity, (in this case, the Gold Coast and it's neighbouring regions of Queensland, Australia), and therefore we are only trying to target those of this vicinity with the website.  To maximise the impact of this, the application itself should reflect the place of 'Pesky Pooch' as a high quality service for those wishing to give their dogs an extra level of care within the Gold Coast region.
 
-### Tech stack :computer:
+### Tech Stack
 
 The following tech stack was used in the development of the ‘Pesky Pooch’ web application:
 
@@ -114,9 +114,7 @@ Dependencies known from design phase:
 
 ### Brainstorming with Client
 
-When first approaching the design process, approaching the client with a rigorous set of questions was the most important step in establishing what direction the design would go in.  Firstly, a simple colour scheme was designed using an online tool (www.coolors.co), however, when this was shown to the client, she desired something more spiritually calming, so in the second iteration of design brainstorming, a 'happier' set of colours was decided on, which the client agreed on.  
-
-
+When first approaching the design process, approaching the client with a rigorous set of questions was the most important step in establishing what direction the design would go in.  Firstly, a simple colour scheme was designed using an online tool (www.coolors.co), however, when this was shown to the client, she desired something more spiritually calming, so in the second iteration of design brainstorming, a 'happier' set of colours was decided on, which the client agreed on.
 
 ### Style Manual
 
@@ -232,7 +230,7 @@ To map out how we expected the different interactions may look in the final appl
 <details>
 <summary>Login DFD</summary>
 
-![Contact DFD](docs/Diagrams/Login_DFD.pdf)
+![Login DFD](docs/Diagrams/Login_DFD.pdf)
 
 </details>
 ### Application Architecture Diagram (AAD)
