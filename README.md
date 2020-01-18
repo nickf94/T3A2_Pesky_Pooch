@@ -20,8 +20,8 @@
   * [Data Flow Diagram](#Data-Flow-Diagram)
   * [Application Architecture Diagram (AAD)](#Application-Architecture-Diagram-AAD)
 * [Project Management & Planning Methodology](#Project-Management--Planning-Methodology-heavy_check_mark)
-  * [Client diary and communication](#Client-diary-and-communication)
   * [Task Delegation](#Task-Delegation) 
+  * [Client Communication Diary](#Client-Diary)
   * [Trello Board Screenshots](#Trello-Board-Screenshots)
   * [Source Control Process](#Source-control-Process)
 
@@ -265,6 +265,10 @@ Nick displayed comfortability with React and UI/UX design especially, so it was 
 Dale displayed relative comfortability across both front and back end, focused in front end at the start of the design stage, but he demonstrated the wish to improve his back-end abilities and to, in the weekend break between design and building, to catch up these required skills so that he could contribute more meaningfully to the back end development of the 'Pesky Pooch' application.
 
 Coen was comfortable with both front and back end work, and was especially interested in overseeing both the client side and server side building processes.  For workflow, he opted to take charge of the building of the back end, due to the fact if issues emerge in the front end, it can be rebuilt relatively quickly, but if issues emerge in the backend, it could be a much more time-consuming process.
+
+### Client Diary
+
+https://docs.google.com/document/d/1H6AIpIEyyg5wbgshtlzzCJEhqaLVrXGQSa0Ce25KzCg/edit?usp=sharing
 
 ### Trello Board Screenshots
 
