@@ -138,7 +138,7 @@ In addition, a direct relationship AAD was made to map the interactions of data 
 
 ## Project Management & Planning Methodology :heavy_check_mark:
 
-The initial stages of project management and planning were largely disordered.  It took a few days of adjustment to be able to begin methodically breaking down the tasks to be completed and the scope of the issue we would need to tackle.
+The initial stages of project management and planning were largely disordered. It took a few days of adjustment to be able to begin methodically breaking down the tasks to be completed and the scope of the issue we would need to tackle.
 
 Despite the 'buzzword' nature of it, Agile methodology is hugely important in a task such as this.  As our first group technology task, we had the opportunity to approach it in an ordered but misinformed (and narrowly scoped) manner, or to analyse our skillsets both independently as well as together, and to allocate tasks appropriately, as required, in a more effective and suited manner.
 
@@ -146,7 +146,7 @@ Despite the 'buzzword' nature of it, Agile methodology is hugely important in a 
 
 As the technical team leader, Coen was responsible for *overseeing* task delegation amongst the group.
 
-The most important aspect of task delegation during the initial stages of the project was communication as a team, and honesty in comfortability.  Team meetings leading into the beginning of the build stage of the project were crucial in determining the skillsets we each held, as well as where our motivations were focused during this project.
+The most important aspect of task delegation during the initial stages of the project was communication as a team, and honesty in comfortability. Team meetings leading into the beginning of the build stage of the project were crucial in determining the skillsets we each held, as well as where our motivations were focused during this project.
 
 Nick displayed comfortability with React and UI/UX design especially, so it was decided he would take charge of the initial development stage of the front end.
 
