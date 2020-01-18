@@ -68,8 +68,9 @@ Both the MVP (minimal viable product) and full production scopes of functionalit
 
 #### Other Necessary MVP Features:
 - **Authorization**:
-  - **JWT Authentication** for the ‘operator account’ (client stays logged in for a reasonable period of time after successful authentication).
-  - **Operator Account:** this account is intended for use by the operator (which is the website/business owner. I.e - our client). This feature was created with usability/UX in mind. The client can easily access the account by clicking on the copyright symbol in the websites footer. Once clicked, the client is redirected to a simple login form (thus eliminating the need for the client to memorize a specific URL). Here the client can login securely with ‘OAuth’ verification. Upon login, the client receives full CRUD capabilities to allow the deletion of testimonials/reviews.
+  - **Login Page or Login Component**: in order to authorize the operator of the application, or administration team as required, there will need to be some mechanism in place to log in.  This could exist as either an entire page, or a conditionally rendered component on the services page for example.
+  - **JWT Authentication**: for the ‘operator account’ (client stays logged in for a reasonable period of time after successful authentication).
+  - **Operator Account:**: this account is intended for use by the operator (which is the website/business owner. I.e - our client). This feature was created with usability/UX in mind. The client can easily access the account by clicking on the copyright symbol in the websites footer. Once clicked, the client is redirected to a simple login form (thus eliminating the need for the client to memorize a specific URL). Here the client can login securely with ‘OAuth’ verification. Upon login, the client receives full CRUD capabilities to allow the deletion of testimonials/reviews.
 
 #### Potential Extensible Features:
 
@@ -133,10 +134,10 @@ The basic design notes/manual can be found at the following Google document:
     - About Page: responsible for informing visitors about the Pesky Pooch brand, history, and testimonials.
     - Services Page: responsible for informing visitors about the services offered by Pesky Pooch (dog behavioural training, TTouch + therapeutic dog massage, grooming, dog walking, and minding), and the equivalent pricing.
     - Contact Page: responsible for allowing users to fill out a contact form, and also to find all other locations of the Pesky Pooch brand.
-- As a visitor to Pesky Pooch, I should be first greeted by a home page that clearly outlines the purpose of the brand/website, and directs me to the more specific areas of the website, so that I can first ensure I am on the right website, and to facilitate business.
-- As a visitor to Pesky Pooch, I should be able to easily access the other social media/content streams related to the brand so that I can find more information about the brand and those who run it.
+- As a visitor to Pesky Pooch, I should be first greeted by a home page that clearly outlines the purpose of the brand/website, and directs me to the more specific areas of the website, so that I can first ensure I am on the right website, inform myself further, and to facilitate business.
+- As a visitor to Pesky Pooch, I should be able to easily access the other social media/content streams related to the brand so that I can find more information about the brand and those who run it and inform myself.
 - As a visitor to Pesky Pooch, I should ALWAYS be able to easily access a method of contacting the brand, so that if I wish to purchase any services I am efficiently able to do so.
-- As a particularly locally focused business, a large amount of the traffic to the website will be mobile, and as such the user experience of Pesky Pooch should be oriented around mobile use.
+- As a particularly locally focused business, a large amount of the traffic to the website will be mobile, and as such the user experience of Pesky Pooch should be oriented around mobile use so that the potential of this primary user base is maximised.
 
 #### Operator (Business Owner):
 
