@@ -4,8 +4,8 @@
   "description": "Pesky Pooch T3A2",
   "main": "server.js",
   "scripts": {
-    "start": "node app.js",
-    "app": "nodemon app.js",
+    "start": "node server.js",
+    "app": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Coen Drexler, Nick Fletcher, Dale Paulsen",
@@ -17,6 +17,12 @@
     "mongoose": "^5.8.9"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.0.0",
     "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "node": "10.18.1"
   }
 }
