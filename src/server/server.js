@@ -1,5 +1,7 @@
-const express = require('express')
+const express = require('express');
+const connectDB = require('./config/db');
 const app = express()
+const port = process.env.PORT || 7001;
+connectDB();
 app.get('/', (req, res) => res.send('Hello from the server!'))
-const port = process.env.PORT || 7002;
-app.listen(port, () => console.log(`Server is running on ${port}`))
+app.listen(port, () => console.log(`Server running on port ${port}`));
