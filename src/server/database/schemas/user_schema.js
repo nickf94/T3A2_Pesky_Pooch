@@ -10,7 +10,7 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true, // Ensures 2 users can't log in with same E-mail
+    unique: true, // Ensures 2 users can't log in with same E-mail.
     trim: true
   },
   password: {
