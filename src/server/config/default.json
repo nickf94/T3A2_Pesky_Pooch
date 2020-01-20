@@ -1,0 +1,4 @@
+{
+  "mongoURI":
+    "mongodb+srv://admin_peskypooch:1234Qwer@peskypoochdb-oy3kg.mongodb.net/test?retryWrites=true&w=majority"
+}
