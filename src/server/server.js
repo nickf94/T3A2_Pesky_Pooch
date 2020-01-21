@@ -12,10 +12,6 @@ app.use(express.json())
 
 const server = ('/server/server.js')
 
-app.use('/users', userRoutes)
-app.use('/contacts', contactRoutes)
-app.listen(port, () => console.log(`Server running on port ${port}`));
-
 module.exports = server; // Need this for tests to connect to server
 app.use(morgan('dev'))
 app.use('/api/users', require('./routes/api/users'))
