@@ -15,7 +15,7 @@ export default class loginForm extends Component {
 
     axios.post("http://localhost:7001/api/login", { email, password })
     .then(res => { this.props.onLogin(res.data.token); this.props.history.push("/") })
-    .cathc(err => console.error(err))
+    .catch(err => console.error(err))
   };
 
   onInputChange = (name, event) => {
