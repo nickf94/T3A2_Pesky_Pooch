@@ -1,5 +1,14 @@
 describe("Test login", () => {
   it("Should go to the login page", () => {
-    cy.visit("localhost:3000/login");
+    cy.viewport(1024, 768);
+    cy.visit("localhost:3000/");
+    cy.contains("Home").click();
+  });
+
+  it("Should render SignIn component", () => {
+    cy.contains("Login").click();
+    cy.root()
+      .should("contain", "Email")
+      .should("contain", "Password");
   })
 })
