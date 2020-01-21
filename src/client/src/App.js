@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
 import { BrowserRouter as  Router, Route, Switch } from "react-router-dom";
-import axios from 'axios';
 import { Home } from './Home';
 import { About } from './About';
 import { Services } from './Services';
 import { Contact } from './Contact';
+import LoginPage from './LoginPage'
 
 class App extends Component {
+  state = {
+    token: sessionStorage.getItem("token")
+  }
+
+  onLogin = (token) => {
+    sessionStorage.setItem("token", token)
+    this.setState({ token })
+  }
   render() {
+    const { token } = this.props;
+
     return (
       <React.Fragment>
         <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/services" component={Services} />
-            <Route exact path="/contact" component={Contact} />
-          </Switch>
+          <div>
+            { token && <h4>User is logged in!</h4>}
+            <Switch>
+              <Route exact path="/login" render={(props) => {
+                  return <LoginPage {...props} onLogin={this.onLogin} />
+                }} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/services" component={Services} />
+              <Route exact path="/contact" component={Contact} />
+            </Switch>
+          </div>
         </Router>
       </React.Fragment>
     );
