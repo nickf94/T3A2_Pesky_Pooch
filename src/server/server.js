@@ -10,9 +10,6 @@ connectDB();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-const server = ('/server/server.js')
-
-module.exports = server; // Need this for tests to connect to server
 app.use(morgan('dev'))
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/contacts', require('./routes/api/contacts'))
@@ -20,3 +17,5 @@ app.use('/api/login', require('./routes/api/login'))
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
+const server = ('/server/server.js')
+module.exports = server; // Need this for tests to connect to server
