@@ -9,6 +9,10 @@ getEvents = (req, res) => {
   }
 }
 
+newEvent = (req, res) => {
+  
+}
+
 module.exports = {
   getEvents
 }
