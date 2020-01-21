@@ -14,6 +14,7 @@ app.use(morgan('dev'))
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/contacts', require('./routes/api/contacts'))
 app.use('/api/login', require('./routes/api/login'))
+// app.use('/api/events', require('./routes/api/events'))
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
