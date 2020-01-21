@@ -17,7 +17,10 @@ export default class loginForm extends Component {
       email,
       password
     }
-    axios.post("https://peskypoochapi.herokuapp.com/api/login", params)
+
+    // HEROKU APP URL: https://peskypoochapi.herokuapp.com
+
+    axios.post("http://localhost:7001/api/login", params)
     .then(res => { this.props.onLogin(res.data.token) })
     .catch(err => console.error(err))
   };

@@ -1,6 +1,6 @@
 const Event = require('../database/models/event_model')
 
-getEvents = (req, res) => {
+getEvents = async (req, res) => {
   const events = await Event.find()
   if (events) {
     res.json(events)
@@ -10,9 +10,10 @@ getEvents = (req, res) => {
 }
 
 newEvent = (req, res) => {
-  
+
 }
 
 module.exports = {
-  getEvents
+  getEvents,
+  newEvent
 }
