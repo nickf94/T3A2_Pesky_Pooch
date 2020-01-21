@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true // Trims white-space upon saving a model to the DB.
-  },
   email: {
     type: String,
     required: true,
