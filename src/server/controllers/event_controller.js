@@ -10,13 +10,13 @@ getEvents = async (req, res) => {
 }
 
 newEvent = async (req, res) => {
-  const newEvent = await new Event({
+  const newEvent = new Event({
     name: req.body.name,
     description: req.body.description,
     location: req.body.location
   })
 
-  newEvent.save()
+  await newEvent.save()
   .then(res.json(newEvent))
   .catch(err => console.log(err)) 
 }
