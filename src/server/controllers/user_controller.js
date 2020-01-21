@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 const UserModel = require("./../database/models/user_model");
 
 // CRUD Actions for users:
+// DEVNOTE: Succesfully creates user however cannot GET user once created....
 
 
-// Creating new 'User' instance
+// Creating new 'User' instance.
 function createUser(req, res) {
     let newUser = new User(req.body)
     newUser.save((err, user) => {

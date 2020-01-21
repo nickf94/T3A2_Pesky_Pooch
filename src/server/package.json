@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "app": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Coen Drexler, Nick Fletcher, Dale Paulsen",
   "license": "ISC",
