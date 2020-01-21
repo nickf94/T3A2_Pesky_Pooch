@@ -3,6 +3,7 @@ const router = express.Router();
 const eventController = require('../../controllers/event_controller.js')
 
 router.get('/test', (req, res) => res.send('Test Event API route'))
-router.post('/', eventController.getEvents)
+router.get('/', eventController.getEvents)
+router.post('/', eventController.newEvent)
 
 module.exports = router
