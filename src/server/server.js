@@ -6,6 +6,6 @@ connectDB();
 const contactRoutes = require('./routes/api/contacts')
 const userRoutes = require('./routes/api/users')
 
-app.use('/users', userRoutes)
-app.use('/contacts', contactRoutes)
+app.use('/api/users', userRoutes)
+app.use('/api/contacts', contactRoutes)
 app.listen(port, () => console.log(`Server running on port ${port}`));
