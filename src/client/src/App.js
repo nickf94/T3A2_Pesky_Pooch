@@ -21,13 +21,18 @@ class App extends Component {
     return (
       <React.Fragment>
         <Router>
-          <Switch>
-            <Route exact path="/login" component={LoginPage} />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/services" component={Services} />
-            <Route exact path="/contact" component={Contact} />
-          </Switch>
+          <div>
+            { token && <h4>User is logged in!</h4>}
+            <Switch>
+              <Route exact path="/login" render={(props) => {
+                  return <LoginPage {...props} onLogin={this.onLogin} />
+                }} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/services" component={Services} />
+              <Route exact path="/contact" component={Contact} />
+            </Switch>
+          </div>
         </Router>
       </React.Fragment>
     );
