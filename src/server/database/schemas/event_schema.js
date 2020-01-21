@@ -1,32 +1,19 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
-const EventSchema = new Schema({
-  eventImage: {
-    type: String, // Img URL as 'string'... Will then fetch img from cloudinary.
-    required: false
-  },
-  eventName: {
+const Event = new Schema({
+  name: {
     type: String,
-    required: true,
-    trim: true
+    required: true
   },
-  eventDetails: {
+  description: {
     type: String,
-    required: true,
-    maxlength: 1500,
-    trim: true
+    required: true
   },
-  eventLocation: {
+  location: {
     type: String,
-    required: true,
-    trim: true
-  },
-  eventDate: {
-    type: String,
-    required: true,
-    trim: true
+    required: true
   }
-});
+})
 
-module.exports = EventSchema;
+module.exports = EventSchema
