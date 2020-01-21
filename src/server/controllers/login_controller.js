@@ -15,7 +15,6 @@ loginUser = (req, res) => {
     if (!user) {
       return res.status(404).json({ emailnotfound: "Email not found" });
     }
-
     
     // If exists, check password
 
