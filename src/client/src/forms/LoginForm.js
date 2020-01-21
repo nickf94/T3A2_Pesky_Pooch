@@ -13,7 +13,7 @@ export default class loginForm extends Component {
     event.preventDefault();
     const { email, password } = this.state;
 
-    axios.post("http://localhost:3000/api/login", { email, password })
+    axios.post("http://localhost:7001/api/login", { email, password })
     .then(res => { this.props.onLogin(res.data.token); this.props.history.push("/") })
     .cathc(err => console.error(err))
   };
