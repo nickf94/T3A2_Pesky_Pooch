@@ -13,8 +13,13 @@ export default class loginForm extends Component {
     event.preventDefault();
     const { email, password } = this.state;
 
-    axios.post("http://localhost:7001/api/login", { email, password })
-    .then(res => { this.props.onLogin(res.data.token); this.props.history.push("/") })
+    const params = {
+      email,
+      password
+    }
+    
+    axios.post("https://peskypoochapi.herokuapp.com/api/login", params)
+    .then(res => { this.props.onLogin(res.data.token) })
     .catch(err => console.error(err))
   };
 

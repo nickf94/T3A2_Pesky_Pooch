@@ -7,7 +7,7 @@ loginUser = (req, res) => {
 
   const email = req.body.email
   const password = req.body.password
-  
+  console.log(req.body, email, password)
   // Find user by email
 
   User.findOne({ email: req.body.email }).then(user => {
