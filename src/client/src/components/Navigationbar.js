@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from 'react-bulma-components';
 import logo from '../assets/logo.jpg'
 import '../styles/styles.scss'
@@ -20,17 +21,17 @@ export const Navigationbar = () => (
   <div class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item">
-        Home
+        <Link to="/">Home</Link>
       </a>
 
       <a class="navbar-item">
-        Services
+        <Link to="/about">About</Link>
       </a>
       <a class="navbar-item">
-        About
+        <Link to="/services">Services</Link>
       </a>
       <a class="navbar-item">
-        Contact
+        <Link to="/contact">Contact</Link>
       </a>
     </div>
   </div>
