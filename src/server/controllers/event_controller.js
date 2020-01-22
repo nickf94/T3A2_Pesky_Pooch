@@ -27,13 +27,10 @@ newEvent = async (req, res) => {
     description: req.body.description,
     location: req.body.location
   })
-
   await newEvent.save()
   .then(res.json(newEvent))
   .catch(err => console.log(err)) 
 }
-
-
 
 module.exports = {
   getEvents,
