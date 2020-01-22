@@ -7,9 +7,22 @@ constructor(props) {
     email: "",
     title: "",
     message: ""
+    }
   }
-}
+  onEmailChange(event) {
+    this.setState({email: event.target.value})
+  }
 
+  onTitleChange(event) {
+    this.setState({title: event.target.value})
+  }
+
+  onMessageChange(event) {
+    this.setState({message: event.target.value})
+  }
+
+  handleSubmit(event) {
+  }
 
   render() {
     return(
@@ -31,18 +44,5 @@ constructor(props) {
     );
   }
 
-  onEmailChange(event) {
-    this.setState({email: event.target.value})
-  }
 
-  onTitleChange(event) {
-    this.setState({title: event.target.value})
-  }
-
-  onMessageChange(event) {
-    this.setState({message: event.target.value})
-  }
-
-  handleSubmit(event) {
-  }
 }
