@@ -17,7 +17,7 @@ class App extends Component {
     this.setState({ token })
   }
   render() {
-    const { token } = this.props;
+    const { token } = this.props
 
     return (
       <React.Fragment>
