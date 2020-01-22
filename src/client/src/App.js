@@ -9,13 +9,16 @@ import { Navigationbar } from './components/Navigationbar'
 
 class App extends Component {
   state = {
-    token: sessionStorage.getItem("token")
+    token: sessionStorage.getItem("token"),
+    user: sessionStorage.getItem("user")
   }
 
-  onLogin = (token) => {
+  onLogin = (token, user) => {
     sessionStorage.setItem("token", token)
-    this.setState({ token })
+    sessionStorage.setItem("user", user)
+    this.setState({ token, user })
   }
+  
   render() {
     const { token } = this.props;
 
@@ -29,6 +32,9 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/services" component={Services} />
             <Route exact path="/contact" component={ContactPage} />
+            <Route exact path="/login">
+              <LoginPage onLogin={this.onLogin} />
+            </Route>
           </Switch>
         </Router>
       </React.Fragment>
