@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as  Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter } as { Router, Route, Switch, Link } from "react-router-dom";
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
@@ -22,6 +22,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Router>
+
           <Navigationbar />
           <Switch>
             <Route exact path="/" component={Home} />
@@ -31,7 +32,7 @@ class App extends Component {
           </Switch>
         </Router>
       </React.Fragment>
-    );
+    )
   }
 }
 
