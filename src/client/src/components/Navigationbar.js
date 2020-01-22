@@ -3,6 +3,7 @@ import { Navbar } from 'react-bulma-components';
 import logo from '../assets/logo.jpg'
 import '../styles/styles.scss'
 
+
 export const Navigationbar = () => (
   <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -17,7 +18,8 @@ export const Navigationbar = () => (
     </a>
   </div>
 
-  <div class="navbar-menu">
+  <div id="navbarBasicExample" class="navbar-menu">
+
     <div class="navbar-start">
       <a class="navbar-item">
         Home
@@ -26,6 +28,7 @@ export const Navigationbar = () => (
       <a class="navbar-item">
         Services
       </a>
+  
       <a class="navbar-item">
         About
       </a>

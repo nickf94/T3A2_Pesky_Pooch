@@ -8,8 +8,15 @@ constructor(props) {
     email: "",
     title: "",
     message: ""
+    }
   }
-}
+  onEmailChange(event) {
+    this.setState({email: event.target.value})
+  }
+
+  onTitleChange(event) {
+    this.setState({title: event.target.value})
+  }
 
   onFormSubmit = event => {
     event.preventDefault();
@@ -41,7 +48,6 @@ constructor(props) {
 
   handleSubmit(event) {
   }
-
 
   render() {
     return(

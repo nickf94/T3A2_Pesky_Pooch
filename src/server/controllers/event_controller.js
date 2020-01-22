@@ -9,6 +9,18 @@ getEvents = async (req, res) => {
   }
 }
 
+updateEvent = async (req, res) => {
+  const event = await Event.findByIdAndUpdate(req.body.id, {
+    name: req.body.name,
+    description: req.body.description,
+    location: req.body.location
+  })
+}
+
+deleteEvent = async (req, res) => {
+  await Event.findByIdAndDelete(req.body.id)
+}
+
 newEvent = async (req, res) => {
   const newEvent = new Event({
     name: req.body.name,
@@ -20,6 +32,8 @@ newEvent = async (req, res) => {
   .then(res.json(newEvent))
   .catch(err => console.log(err)) 
 }
+
+
 
 module.exports = {
   getEvents,
