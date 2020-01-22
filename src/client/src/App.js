@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter } as { Router, Route, Switch, Link } from "react-router-dom";
-import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Services } from './pages/Services';
-import ContactPage from './pages/ContactPage';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { Home } from './pages/Home'
+import { About } from './pages/About'
+import { Services } from './pages/Services'
+import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
 import { Navigationbar } from './components/Navigationbar'
 
