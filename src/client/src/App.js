@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as  Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { Home } from './Home';
 import { About } from './About';
 import { Services } from './Services';
@@ -23,16 +23,28 @@ class App extends Component {
         <Router>
           <div>
             { token && <h4>User is logged in!</h4>}
-            <Switch>
-              <Route exact path="/login" render={(props) => {
+              <Link to="/login" render={(props) => {
                   return <LoginPage {...props} onLogin={this.onLogin} />
                 }} />
-              <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/services" component={Services} />
-              <Route exact path="/contact" component={ContactPage} />
-            </Switch>
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/contact">Contact</Link>
           </div>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/services">
+              <Services />
+            </Route>
+            <Route exact path="/contact">
+              <ContactPage />
+            </Route>
+          </Switch>
         </Router>
       </React.Fragment>
     );
