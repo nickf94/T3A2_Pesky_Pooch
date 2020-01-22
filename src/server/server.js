@@ -15,6 +15,7 @@ connectDB(environment)
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(morgan('dev'))
+
 app.use('/api/events', authorize.checkToken)
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/contacts', require('./routes/api/contacts'))
