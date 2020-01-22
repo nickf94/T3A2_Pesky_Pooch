@@ -4,7 +4,8 @@
   "description": "Pesky Pooch T3A2",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js MAIN",
+    "dev": "nodemon server.js DEV",
     "app": "nodemon server.js",
     "test": "mocha"
   },
@@ -12,10 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "celebrate": "^11.0.1",
     "body-parser": "^1.19.0",
+    "celebrate": "^11.0.1",
     "config": "^3.2.5",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
@@ -25,8 +27,10 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "jest": "^24.9.0",
     "mocha": "^7.0.0",
     "nodemon": "^2.0.2",
+    "commander": "^4.1.0",
     "should": "^13.2.3"
   },
   "engines": {
