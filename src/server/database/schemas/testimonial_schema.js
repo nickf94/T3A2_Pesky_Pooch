@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-  email: {
+const TestimonialSchema = new Schema({
+  testimonial: {
     type: String,
     required: true,
-    unique: true, // Ensures 2 users can't log in with same E-mail.
+    maxlength: 1000,
     trim: true
   },
-  password: {
+  name: {
     type: String,
     required: true,
     trim: true
@@ -16,12 +16,7 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  },
-  role: {
-    type: String,
-    default: "user"
   }
 });
 
-
-module.exports = UserSchema
+module.exports = TestimonialSchema;

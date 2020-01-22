@@ -22,13 +22,12 @@ const connectDB = async (environment) => {
         useNewUrlparser: true,
         useUnifiedTopology: true
       }
-    );
-
-    console.log('MongoDB is Connected on port 7001');
+    )
+    console.log('MongoDB Atlas is connected');
   } catch (err) {
     console.error(err.message);
     process.exit(1);
   }
-};
+}
 
-module.exports = connectDB;
+module.exports = connectDB
