@@ -7,7 +7,6 @@ loginUser = (req, res) => {
 
   const email = req.body.email
   const password = req.body.password
-  console.log(req.body, email, password)
   // Find user by email
 
   User.findOne({ email: req.body.email }).then(user => {
@@ -34,14 +33,14 @@ loginUser = (req, res) => {
             expiresIn: 10000
           },
           (err, token) => {
-            console.log(token)
+            console.log(user)
             res.json({
               success: true,
-              token: "Bearer " + token
-            });
+              token: "Bearer " + token,
+              currentuser: user
+            })
           }
-        );
-        // res.send(200)
+        )
       } else {
         return res
           .status(400)

@@ -19,20 +19,22 @@ constructor(props) {
   }
 
   onFormSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
     const { email, title, message } = this.state;
 
     const params = {
       email,
       title,
       message
+    }
+
+    axios.post("http://localhost:7002/api/contact/", params)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
   }
+
   // HEROKU APP URL: https://peskypoochapi.herokuapp.com
 
-  axios.post("http://localhost:7001/contact", params)
-  .then(res => console.log)
-  .catch(err => console.log)
-};
 
   onEmailChange(event) {
     this.setState({email: event.target.value})
@@ -46,12 +48,10 @@ constructor(props) {
     this.setState({message: event.target.value})
   }
 
-  handleSubmit(event) {
-  }
 
   render() {
     return(
-      <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+      <form id="contact-form" onSubmit={this.onFormSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input type="email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
@@ -66,6 +66,6 @@ constructor(props) {
         </div>
         <button type="submit" className="btn-primary">Submit</button>
       </form>
-    );
+    )
   }
 }
