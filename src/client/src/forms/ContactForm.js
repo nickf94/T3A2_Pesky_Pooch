@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 export default class ContactForm extends Component {
 constructor(props) {
@@ -9,6 +10,37 @@ constructor(props) {
     message: ""
   }
 }
+
+  onFormSubmit = event => {
+    event.preventDefault();
+    const { email, title, message } = this.state;
+
+    const params = {
+      email,
+      title,
+      message
+  }
+  // HEROKU APP URL: https://peskypoochapi.herokuapp.com
+
+  axios.post("http://localhost:7001/contact", params)
+  .then(res => { this.props.onFormSubmit(res.data.token) })
+  .catch(err => console.error(err))
+};
+
+  onEmailChange(event) {
+    this.setState({email: event.target.value})
+  }
+
+  onTitleChange(event) {
+    this.setState({title: event.target.value})
+  }
+
+  onMessageChange(event) {
+    this.setState({message: event.target.value})
+  }
+
+  handleSubmit(event) {
+  }
 
 
   render() {
@@ -29,20 +61,5 @@ constructor(props) {
         <button type="submit" className="btn-primary">Submit</button>
       </form>
     );
-  }
-
-  onEmailChange(event) {
-    this.setState({email: event.target.value})
-  }
-
-  onTitleChange(event) {
-    this.setState({title: event.target.value})
-  }
-
-  onMessageChange(event) {
-    this.setState({message: event.target.value})
-  }
-
-  handleSubmit(event) {
   }
 }
