@@ -19,6 +19,8 @@ updateEvent = async (req, res) => {
 
 deleteEvent = async (req, res) => {
   await Event.findByIdAndDelete(req.body.id)
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
 }
 
 newEvent = async (req, res) => {
@@ -34,5 +36,6 @@ newEvent = async (req, res) => {
 
 module.exports = {
   getEvents,
-  newEvent
+  newEvent,
+  deleteEvent
 }
