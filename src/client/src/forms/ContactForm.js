@@ -23,8 +23,8 @@ constructor(props) {
   // HEROKU APP URL: https://peskypoochapi.herokuapp.com
 
   axios.post("http://localhost:7001/contact", params)
-  .then(res => { this.props.onFormSubmit(res.data.token) })
-  .catch(err => console.error(err))
+  .then(res => console.log)
+  .catch(err => console.log)
 };
 
   onEmailChange(event) {
