@@ -1,14 +1,16 @@
-import React from 'react';
-import { render } from 'node-sass';
+import React, { Component } from 'react';
 
-const OptionSelector = () => {
-  return (
+export default class OptionSelector extends Component {
+
+  state = this.props
+
+  render() {
+    return (
     <div className="event-option-selector">
       <button>Add Event</button>
       <button>Edit Event</button>
       <button>Delete Event</button>
     </div>
-  )
+    )
+  }
 }
-
-export default OptionSelector
