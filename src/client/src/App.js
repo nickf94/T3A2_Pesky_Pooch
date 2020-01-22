@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Home } from './Home';
-import { About } from './About';
-import { Services } from './Services';
-import ContactPage from './ContactPage';
-import LoginPage from './LoginPage'
+import { BrowserRouter } as { Router, Route, Switch, Link } from "react-router-dom";
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+import { Services } from './pages/Services';
+import ContactPage from './pages/ContactPage';
+import LoginPage from './pages/LoginPage'
+import { Navigationbar } from './components/Navigationbar'
 
 class App extends Component {
   state = {
@@ -21,33 +22,17 @@ class App extends Component {
     return (
       <React.Fragment>
         <Router>
-          <div>
-            { token && <h4>User is logged in!</h4>}
-              <Link to="/login" render={(props) => {
-                  return <LoginPage {...props} onLogin={this.onLogin} />
-                }} />
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/services">Services</Link>
-              <Link to="/contact">Contact</Link>
-          </div>
+
+          <Navigationbar />
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/services">
-              <Services />
-            </Route>
-            <Route exact path="/contact">
-              <ContactPage />
-            </Route>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/services" component={Services} />
+            <Route exact path="/contact" component={ContactPage} />
           </Switch>
         </Router>
       </React.Fragment>
-    );
+    )
   }
 }
 
