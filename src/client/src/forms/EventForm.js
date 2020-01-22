@@ -51,7 +51,7 @@ render() {
         <input type="location" value={this.state.location} onChange={this.onLocationChange.bind(this)} />
       </div>
       <div className="form-group">
-        <label for="message">Message:</label>
+        <label for="description">Description:</label>
         <textarea rows="3" value={this.state.description} onChange={this.onDescriptionChange.bind(this)} />
       </div>
       <button type="submit" className="btn-primary">Submit</button>
