@@ -2,7 +2,8 @@ const express = require('express');
 const connectDB = require('./config/db');
 const app = express()
 const port = process.env.PORT || 7001;
-connectDB();
+const environment = process.argv[2] || "TEST"
+connectDB(environment);
 const contactRoutes = require('./routes/api/contacts')
 const userRoutes = require('./routes/api/users')
 const server = ('/server/server.js')
