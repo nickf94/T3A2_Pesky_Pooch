@@ -13,10 +13,16 @@ export default class loginForm extends Component {
     event.preventDefault();
     const { email, password } = this.state;
 
-    axios.post("http://localhost:7001/api/login", { email, password })
-    .then(res => { this.props.onLogin(res.data.token); this.props.history.push("/") })
+    const params = {
+      email,
+      password
+    }
+    // HEROKU APP URL: https://peskypoochapi.herokuapp.com
+  
+    axios.post("http://localhost:7002/api/login", params)
+    .then(res => { this.props.onLogin(res.data.token, res.data.currentuser) })
     .catch(err => console.error(err))
-  };
+  }
 
   onInputChange = (name, event) => {
     this.setState({ [name]: event.target.value });

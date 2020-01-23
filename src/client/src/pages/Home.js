@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Services  = () => (
+export const Home  = () => (
   <React.Fragment>
     <div>
-      <h1>Services page</h1>
+      <h1>Home</h1>
     </div>
   </React.Fragment>
 )
