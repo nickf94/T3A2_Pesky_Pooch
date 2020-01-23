@@ -18,7 +18,7 @@ export default class EventControlPanel extends Component {
     headers: {
     'Authorization': token
     }})
-    .then(res => this.setState({ events: res }))
+    .then(res => this.setState({ events: res.data }))
     .catch(err => console.log)
   }
   
@@ -51,6 +51,10 @@ export default class EventControlPanel extends Component {
     this.setState({ editEvent: false, addEvent: false, deleteEvent: false })
   }
 
+  componentDidMount() {
+    this.getEvents()
+  }
+
   render() {
     return (
       <>
@@ -65,6 +69,9 @@ export default class EventControlPanel extends Component {
 
         <div>
           {this.state.editEvent ? (<h1>Test</h1>):(<h1>Other test</h1>) }
+          { this.state.events.forEach(event => {
+            return <h1>{event.name}</h1>
+          }) }
         </div>
       </>
     )
