@@ -5,36 +5,26 @@ import logo from '../assets/logo.jpg'
 import '../styles/styles.scss'
 
 export const Navigationbar = () => (
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-icon" href="https://bulma.io">
+  <nav className="navbar" role="navigation" aria-label="main navigation">
+    <div className="navbar-brand">
+      <div className="navbar-icon" href="https://bulma.io">
         <img src={logo} width="40" height="40" />
-      </a>
+      </div>
 
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div className="navbar-menu">
 
-      <div class="navbar-start">
-        <a class="navbar-item">
-          <Link to="/">Home</Link>
-        </a>
-
-        <a class="navbar-item">
-          <Link to="/about">About</Link>
-        </a>
-
-        <a class="navbar-item">
-          <Link to="/services">Services</Link>
-        </a>
-        <a class="navbar-item">
-          <Link to="/contact">Contact</Link>
-        </a>
+      <div className="navbar-start">
+          <Link to="/" className="navbar-item">Home</Link>
+          <Link to="/about" className="navbar-item">About</Link>
+          <Link to="/services" className="navbar-item">Services</Link>
+          <Link to="/contact" className="navbar-item">Contact</Link>
       </div>
     </div>
   </nav>

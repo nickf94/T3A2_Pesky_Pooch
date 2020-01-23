@@ -14,7 +14,18 @@
 }
 
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 450px;
+  align-items: center;
   background: rgb(187, 189, 246);
+}
+
+.contact-label {
+  display: block;
+  position: relative;
+  margin: 1rem;
 }
 
 @media screen and (max-width: 600px) {

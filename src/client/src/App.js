@@ -8,24 +8,29 @@ import LoginPage from './pages/LoginPage'
 import { Navigationbar } from './components/Navigationbar'
 
 class App extends Component {
+  /* Use a state to collect the token and user from our login form */
+
   state = {
     token: sessionStorage.getItem("token"),
     user: sessionStorage.getItem("user")
   }
+
+  /* on login the token and user is stored into session storage */
 
   onLogin = (token, user) => {
     sessionStorage.setItem("token", token)
     sessionStorage.setItem("user", user)
     this.setState({ token, user })
   }
-  
+
   render() {
     const { token } = this.props;
+
+    /* Renders the routes and the navbar on all pages of the app */
 
     return (
       <React.Fragment>
         <Router>
-
           <Navigationbar />
           <Switch>
             <Route exact path="/" component={Home} />
