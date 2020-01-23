@@ -20,8 +20,6 @@ export class Services extends Component {
             ) : ( 
             <div>
               <p>Not logged in.</p>
-              <EventForm />
-              <EventControlPanel />
             </div>
             ) 
           }

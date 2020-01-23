@@ -8,6 +8,8 @@ export default class EventControlPanel extends Component {
     deleteEvent: false
   }
 
+  
+
   // renderNewComponent = (children) => {
   //   return (
   //     <FormComponent >
