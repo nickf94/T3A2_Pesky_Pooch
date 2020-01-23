@@ -14,7 +14,6 @@ export class Services extends Component {
           <h1>Services page</h1>
           { this.props.user ? (
             <div>
-              <EventForm />
               <EventControlPanel />
             </div>
             ) : ( 

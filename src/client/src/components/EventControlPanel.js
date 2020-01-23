@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import EventOptionSelector from './EventOptionSelector'
 import axios from 'axios'
+import EditEvent from './EditEvent';
+import EventForm from '../forms/EventForm';
 
 export default class EventControlPanel extends Component {
   
@@ -68,10 +70,17 @@ export default class EventControlPanel extends Component {
         deleteEvent={this.state.deleteEvent} />
 
         <div>
-          {this.state.editEvent ? (<h1>Test</h1>):(<h1>Other test</h1>) }
-          { this.state.events.forEach(event => {
+          {this.state.editEvent ? (
+          < EditEvent events={this.state.events} />,
+          this.state.events.forEach(event => {
             return <h1>{event.name}</h1>
-          }) }
+          })
+          ): this.state.addEvent ? (
+            < EventForm />
+          ) :
+          (<h1>Other test</h1>) }
+          
+
         </div>
       </>
     )
