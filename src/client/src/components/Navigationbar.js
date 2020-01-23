@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar } from 'react-bulma-components';
 import logo from '../assets/logo.jpg'
 import '../styles/styles.scss'
 
 export const Navigationbar = () => (
   <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
-      <div className="navbar-icon" href="https://bulma.io">
-        <img src={logo} width="40" height="40" />
+      <div className="navbar-icon">
+        <img src={logo} alt="pesky pooch logo" width="40" height="40" />
       </div>
 
-      <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <div role="button" className="navbar-burger burger is-active" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-      </a>
+      </div>
     </div>
 
     <div className="navbar-menu">

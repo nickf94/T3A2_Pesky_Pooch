@@ -1,9 +1,14 @@
+@import
+url('https://fonts.googleapis.com/css?family=Amarante');
+
 .navbar {
   background-color: rgb(187, 189, 246);
 }
 
 .navbar-item {
   margin-left: 2rem;
+  font-size: 24px;
+  font-family: 'Amarante', cursive;
 
   &:hover {
     background-color: rgb(229, 212, 237);
@@ -27,19 +32,20 @@
   position: relative;
   margin: 1rem;
 }
-
-@media screen and (max-width: 600px) {
-  .navbar-burger {
-    display: block;
-
-    &:span {
-      background-color: grey;
-      display: block;
-      position: relative;
-      width: 3.5rem;
-      height: .4rem;
-      margin-bottom: .7rem;
-      transition: ease-in-out 0.2s;
-    }
-  }
-}
+//
+// @media screen and (max-width: 600px) {
+//   .navbar-burger burger {
+//     display: block;
+//     color: black;
+//
+//     &:span {
+//       background-color: grey;
+//       display: block;
+//       position: relative;
+//       width: 3.5rem;
+//       height: .4rem;
+//       margin-bottom: .7rem;
+//       transition: ease-in-out 0.2s;
+//     }
+//   }
+// }

@@ -3,10 +3,6 @@ import EventForm from '../forms/EventForm'
 import EventControlPanel from '../components/EventControlPanel';
 
 export class Services extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <>
@@ -17,11 +13,11 @@ export class Services extends Component {
               <EventForm />
               <EventControlPanel />
             </div>
-            ) : ( 
+            ) : (
             <div>
               <p>Not logged in.</p>
             </div>
-            ) 
+            )
           }
         </div>
       </>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from './pages/Home'
 import { About } from './pages/About'
 import { Services } from './pages/Services'
@@ -24,14 +24,15 @@ class App extends Component {
   }
 
   render() {
-    const { token } = this.props;
 
     /* Renders the routes and the navbar on all pages of the app */
 
     return (
       <React.Fragment>
         <Router>
-          <Navigationbar />
+          <div>
+            <Navigationbar />
+          </div>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
