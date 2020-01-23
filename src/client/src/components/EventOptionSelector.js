@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 
 export default class OptionSelector extends Component {
 
-  state = this.props
-
   render() {
     return (
     <div className="event-option-selector">
-      <button>Add Event</button>
-      <button>Edit Event</button>
-      <button>Delete Event</button>
+      <button onClick={this.props.setAddTrue}>Add Event</button>
+      <button onClick={this.props.setEditTrue}>Edit Event</button>
+      <button onClick={this.props.setDeleteTrue}>Delete Event</button>
     </div>
     )
   }

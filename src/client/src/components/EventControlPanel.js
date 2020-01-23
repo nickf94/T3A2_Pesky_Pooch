@@ -8,9 +8,28 @@ export default class EventControlPanel extends Component {
     deleteEvent: false
   }
 
-  setOneTrue = (target) => {
-    this.setState({ editEvent: false, addEvent: false, deleteEvent: false })
-    this.setState({ editEvent: target })
+  // renderNewComponent = (children) => {
+  //   return (
+  //     <FormComponent >
+  //       {...children}
+  //     </FormComponent>
+  //   )
+  // }
+
+  setEditTrue = () => {
+    this.setAllFalse()
+    this.setState({ editEvent: true })
+  }
+
+  setAddTrue = () => {
+    console.log('RUNNING setAddTrue NOW')
+    this.setAllFalse()
+    this.setState({ addEvent: true })
+  }
+
+  setDeleteTrue = () => {
+    this.setAllFalse()
+    this.setState({ deleteEvent: true })
   }
 
   setAllFalse = () => {
@@ -20,7 +39,14 @@ export default class EventControlPanel extends Component {
   render() {
     return (
       <>
-        < EventOptionSelector setOneTrue={this.setOneTrue} setAllFalse={this.setAllFalse} />
+        < EventOptionSelector 
+        setEditTrue={this.setEditTrue} 
+        setAddTrue={this.setAddTrue} 
+        setDeleteTrue={this.setDeleteTrue} 
+        setAllFalse={this.setAllFalse} 
+        editEvent={this.state.editEvent} 
+        addEvent={this.state.addEvent} 
+        deleteEvent={this.state.deleteEvent} />
       </>
     )
   }
