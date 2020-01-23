@@ -51,21 +51,23 @@ constructor(props) {
 
   render() {
     return(
-      <form id="contact-form" onSubmit={this.onFormSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input type="email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="title">Title:</label>
-          <input type="title" value={this.state.title} onChange={this.onTitleChange.bind(this)} />
-        </div>
-        <div className="form-group">
-          <label for="message">Message:</label>
-          <textarea rows="3" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-        </div>
-        <button type="submit" className="btn-primary">Submit</button>
-      </form>
+      <container className="contactform">
+        <form className="contact-form" onSubmit={this.onFormSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input type="email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="title">Title:</label>
+            <input type="title" value={this.state.title} onChange={this.onTitleChange.bind(this)} />
+          </div>
+          <div className="form-group">
+            <label for="message">Message:</label>
+            <textarea rows="3" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
+          </div>
+          <button type="submit" className="btn-primary">Submit</button>
+        </form>
+      </container>
     )
   }
 }
