@@ -10,7 +10,7 @@ export default class EventControlPanel extends Component {
     editEvent: false,
     addEvent: false,
     deleteEvent: false,
-    events: []
+    events: {},
   }
 
   getEvents = () => {
@@ -21,6 +21,7 @@ export default class EventControlPanel extends Component {
     'Authorization': token
     }})
     .then(res => this.setState({ events: res.data }))
+    .then(this.props.setParentEvents(this.state.events))
     .catch(err => console.log)
   }
   
