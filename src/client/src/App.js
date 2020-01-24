@@ -5,7 +5,7 @@ import { About } from './pages/About'
 import { Services } from './pages/Services'
 import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
-import { Navigationbar } from './components/Navigationbar'
+import Navigationbar from './components/Navigationbar'
 
 class App extends Component {
   /* Use a state to collect the token and user from our login form */
