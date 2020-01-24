@@ -10,18 +10,22 @@ export default class EventControlPanel extends Component {
     editEvent: false,
     addEvent: false,
     deleteEvent: false,
-    events: {},
+    events: [],
   }
 
   getEvents = () => {
     let token = sessionStorage.getItem('token')
-    console.log(token)
+    console.log('asking data')
     axios.get("http://localhost:7002/api/events", {
     headers: {
     'Authorization': token
     }})
-    .then(res => this.setState({ events: res.data }))
-    .then(this.props.setParentEvents(this.state.events))
+    .then(res => {
+      let data = res.data
+      console.log('found data')
+      this.setState({ events: data })
+      return data
+      })
     .catch(err => console.log)
   }
   
@@ -35,47 +39,47 @@ export default class EventControlPanel extends Component {
   // }
 
   setEditTrue = () => {
-    this.setAllFalse()
-    this.setState({ editEvent: true })
+    // this.setAllFalse()
+    this.setState({ editEvent: true, deleteEvent: false, addEvent: false })
+
   }
 
   setAddTrue = () => {
     console.log('RUNNING setAddTrue NOW')
-    this.setAllFalse()
-    this.setState({ addEvent: true })
+    // this.setAllFalse()
+    this.setState({ editEvent: false, deleteEvent: false, addEvent: true })
   }
 
   setDeleteTrue = () => {
-    this.setAllFalse()
-    this.setState({ deleteEvent: true })
+    // this.setAllFalse()
+    this.setState({ editEvent: false, deleteEvent: true, addEvent: false })
+
+    // this.setState({ deleteEvent: true })
   }
 
-  setAllFalse = () => {
-    this.setState({ editEvent: false, addEvent: false, deleteEvent: false })
-  }
+  // setAllFalse = () => {
+  //   this.setState({ editEvent: false, addEvent: false, deleteEvent: false })
+  // }
 
   componentDidMount() {
     this.getEvents()
   }
 
   render() {
+    console.log(this.state.events)
     return (
       <>
         < EventOptionSelector 
         setEditTrue={this.setEditTrue} 
         setAddTrue={this.setAddTrue} 
         setDeleteTrue={this.setDeleteTrue} 
-        setAllFalse={this.setAllFalse} 
         editEvent={this.state.editEvent} 
         addEvent={this.state.addEvent} 
         deleteEvent={this.state.deleteEvent} />
 
         <div>
           {this.state.editEvent ? (
-          < EditEvent events={this.state.events} />,
-          this.state.events.forEach(event => {
-            return <h1>{event.name}</h1>
-          })
+          < EditEvent events={this.state.events} updateControlEvents={this.getEvents} />
           ): this.state.addEvent ? (
             < EventForm />
           ) :
