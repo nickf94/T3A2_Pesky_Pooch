@@ -4,11 +4,13 @@ import { Redirect } from "react-router-dom";
 
 
 export default class loginForm extends Component {
+  /* state takes in email and password for a user login */
   state = {
     email: "",
     password: ""
   };
 
+  /* when the user logs in to the site it pulls the email and password from the state */
   onFormSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
@@ -18,7 +20,8 @@ export default class loginForm extends Component {
       password
     }
     // HEROKU APP URL: https://peskypoochapi.herokuapp.com
-  
+
+    /* axios posts to the backend and then renders a route to an api */
     axios.post("http://localhost:7002/api/login", params)
     .then(res => { this.props.onLogin(res.data.token, res.data.currentuser) })
     .catch(err => console.error(err))
@@ -28,6 +31,7 @@ export default class loginForm extends Component {
     this.setState({ [name]: event.target.value });
   };
 
+  /* form for the login screen */
   render() {
     console.log(this.props);
     const { email, password } = this.state;
