@@ -2,23 +2,13 @@ import React, { Component, useEffect, useState } from 'react';
 import EventOptionSelector from './EventOptionSelector'
 import axios from 'axios'
 import EditEvent from './EditEvent';
+import AddEvent from './AddEvent';
 // import EditEvent from './EditEvent';
 // import EventForm from '../forms/EventForm';
 
 
 
 
-function DeleteEvent() {
-  return (
-    <h1>Delete event page</h1>
-  )
-}
-
-function AddEvent() {
-  return (
-    <h1>Add event page</h1>
-  )
-}
 
 export default function EventControlPanel() {
   const [eventTypes, setEventTypes] = useState({add: false, edit: false, delete: false})
@@ -29,7 +19,7 @@ export default function EventControlPanel() {
       case 'add':
         return < AddEvent />
       case 'delete':
-        return < DeleteEvent />
+        return <p>Delete</p>
       case 'edit':
         return < EditEvent />
       default:
