@@ -11,7 +11,7 @@ getEvents = async (req, res) => {
 
 updateEvent = async (req, res) => {
   console.log(req.body)
-  const event = await Event.findByIdAndUpdate(req.body.id, {
+  const event = await Event.findByIdAndUpdate(req.body._id, {
     name: req.body.name,
     description: req.body.description,
     location: req.body.location
