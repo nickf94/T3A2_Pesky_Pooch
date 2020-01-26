@@ -10,11 +10,13 @@ getEvents = async (req, res) => {
 }
 
 updateEvent = async (req, res) => {
-  const event = await Event.findByIdAndUpdate(req.body.id, {
+  console.log(req.body)
+  const event = await Event.findByIdAndUpdate(req.body._id, {
     name: req.body.name,
     description: req.body.description,
     location: req.body.location
   })
+  res.send(event)
 }
 
 deleteEvent = async (req, res) => {
@@ -37,5 +39,6 @@ newEvent = async (req, res) => {
 module.exports = {
   getEvents,
   newEvent,
-  deleteEvent
+  deleteEvent, 
+  updateEvent
 }

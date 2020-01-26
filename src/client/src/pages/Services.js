@@ -3,8 +3,15 @@ import EventForm from '../forms/EventForm'
 import EventControlPanel from '../components/EventControlPanel';
 
 export class Services extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
+  // }
+
+  state = {
+    events: {}
+  }
+
+  setEvents = (response) => {
   }
 
   render() {
@@ -14,8 +21,7 @@ export class Services extends Component {
           <h1>Services page</h1>
           { this.props.user ? (
             <div>
-              <EventForm />
-              <EventControlPanel />
+              < EventControlPanel setParentEvents={this.setEvents} />
             </div>
             ) : ( 
             <div>
