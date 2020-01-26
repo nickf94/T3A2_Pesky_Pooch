@@ -29,7 +29,11 @@ constructor(props) {
     }
 
     axios.post("http://localhost:7002/api/contact/", params)
-    .then((res) => console.log(res))
+    .then((res) => {
+      console.log(res)
+      document.getElementById("contact-submit").classList.toggle('successful')
+    })
+
     .catch((err) => console.log(err))
   }
 
@@ -65,7 +69,7 @@ constructor(props) {
             <label for="message">Message:</label>
             <textarea rows="3" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
           </div>
-          <button type="submit" className="btn-primary">Submit</button>
+          <button type="submit" className="btn-primary" id="contact-submit">Submit</button>
         </form>
       </container>
     )

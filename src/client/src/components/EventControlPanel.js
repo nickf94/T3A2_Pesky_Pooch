@@ -5,8 +5,6 @@ import AddEvent from './AddEvent'
 import DeleteEvent from './DeleteEvent'
 import '../styles/eventcontrolpanel.css'
 
-
-
 export default function EventControlPanel() {
   const [eventTypes, setEventTypes] = useState({add: false, edit: false, delete: false})
   const [selectedType, setSelectedType] = useState(null)
@@ -19,8 +17,6 @@ export default function EventControlPanel() {
         return <DeleteEvent />
       case 'edit':
         return < EditEvent />
-      default:
-        return <p>No type selected</p>
     }
   }
 

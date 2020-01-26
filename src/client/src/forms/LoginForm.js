@@ -6,7 +6,8 @@ import { Redirect } from "react-router-dom";
 export default class loginForm extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    submit: false
   };
 
   onFormSubmit = event => {
@@ -20,7 +21,10 @@ export default class loginForm extends Component {
     // HEROKU APP URL: https://peskypoochapi.herokuapp.com
   
     axios.post("http://localhost:7002/api/login", params)
-    .then(res => { this.props.onLogin(res.data.token, res.data.currentuser) })
+    .then(res => { 
+      this.props.onLogin(res.data.token, res.data.currentuser)
+      this.setState({ submit: true })
+      })
     .catch(err => console.error(err))
   }
 
@@ -29,9 +33,7 @@ export default class loginForm extends Component {
   };
 
   render() {
-    console.log(this.props);
     const { email, password } = this.state;
-
     return this.state.submit ? (
       <Redirect to="/" />
     ) : (
