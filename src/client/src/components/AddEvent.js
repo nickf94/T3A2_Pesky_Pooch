@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles/eventcontrolpanel.css'
 
 export default function AddEvent() {
   const [eventParams, setEventParams] = useState({name: '', description: '', location: ''})
@@ -12,9 +13,7 @@ export default function AddEvent() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-
     let token = sessionStorage.getItem('token')
-    console.log(token)
     axios.post("http://localhost:7002/api/events/new", eventParams, {
     headers: {
     'Authorization': token

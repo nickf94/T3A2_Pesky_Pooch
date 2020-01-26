@@ -10,7 +10,6 @@ getEvents = async (req, res) => {
 }
 
 updateEvent = async (req, res) => {
-  console.log(req.body)
   const event = await Event.findByIdAndUpdate(req.body._id, {
     name: req.body.name,
     description: req.body.description,
@@ -21,8 +20,9 @@ updateEvent = async (req, res) => {
 
 deleteEvent = async (req, res) => {
   await Event.findByIdAndDelete(req.headers.eventid)
-  .then(res => console.log(res))
+  .then(res => console.log("Successfully deleted event"))
   .catch(err => console.log(err))
+  res.json({ deleteSuccessful: true })
 }
 
 newEvent = async (req, res) => {

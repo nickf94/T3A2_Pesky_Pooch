@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/eventcontrolpanel.css'
 
 export default class OptionSelector extends Component {
 
