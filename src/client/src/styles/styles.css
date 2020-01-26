@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #bbbdf6;
+}
+
+.navbar-item {
+  margin-left: 2rem;
+}
+
+.navbar-item:hover {
+  background-color: #e5d4ed;
+}
+
+.navbar-icon {
+  padding-right: 6px;
+}
+
+.contact-form {
+  background: #bbbdf6;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-burger {
+    display: block;
+  }
+  .navbar-burger:span {
+    background-color: grey;
+    display: block;
+    position: relative;
+    width: 3.5rem;
+    height: .4rem;
+    margin-bottom: .7rem;
+    -webkit-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
