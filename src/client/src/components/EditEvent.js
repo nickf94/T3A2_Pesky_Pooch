@@ -8,8 +8,8 @@ export default function EditEvent() {
   const [submit, setSubmit] = useState(false)
   const token = sessionStorage.getItem('token')
 
-  const fetchEvents = () => {
-    axios.get("http://localhost:7002/api/events", {
+  const fetchEvents = async () => {
+    await axios.get("http://localhost:7002/api/events", {
       headers: {
         'Authorization': token
       }})
@@ -29,19 +29,18 @@ export default function EditEvent() {
     console.log(subject)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     console.log("Submitting:", e)
 
-    axios.put("http://localhost:7002/api/events/update", subject, {
+    await axios.put("http://localhost:7002/api/events/update", subject, {
       headers: {
         'Authorization': token
       },
       id: subject._id
       })
     .then(res => {
-      fetchEvents()
-      return res
+      setSubmit(true)
     })
     .catch(err => console.log(err))
   }

@@ -4,25 +4,23 @@ import '../styles/eventcontrolpanel.css'
 
 export default function DeleteEvent() {
   const [events, setEvents] = useState([])
+  const [submit, setSubmit] = useState(false)
+  const token = sessionStorage.getItem('token')
 
-  const fetchEvents = () => {
-    const token = sessionStorage.getItem('token')
-    axios.get("http://localhost:7002/api/events", {
+  const fetchEvents = async () => {
+    await axios.get("http://localhost:7002/api/events", {
       headers: {
         'Authorization': token
       }})
     .then(res => {
       setEvents(res.data)
+      console.log('Fetched events')
     })
     .catch(err => console.log(err))
   }
 
   const handleSubmit = async (eventId) => {
-    let test = window.confirm("Are you sure you want to delete this event?")
-    if (test) {
-      const token = sessionStorage.getItem('token')
-      console.log("Submitting:", eventId)
-
+    if (window.confirm("Are you sure you want to delete this event?")) {
       await axios.delete("http://localhost:7002/api/events/delete", {
         headers: {
           'Authorization': token,
@@ -30,7 +28,7 @@ export default function DeleteEvent() {
         }})
       .then(res => {
         fetchEvents()
-        console.log(res)
+        console.log('Successfully submitted')
       })
       .catch(err => console.log(err))
     }
@@ -38,7 +36,15 @@ export default function DeleteEvent() {
 
   useEffect(() => {
     fetchEvents()
+    console.log("Component mounted")
   }, [])
+
+  useEffect(() => {
+    if (submit) {
+      fetchEvents()
+      setSubmit(false)
+    }
+  }, [submit])
 
   return (
     <>
@@ -50,5 +56,4 @@ export default function DeleteEvent() {
     </div>
     </>
   )
-
 }
