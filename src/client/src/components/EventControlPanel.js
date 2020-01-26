@@ -7,7 +7,7 @@ import DeleteEvent from './DeleteEvent';
 // import EditEvent from './EditEvent';
 // import EventForm from '../forms/EventForm';
 
-
+import '../styles/eventcontrolpanel.css'
 
 
 
@@ -35,6 +35,8 @@ export default function EventControlPanel() {
 
   return (
     <>
+      <p className="admin-banner">You have been authorized.</p>
+
       < EventOptionSelector 
         setProperType={setProperType}
       />

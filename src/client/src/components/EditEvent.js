@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios'
+import '../styles/eventcontrolpanel.css'
 
 export default function EditEvent() {
   const [events, setEvents] = useState([])
@@ -54,7 +55,7 @@ export default function EditEvent() {
 
   return (
     <>
-    <div>
+    <div className="event-buttons">
       {events.map((event) => {
         return (<button key={event._id} onClick={() => {setSubject(event)}}>{event.name}</button>)
       })}
