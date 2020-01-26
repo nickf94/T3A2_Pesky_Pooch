@@ -3,6 +3,7 @@ import EventOptionSelector from './EventOptionSelector'
 import axios from 'axios'
 import EditEvent from './EditEvent';
 import AddEvent from './AddEvent';
+import DeleteEvent from './DeleteEvent';
 // import EditEvent from './EditEvent';
 // import EventForm from '../forms/EventForm';
 
@@ -19,7 +20,7 @@ export default function EventControlPanel() {
       case 'add':
         return < AddEvent />
       case 'delete':
-        return <p>Delete</p>
+        return <DeleteEvent />
       case 'edit':
         return < EditEvent />
       default:

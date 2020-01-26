@@ -20,7 +20,7 @@ updateEvent = async (req, res) => {
 }
 
 deleteEvent = async (req, res) => {
-  await Event.findByIdAndDelete(req.body.id)
+  await Event.findByIdAndDelete(req.headers.eventid)
   .then(res => console.log(res))
   .catch(err => console.log(err))
 }
