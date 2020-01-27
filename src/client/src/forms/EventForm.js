@@ -48,17 +48,23 @@ export default class EventForm extends Component {
       <form id="event-form" onSubmit={this.onFormSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
-          <input type="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-        </div>
+          <div>
+            <input type="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
+          </div>
+      </div>
         <div className="form-group">
           <label htmlFor="location">Location:</label>
-          <input type="location" value={this.state.location} onChange={this.onLocationChange.bind(this)} />
-        </div>
+          <div>
+            <input type="location" value={this.state.location} onChange={this.onLocationChange.bind(this)} />
+          </div>
+      </div>
         <div className="form-group">
-          <label for="description">Description:</label>
-          <textarea rows="3" value={this.state.description} onChange={this.onDescriptionChange.bind(this)} />
+          <label htmlfor="description">Description:</label>
+          <div>
+            <textarea value={this.state.description} onChange={this.onDescriptionChange.bind(this)} />
+          </div>
         </div>
-        <button type="submit" className="btn-primary">Submit</button>
+          <button type="submit" className="btn-primary">Submit</button>
       </form>
     );
   }
