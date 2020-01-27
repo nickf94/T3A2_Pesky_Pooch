@@ -15,11 +15,28 @@ newService = async (req, res) => {
   await newService.save()
   .then(res => console.log(res))
   .then(res.json(newService))
+  .catch(err => console.log(err)) 
+}
+
+editService = async (req, res) => {
+  const service = await Service.findByIdAndUpdate(req.body._id, {
+    name: req.body.name,
+    description: req.body.description,
+    cost: req.body.cost
+  })
+  res.send(service)
+}
+
+deleteService = async (req, res) => {
+  await Service.findByIdAndDelete(req.body._id)
+  .then(res => console.log(res))
   .catch(err => console.log(err))
-  
+  res.json({ deleteSuccessful: true })
 }
 
 module.exports = {
   getServices,
-  newService
+  newService,
+  editService,
+  deleteService
 }
