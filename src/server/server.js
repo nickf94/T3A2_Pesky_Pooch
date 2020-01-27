@@ -21,6 +21,7 @@ app.use('/api/users', require('./routes/api/users'))
 app.use('/api/contact', require('./routes/api/contacts'))
 app.use('/api/login', require('./routes/api/login'))
 app.use('/api/events', require('./routes/api/events'))
+app.use('/api/services', require('./routes/api/services'))
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
