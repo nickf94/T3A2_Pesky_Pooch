@@ -5,8 +5,6 @@ import AddEvent from './AddEvent'
 import DeleteEvent from './DeleteEvent'
 import '../styles/eventcontrolpanel.css'
 
-
-
 export default function EventControlPanel() {
   const [eventTypes, setEventTypes] = useState({add: false, edit: false, delete: false})
   const [selectedType, setSelectedType] = useState(null)
@@ -20,7 +18,7 @@ export default function EventControlPanel() {
       case 'edit':
         return < EditEvent />
       default:
-        return <p>No type selected</p>
+        return <p>No selectedType</p>
     }
   }
 
@@ -31,7 +29,7 @@ export default function EventControlPanel() {
 
   return (
     <>
-      <p className="admin-banner">You have been authorized.</p>
+      <p className="admin-banner">You have been authorized as an admin.</p>
 
       < EventOptionSelector 
         setProperType={setProperType}

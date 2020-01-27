@@ -26,12 +26,11 @@ export default function EditEvent() {
   const stateReducer = (event) => {
     let newSubject = {...subject, [event.target.name]: event.target.value}
     setSubject(newSubject)
-    console.log(subject)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("Submitting:", e)
+    console.log("Submitting an event edit")
 
     await axios.put("http://localhost:7002/api/events/update", subject, {
       headers: {
@@ -41,6 +40,7 @@ export default function EditEvent() {
       })
     .then(res => {
       setSubmit(true)
+      setSubject(null)
     })
     .catch(err => console.log(err))
   }

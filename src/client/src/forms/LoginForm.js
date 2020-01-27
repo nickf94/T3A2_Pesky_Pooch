@@ -7,7 +7,8 @@ export default class loginForm extends Component {
   /* state takes in email and password for a user login */
   state = {
     email: "",
-    password: ""
+    password: "",
+    submit: false
   };
 
   /* when the user logs in to the site it pulls the email and password from the state */
@@ -23,7 +24,10 @@ export default class loginForm extends Component {
 
     /* axios posts to the backend and then renders a route to an api */
     axios.post("http://localhost:7002/api/login", params)
-    .then(res => { this.props.onLogin(res.data.token, res.data.currentuser) })
+    .then(res => { 
+      this.props.onLogin(res.data.token, res.data.currentuser)
+      this.setState({ submit: true })
+      })
     .catch(err => console.error(err))
   }
 
@@ -33,9 +37,7 @@ export default class loginForm extends Component {
 
   /* form for the login screen */
   render() {
-    console.log(this.props);
     const { email, password } = this.state;
-
     return this.state.submit ? (
       <Redirect to="/" />
     ) : (

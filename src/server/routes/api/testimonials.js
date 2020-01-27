@@ -1,4 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const testimonialsController = require('../../controllers/testimonial_controller')
 
-const Contact = require("../../database/models/testimonial_model");
+router.get('/', testimonialsController.getTestimonials)
+
+module.exports = router
