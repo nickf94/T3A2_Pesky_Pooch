@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ServiceSchema = require("./../schemas/testimonial_schema");
+const ServiceSchema = require("./../schemas/service_schema");
 
 const ServiceModel = mongoose.model("service", ServiceSchema);
 
