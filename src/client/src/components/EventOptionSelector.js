@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/eventcontrolpanel.css'
 
-export default class OptionSelector extends Component {
-
-  render() {
-    return (
+const OptionSelector = (props) => {
+  return (
     <div className="event-option-selector">
-      <button onClick={this.props.setProperType} name="add">Add Event</button>
-      <button onClick={this.props.setProperType} name="edit">Edit Event</button>
-      <button onClick={this.props.setProperType} name="delete">Delete Event</button>
+      <button onClick={props.setProperType} name="add">Add Event</button>
+      <button onClick={props.setProperType} name="edit">Edit Event</button>
+      <button onClick={props.setProperType} name="delete">Delete Event</button>
     </div>
-    )
-  }
+  )
 }
+
+export default OptionSelector

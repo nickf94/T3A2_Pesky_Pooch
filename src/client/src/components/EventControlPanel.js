@@ -17,6 +17,8 @@ export default function EventControlPanel() {
         return <DeleteEvent />
       case 'edit':
         return < EditEvent />
+      default:
+        return <p>No selectedType</p>
     }
   }
 
@@ -27,7 +29,7 @@ export default function EventControlPanel() {
 
   return (
     <>
-      <p className="admin-banner">You have been authorized.</p>
+      <p className="admin-banner">You have been authorized as an admin.</p>
 
       < EventOptionSelector 
         setProperType={setProperType}
