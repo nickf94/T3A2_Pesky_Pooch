@@ -28,7 +28,7 @@ export default function DeleteEvent() {
         }})
       .then(res => {
         fetchEvents()
-        console.log('Successfully submitted')
+        console.log('Successfully submitted delete event request')
       })
       .catch(err => console.log(err))
     }
@@ -36,7 +36,6 @@ export default function DeleteEvent() {
 
   useEffect(() => {
     fetchEvents()
-    console.log("Component mounted")
   }, [])
 
   useEffect(() => {

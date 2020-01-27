@@ -33,4 +33,12 @@
     transition: ease-in-out 0.2s;
   }
 }
+
+.successful {
+  background-color: #49a849 !important;
+  -webkit-transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
 /*# sourceMappingURL=styles.css.map */
