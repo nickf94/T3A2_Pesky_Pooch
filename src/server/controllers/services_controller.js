@@ -9,6 +9,17 @@ getServices = async (req, res) => {
   }
 }
 
+newService = async (req, res) => {
+  const serviceParams = req.body
+  const newService = new Service(serviceParams)
+  await newService.save()
+  .then(res => console.log(res))
+  .then(res.json(newService))
+  .catch(err => console.log(err))
+  
+}
+
 module.exports = {
-  getServices
+  getServices,
+  newService
 }
