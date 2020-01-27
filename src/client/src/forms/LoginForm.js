@@ -24,7 +24,7 @@ export default class loginForm extends Component {
 
     /* axios posts to the backend and then renders a route to an api */
     axios.post("http://localhost:7002/api/login", params)
-    .then(res => { 
+    .then(res => {
       this.props.onLogin(res.data.token, res.data.currentuser)
       this.setState({ submit: true })
       })
@@ -34,6 +34,17 @@ export default class loginForm extends Component {
   onInputChange = (name, event) => {
     this.setState({ [name]: event.target.value });
   };
+
+  handleRemove = (e) => {
+    const url =  ``;
+
+  axios.delete(`http://localhost:7002/api/login/users/id/${this.state}`)
+    .then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
+  }
+
 
   /* form for the login screen */
   render() {
@@ -60,6 +71,7 @@ export default class loginForm extends Component {
         </p>
         <p>
           <input type="submit" value="Login user" />
+          <button type="submit" value="logout user" onChange={this.handleRemove}>Logout</button>
         </p>
      </form>
    );
