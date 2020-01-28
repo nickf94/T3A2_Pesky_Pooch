@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import '../styles/styles.scss'
 
 export default class ContactForm extends Component {
   /* takes in props that passes conditions into a state */
