@@ -14,7 +14,7 @@ body {
 
 .container {
   position: relative;
-  height: 100vh;
+  height: 650px;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -210,7 +210,7 @@ margin-bottom: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 450px;
+  height: 650px;
   align-items: center;
   background: rgb(187, 189, 246);
 }
@@ -232,10 +232,19 @@ margin-bottom: 0.8rem;
   justify-content: center;
   align-content: center;
   text-align: center;
+  height: 600px;
 }
 
 .successful {
   background-color: rgb(73, 168, 73) !important;
   transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
   transform: scale(1.25);
+}
+.footer {
+  background-color: pink;
+  padding-bottom: 0px;
+}
+
+.footer > i {
+  font-size: 25px;
 }

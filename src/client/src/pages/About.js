@@ -4,11 +4,6 @@ import '../styles/styles.scss'
 
 export const About  = () => (
   <React.Fragment>
-    <div className="header">
-      <h1>About Page</h1>
-
-export const About  = () => (
-  <React.Fragment>
     <div>
       <h1>About Us</h1>
       < TestimonialsBox />
