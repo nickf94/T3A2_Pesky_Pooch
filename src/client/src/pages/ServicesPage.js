@@ -1,8 +1,9 @@
 import React from 'react';
 import EventForm from '../forms/EventForm'
 import EventControlPanel from '../components/EventControlPanel';
+import Services from '../components/Services';
 
-export function Services(props) {
+export default function ServicesPage(props) {
   return (
     <>
       <div>
@@ -18,6 +19,7 @@ export function Services(props) {
           </div>
           )
         }
+        < Services />
       </div>
     </>
   )
