@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/styles.scss'
 
-export default class Navigationbar extends Component {
-  render() {
+export default function NavigationBar() {
     return(
     <html>
     <body>
@@ -30,5 +29,4 @@ export default class Navigationbar extends Component {
     </body>
     </html>
   )
-  }
 }

@@ -54,20 +54,26 @@ constructor(props) {
   render() {
     return(
       <container className="contactform">
+        
         <form className="contact-form" onSubmit={this.onFormSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
+
+          <label>Send us a message</label>
+          
+          <fieldset className="form-group">
+            <label>Email:</label>
             <input type="email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="title">Title:</label>
+          </fieldset>
+          <fieldset className="form-group">
+            <label>Title:</label>
             <input type="title" value={this.state.title} onChange={this.onTitleChange.bind(this)} />
-          </div>
-          <div className="form-group">
-            <label for="message">Message:</label>
+          </fieldset>
+          <fieldset className="form-group">
+            <label>Message:</label>
             <textarea rows="3" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-          </div>
+          </fieldset>
+
           <button type="submit" className="btn-primary" id="contact-submit">Submit</button>
+
         </form>
       </container>
     )
