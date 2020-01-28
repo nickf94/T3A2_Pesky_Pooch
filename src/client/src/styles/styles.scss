@@ -18,7 +18,7 @@ $plum: #36083F;
 
 .container {
   position: relative;
-  height: 100vh;
+  height: 650px;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -72,6 +72,10 @@ margin-bottom: 0.8rem;
 }
 
 .menu-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -79,9 +83,12 @@ margin-bottom: 0.8rem;
 }
 
 .toggler {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   position: absolute;
   top: 0.5rem;
-  left: 0.5rem;
+  right: 0.5rem;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -91,7 +98,6 @@ margin-bottom: 0.8rem;
 }
 
 .hamburger {
-  position: absolute;
   top: 0.5rem;
   left: 0.5rem;
   width: 60px;
@@ -105,7 +111,7 @@ margin-bottom: 0.8rem;
 }
 
 .hamburger>div {
-  position: absolute;
+  position: relative;
   width: 60%;
   height: 3px;
   border-radius: 1.5px;
@@ -157,6 +163,9 @@ margin-bottom: 0.8rem;
 }
 
 .menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -211,9 +220,11 @@ margin-bottom: 0.8rem;
 }
 
 .contact-form {
+  font-size: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 650px;
   height: 100vh;
   align-items: center;
   background: rgb(187, 189, 246);
@@ -244,6 +255,14 @@ margin-bottom: 0.8rem;
   border-radius: 0.5rem;
 }
 
+.contact-header {
+  font-size: 29px;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  position: absolute;
+}
+
 .contact-label {
   display: block;
   position: relative;
@@ -261,7 +280,23 @@ margin-bottom: 0.8rem;
   justify-content: center;
   align-content: center;
   text-align: center;
+  height: 600px;
 }
+
+.successful {
+  background-color: rgb(73, 168, 73) !important;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  transform: scale(1.25);
+}
+.footer {
+  background-color: pink;
+  padding-bottom: 0px;
+}
+
+.footer > i {
+  font-size: 25px;
+}
+
 
 .services-box {
   background-color: $babyblue;

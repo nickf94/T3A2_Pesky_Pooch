@@ -7,7 +7,6 @@ export const Home  = () => (
       <div class="content">
           <h1>Welcome</h1>
           <p>Pesky Pooch is a dog behaviourial company focused on teaching your pups the very best in puppy training</p>
-          <button>Click me!</button>
       </div>
     </div>
   </React.Fragment>

@@ -3,6 +3,11 @@ import TestimonialsBox from '../components/TestimonialsBox';
 import '../styles/styles.scss'
 
 export const About  = () => (
+  <React.Fragment>
+    <div>
+      <h1>About Us</h1>
+      < TestimonialsBox />
+    </div>
   <>
     <container className="about-container">
       <div>

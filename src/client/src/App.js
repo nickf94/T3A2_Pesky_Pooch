@@ -6,6 +6,7 @@ import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
 import Navigationbar from './components/Navigationbar'
+import Footer from './components/Footer'
 
 class App extends Component {
   /* Use a state to collect the token and user from our login form */
@@ -48,6 +49,7 @@ class App extends Component {
               </Route>
             </div>
           </Switch>
+          <Footer />
         </Router>
       </React.Fragment>
     )

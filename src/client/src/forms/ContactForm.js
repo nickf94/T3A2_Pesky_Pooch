@@ -54,11 +54,13 @@ constructor(props) {
   render() {
     return(
       <container className="contactform">
-        
+        <div className="contact-header">
+          <p>Pesky Pooch</p>
+        </div>
         <form className="contact-form" onSubmit={this.onFormSubmit}>
 
           <label>Send us a message</label>
-          
+
           <fieldset className="form-group">
             <label>Email:</label>
             <input type="email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
