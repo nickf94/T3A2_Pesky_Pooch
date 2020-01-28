@@ -3,10 +3,27 @@ import '../styles/styles.scss'
 
 export const Home  = () => (
   <React.Fragment>
-    <div class="container">
-      <div class="content">
-          <h1>Welcome</h1>
-          <p>Pesky Pooch is a dog behaviourial company focused on teaching your pups the very best in puppy training</p>
+    <div className="homepage">
+      <div>
+        <h1>Home</h1>
+      </div>
+      <div className="pagecontent">
+        <p>Who are we at Pesky Pooch?</p>
+        <p>Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+        </p>
+
+        <p>Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+          Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  Lorem text is what I am writing here.  
+        </p>
       </div>
     </div>
   </React.Fragment>
