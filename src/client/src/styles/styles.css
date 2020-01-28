@@ -279,7 +279,6 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   text-align: center;
-  border: 1px solid red;
   height: 100vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -318,5 +317,9 @@
   -ms-flex-line-pack: center;
       align-content: center;
   text-align: center;
+}
+
+.services-box {
+  background-color: #BBBDF6;
 }
 /*# sourceMappingURL=styles.css.map */

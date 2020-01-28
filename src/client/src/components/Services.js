@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
+import '../styles/styles.css'
 
 export default function Services(props) {
   const [services, setServices] = useState(null)
@@ -15,8 +16,18 @@ export default function Services(props) {
   }, [])
 
   return (
-    <div>
-      { services ? (services.map(service => <p>{service.name}</p>)): (<p>No services</p>) }
+    <div className="services-box">
+      { services ? 
+        (services.map(service => {
+          return (
+          <div className="service-card">
+            <p>{service.name}</p>
+            <p>{service.description}</p>
+            <p>{service.cost}</p>
+          </div>
+          )})
+        ): 
+        (<p>No services</p>) }
     </div>
   )
 }
