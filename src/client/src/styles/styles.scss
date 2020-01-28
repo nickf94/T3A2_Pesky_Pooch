@@ -79,8 +79,12 @@ margin-bottom: 0.8rem;
 }
 
 .toggler {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
   top: 0.5rem;
-  left: 0.5rem;
+  right: 0.5rem;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -156,8 +160,8 @@ margin-bottom: 0.8rem;
 
 .menu {
   display: flex;
-  justify-content: right;
-  align-items: right;
+  justify-content: flex-end;
+  align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -212,12 +216,21 @@ margin-bottom: 0.8rem;
 }
 
 .contact-form {
+  font-size: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 650px;
   align-items: center;
   background: rgb(187, 189, 246);
+}
+
+.contact-header {
+  font-size: 29px;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  position: absolute;
 }
 
 .contact-label {

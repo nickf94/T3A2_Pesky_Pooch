@@ -54,6 +54,9 @@ constructor(props) {
   render() {
     return(
       <container className="contactform">
+        <div className="contact-header">
+          <p>Pesky Pooch</p>
+        </div>
         <form className="contact-form" onSubmit={this.onFormSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email:</label>
