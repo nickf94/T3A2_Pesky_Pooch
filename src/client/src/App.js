@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from './pages/Home'
 import { About } from './pages/About'
 import { Services } from './pages/Services'
 import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
-import { Navigationbar } from './components/Navigationbar'
+import Navigationbar from './components/Navigationbar'
 
 class App extends Component {
+  /* Use a state to collect the token and user from our login form */
+
   state = {
     token: sessionStorage.getItem("token"),
     user: sessionStorage.getItem("user")
   }
+
+  /* on login the token and user is stored into session storage */
 
   onLogin = (token, user) => {
     sessionStorage.setItem("token", token)
     sessionStorage.setItem("user", user)
     this.setState({ token, user })
   }
-  
+
   render() {
-    const { token } = this.props;
+
+    /* Renders the routes and the navbar on all pages of the app */
 
     return (
       <React.Fragment>
         <Router>
-
-          <Navigationbar />
+          <div>
+            <Navigationbar />
+          </div>
           <Switch>
             <div className="pagecontent-wrapper">
               <Route exact path="/" component={Home} />

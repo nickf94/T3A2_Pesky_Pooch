@@ -3,11 +3,7 @@ import EventForm from '../forms/EventForm'
 import EventControlPanel from '../components/EventControlPanel';
 
 export class Services extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
-
-  state = {
+    state = {
     events: {}
   }
 
@@ -23,11 +19,11 @@ export class Services extends Component {
             <div>
               < EventControlPanel setParentEvents={this.setEvents} />
             </div>
-            ) : ( 
+            ) : (
             <div>
               <p>Not logged in.</p>
             </div>
-            ) 
+            )
           }
         </div>
       </>
