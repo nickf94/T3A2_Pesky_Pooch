@@ -232,7 +232,6 @@ margin-bottom: 0.8rem;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  border: 1px solid red;
   height: 100vh;
   align-items: center;
 }
@@ -262,4 +261,8 @@ margin-bottom: 0.8rem;
   justify-content: center;
   align-content: center;
   text-align: center;
+}
+
+.services-box {
+  background-color: $babyblue;
 }
