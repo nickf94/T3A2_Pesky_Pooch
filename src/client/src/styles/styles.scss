@@ -68,6 +68,10 @@ margin-bottom: 0.8rem;
 }
 
 .menu-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -75,7 +79,6 @@ margin-bottom: 0.8rem;
 }
 
 .toggler {
-  position: absolute;
   top: 0.5rem;
   left: 0.5rem;
   width: 60px;
@@ -87,7 +90,6 @@ margin-bottom: 0.8rem;
 }
 
 .hamburger {
-  position: absolute;
   top: 0.5rem;
   left: 0.5rem;
   width: 60px;
@@ -101,7 +103,7 @@ margin-bottom: 0.8rem;
 }
 
 .hamburger>div {
-  position: absolute;
+  position: relative;
   width: 60%;
   height: 3px;
   border-radius: 1.5px;
@@ -153,6 +155,9 @@ margin-bottom: 0.8rem;
 }
 
 .menu {
+  display: flex;
+  justify-content: right;
+  align-items: right;
   position: fixed;
   top: 0;
   left: 0;
