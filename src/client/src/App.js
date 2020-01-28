@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from './pages/Home'
 import { About } from './pages/About'
-import { Services } from './pages/Services'
+import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
 import Navigationbar from './components/Navigationbar'
@@ -39,7 +39,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/services">
-                < Services user={this.state.user} />
+                < ServicesPage user={this.state.user} />
               </Route>
               <Route exact path="/contact" >
               < ContactPage user={this.state.user} />

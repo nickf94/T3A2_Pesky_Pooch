@@ -224,11 +224,8 @@ margin-bottom: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-<<<<<<< HEAD
   height: 650px;
-=======
   height: 100vh;
->>>>>>> 04dc5ca4e12cd41e37f2cc2eb9c81d25a1f6d7cd
   align-items: center;
   background: rgb(187, 189, 246);
   width: 100vw;
@@ -246,7 +243,6 @@ margin-bottom: 0.8rem;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  border: 1px solid red;
   height: 100vh;
   align-items: center;
 }
@@ -284,7 +280,6 @@ margin-bottom: 0.8rem;
   justify-content: center;
   align-content: center;
   text-align: center;
-<<<<<<< HEAD
   height: 600px;
 }
 
@@ -301,6 +296,8 @@ margin-bottom: 0.8rem;
 .footer > i {
   font-size: 25px;
 }
-=======
+
+
+.services-box {
+  background-color: $babyblue;
 }
->>>>>>> 04dc5ca4e12cd41e37f2cc2eb9c81d25a1f6d7cd
