@@ -35,8 +35,10 @@ export default class loginForm extends Component {
     this.setState({ [name]: event.target.value });
   };
 
+/* axios deletes the admin user from the api using axios.delete and using the url as a parameter */
+
   handleRemove = (e) => {
-    const url =  ``;
+    event.preventDefault();
 
   axios.delete(`http://localhost:7002/api/login/users/id/${this.state}`)
     .then(res => {
