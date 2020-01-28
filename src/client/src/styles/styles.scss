@@ -1,3 +1,12 @@
+$primary_purple: #B66FB3;
+$babyblue: #BBBDF6;
+$ceramic: #E5D4ED;
+$tarmac: #3C3744;
+$plum: #36083F;
+
+.navbar {
+  background-color: rgb(187, 189, 246);
+
 @import
 url('https://fonts.googleapis.com/css?family=Amarante');
 
@@ -213,6 +222,32 @@ margin-bottom: 0.8rem;
   height: 450px;
   align-items: center;
   background: rgb(187, 189, 246);
+  width: 100vw;
+}
+
+.successful {
+  background-color: rgb(73, 168, 73) !important;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  transform: scale(1.25);
+}
+
+.pagecontent-wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  border: 1px solid red;
+  height: 100vh;
+  align-items: center;
+}
+
+.pagecontent {
+  width: 80vw;
+  text-align: left;
+  background-color: $babyblue;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .contact-label {
@@ -234,8 +269,3 @@ margin-bottom: 0.8rem;
   text-align: center;
 }
 
-.successful {
-  background-color: rgb(73, 168, 73) !important;
-  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-  transform: scale(1.25);
-}

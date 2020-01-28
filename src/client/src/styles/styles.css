@@ -16,6 +16,43 @@
 
 .contact-form {
   background: #bbbdf6;
+  width: 100vw;
+}
+
+.successful {
+  background-color: #49a849 !important;
+  -webkit-transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.pagecontent-wrapper {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: center;
+  border: 1px solid red;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagecontent {
+  width: 80vw;
+  text-align: left;
+  background-color: #BBBDF6;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -32,13 +69,5 @@
     -webkit-transition: ease-in-out 0.2s;
     transition: ease-in-out 0.2s;
   }
-}
-
-.successful {
-  background-color: #49a849 !important;
-  -webkit-transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
 }
 /*# sourceMappingURL=styles.css.map */

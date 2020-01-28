@@ -34,17 +34,19 @@ class App extends Component {
             <Navigationbar />
           </div>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/services">
-              < Services user={this.state.user} />
-            </Route>
-            <Route exact path="/contact" >
-             < ContactPage user={this.state.user} />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage onLogin={this.onLogin} />
-            </Route>
+            <div className="pagecontent-wrapper">
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/services">
+                < Services user={this.state.user} />
+              </Route>
+              <Route exact path="/contact" >
+              < ContactPage user={this.state.user} />
+              </Route>
+              <Route exact path="/login">
+                <LoginPage onLogin={this.onLogin} />
+              </Route>
+            </div>
           </Switch>
         </Router>
       </React.Fragment>
