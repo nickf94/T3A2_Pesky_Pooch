@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import '../styles/eventcontrolpanel.css'
 
@@ -64,9 +64,9 @@ export default function EditEvent() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <fieldset>
           <label>Name of event</label>
-          <input type="text" 
-                 name="name" 
-                 onChange={(e) => stateReducer(e)} 
+          <input type="text"
+                 name="name"
+                 onChange={(e) => stateReducer(e)}
                  value={subject.name}>
           </input>
         </fieldset>

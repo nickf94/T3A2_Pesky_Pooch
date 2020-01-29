@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/styles.scss'
 
-export default function NavigationBar() {
-    return(
-    <html>
-    <body>
+export default class NavigationBar extends Component {
+  onLogin = (token, user) => {
+    sessionStorage.setItem("token", token)
+    sessionStorage.setItem("user", user)
+    this.setState({ token, user })
+  }
+  render() {
+  return(
       <div class="menu-container">
-        <input type="checkbox" class="toggler" />
-        <div class="hamburger">
+        <input type="checkbox" className="toggler" />
+        <div className="hamburger">
           <div></div>
         </div>
-        <div class="menu">
+        <div className="menu">
           <div>
             <div>
               <ul>
@@ -19,14 +23,12 @@ export default function NavigationBar() {
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/services">Services</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/login" onLogin={this.onLogin}>Login</Link></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-
-
-    </body>
-    </html>
-  )
+    )
+  }
 }

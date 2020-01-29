@@ -1,5 +1,4 @@
 import React from 'react';
-import EventForm from '../forms/EventForm'
 import EventControlPanel from '../components/EventControlPanel';
 import Services from '../components/Services';
 
@@ -24,5 +23,3 @@ export default function ServicesPage(props) {
     </>
   )
 }
-
-

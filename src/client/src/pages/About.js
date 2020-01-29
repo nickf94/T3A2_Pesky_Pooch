@@ -5,10 +5,8 @@ import '../styles/styles.scss'
 export const About  = () => (
   <React.Fragment>
     <div>
-      <h1>About Us</h1>
-      < TestimonialsBox />
+      <TestimonialsBox />
     </div>
-  <>
     <container className="about-container">
       <div>
         <h1>About Us</h1>
@@ -20,5 +18,5 @@ export const About  = () => (
       <h2>Reviews</h2>
       <TestimonialsBox />
     </div>
-  </>
+  </React.Fragment>
 )
