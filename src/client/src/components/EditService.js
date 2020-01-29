@@ -19,7 +19,7 @@ export default function EditService() {
 
   useEffect(() => {
     if (submit) {
-      fetchEvents()
+      updateServices()
       setSubmit(false)
     }
   }, [submit])
@@ -33,7 +33,7 @@ export default function EditService() {
     e.preventDefault()
     console.log("Submitting a service edit")
 
-    await axios.put("http://localhost:7002/api/service/update", subject, {
+    await Axios.put("http://localhost:7002/api/service/update", subject, {
       headers: {
         'Authorization': token
       }
