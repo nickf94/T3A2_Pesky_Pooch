@@ -22,4 +22,4 @@ app.use('/api/events', require('./routes/api/events'))
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
-// module.exports = server; // Need this for tests to connect to server
+module.exports = app; // Need this for tests to connect to server
