@@ -51,28 +51,29 @@ describe("GET users route", function() {
 
 // NewUser email should be unique (email should not already exist in DB)
 describe("/POST user", function() {
-//   it("should not create a user if email is not unique", function(done) {
-//     const user = {
-//       email: "coen@admin.com",
-//       password: "password123"
-//     };
+  it("should not create a user if email is not unique", function(done) {
+    const user = {
+      email: "coen@admin.com",
+      password: "password123"
+    };
     
-//     chai
-//       .request(app) // connect to server
-//       .post("/api/users/new") // initiate server POST req using '/new' route (which contains createUser func)
-//       .send(user) // send user object above through request
-//       .end(function(err, res) {
-//         if (err) {
-//           done(err);
-//         } else {
-//           console.log(res.json)
-//           expect(res).to.have.status(422);
-//           expect(res.text).to.be.a("string");
-//           expect(res.text).to.equal("Email already exists");
-//           done();
-//         }
-//       });
-//   });
+    chai
+      .request(app) // connect to server
+      .post("/api/users/new") // initiate server POST req using '/new' route (which contains createUser func)
+      .send(user) // send user object above through request
+      .end(function(err, res) {
+        if (err) {
+          done(err);
+        } else {
+          console.log(res.json)
+          expect(res).to.have.status(422);
+          expect(res.text).to.be.a("string");
+          expect(res.text).to.equal("Email is taken");
+          // expect(res.text).to.equal("error: Email is taken");
+          done();
+        }
+      });
+  });
 
 
   it("it should create a user ", function(done) {
@@ -82,7 +83,7 @@ describe("/POST user", function() {
     };
     chai
       .request(app)
-      .post("/new")
+      .post("/api/users/new")
       .send(user)
       .end(function(err, res) {
         if (err) {
@@ -90,7 +91,9 @@ describe("/POST user", function() {
         } else {
           expect(res).to.have.status(200);
           expect(res.body).to.be.a("object");
-          expect(res.body).to.have.property("statusMessage").eql("User successfully created");
+          expect(res.body)
+            .to.have.property("statusMessage")
+            .eql("User successfully created");
           expect(res.body).to.have.property("email");
           expect(res.body).to.have.property("password");
           done(err);
