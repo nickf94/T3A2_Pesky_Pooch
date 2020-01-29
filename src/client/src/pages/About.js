@@ -4,9 +4,6 @@ import '../styles/styles.scss'
 
 export const About  = () => (
   <React.Fragment>
-    <div>
-      <TestimonialsBox />
-    </div>
     <container className="about-container">
       <div>
         <h1>About Us</h1>
@@ -15,8 +12,8 @@ export const About  = () => (
       </div>
     </container>
     <div>
-      <h2>Reviews</h2>
-      <TestimonialsBox />
+    <h2>Reviews</h2>
+    <TestimonialsBox />
     </div>
   </React.Fragment>
 )

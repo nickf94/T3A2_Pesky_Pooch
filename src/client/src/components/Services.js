@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import '../styles/styles.css'
+import ServicesControlPanel from './ServicesControlPanel'
 
 export default function Services(props) {
   const [services, setServices] = useState(null)
@@ -16,11 +17,12 @@ export default function Services(props) {
   }, [])
 
   return (
-    <div className="services-box">
+    <>
+      <div className="services-box">
       { services ? 
         (services.map(service => {
           return (
-          <div className="service-card">
+          <div className="service-card" key={service._id}>
             <p>{service.name}</p>
             <p>{service.description}</p>
             <p>{service.cost}</p>
@@ -28,6 +30,8 @@ export default function Services(props) {
           )})
         ): 
         (<p>No services</p>) }
-    </div>
+      </div>
+      { sessionStorage.getItem('token') ? < ServicesControlPanel services={services} updateServices={fetchServices}/> : (null)}
+      </>
   )
 }

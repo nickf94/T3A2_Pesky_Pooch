@@ -3,7 +3,7 @@ import EventControlPanel from '../components/EventControlPanel';
 import Services from '../components/Services';
 
 export default function ServicesPage(props) {
-  return (
+   return (
     <>
       <div>
         { props.user ? (

@@ -8,6 +8,11 @@ export default class NavigationBar extends Component {
     sessionStorage.setItem("user", user)
     this.setState({ token, user })
   }
+
+  // function hideMenu() {
+  //     setActive(false)
+  // }
+
   render() {
   return(
       <div class="menu-container">
