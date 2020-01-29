@@ -11,6 +11,7 @@ getServices = async (req, res) => {
 
 newService = async (req, res) => {
   const serviceParams = req.body
+  console.log(serviceParams)
   const newService = new Service(serviceParams)
   await newService.save()
   .then(res => console.log(res))
