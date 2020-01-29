@@ -4,28 +4,27 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 loginUser = async (req, res) => {
-
+  // First pulls user params from request
   const email = req.body.email
   const password = req.body.password
-  // Find user by email
-
+  
+  // Uses these params to retrieve a user and validate them
   await User.findOne({ email: req.body.email }).then(user => {
-    // Check if user exists
+
+    // Check if the user exists, handle error if not
     if (!user) {
       return res.status(400).json({ errors: "Email not found" })
     }
     
-    // If exists, check password
-
+    // If exists, move on to check the password
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        // User matched
-        // Create JWT Payload
+        // All credentials match, create JWT Payload
         const payload = {
           id: user.id,
           email: user.email
         }
-        // Sign token
+        // Sign JWT token with long expiry date and attach current user
         jwt.sign(
           payload,
           keys.secretOrKey,
@@ -33,7 +32,6 @@ loginUser = async (req, res) => {
             expiresIn: 10000
           },
           (err, token) => {
-            console.log(user)
             res.json({
               success: true,
               token: "Bearer " + token,
@@ -42,9 +40,8 @@ loginUser = async (req, res) => {
           }
         )
       } else {
-        return res
-          .status(400)
-          .json({ errors: "Password incorrect" });
+        // If no match is found, it can only be the password
+        return res.status(400).json({ errors: "Password incorrect" });
       }
     })
   })
