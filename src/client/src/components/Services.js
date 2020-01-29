@@ -31,7 +31,7 @@ export default function Services(props) {
         ): 
         (<p>No services</p>) }
       </div>
-      < ServicesControlPanel services={services}/>
+      < ServicesControlPanel services={services} updateServices={fetchServices}/>
       </>
   )
 }
