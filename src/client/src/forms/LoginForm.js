@@ -4,11 +4,14 @@ import { Redirect } from "react-router-dom";
 
 
 export default class loginForm extends Component {
+  /* state takes in email and password for a user login */
   state = {
     email: "",
-    password: ""
+    password: "",
+    submit: false
   };
 
+  /* when the user logs in to the site it pulls the email and password from the state */
   onFormSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
@@ -19,19 +22,30 @@ export default class loginForm extends Component {
     }
     // HEROKU APP URL: https://peskypoochapi.herokuapp.com
 
-    axios.post("http://localhost:7001/api/login", params)
-    .then(res => { this.props.onLogin(res.data.token) })
+    /* axios posts to the backend and then renders a route to an api */
+    axios.post("http://localhost:7002/api/login", params)
+    .then(res => {
+      this.props.onLogin(res.data.token, res.data.currentuser)
+      this.setState({ submit: true })
+      })
     .catch(err => console.error(err))
-  };
+  }
 
   onInputChange = (name, event) => {
     this.setState({ [name]: event.target.value });
   };
 
-  render() {
-    console.log(this.props);
-    const { email, password } = this.state;
+/* axios deletes the admin user from the api using axios.delete and using the url as a parameter */
 
+  handleRemove = (e) => {
+    e.preventDefault();
+    sessionStorage.removeItem('token')
+  }
+
+
+  /* form for the login screen */
+  render() {
+    const { email, password } = this.state;
     return this.state.submit ? (
       <Redirect to="/" />
     ) : (
@@ -54,6 +68,7 @@ export default class loginForm extends Component {
         </p>
         <p>
           <input type="submit" value="Login user" />
+          <button type="submit" value="logout user" onChange={this.handleRemove}>Logout</button>
         </p>
      </form>
    );
