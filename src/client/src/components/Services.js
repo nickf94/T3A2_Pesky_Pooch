@@ -22,7 +22,7 @@ export default function Services(props) {
       { services ? 
         (services.map(service => {
           return (
-          <div className="service-card">
+          <div className="service-card" key={service._id}>
             <p>{service.name}</p>
             <p>{service.description}</p>
             <p>{service.cost}</p>
@@ -31,7 +31,7 @@ export default function Services(props) {
         ): 
         (<p>No services</p>) }
       </div>
-      < ServicesControlPanel />
+      < ServicesControlPanel services={services}/>
       </>
   )
 }

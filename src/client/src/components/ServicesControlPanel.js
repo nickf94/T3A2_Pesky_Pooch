@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import ServiceOptionSelector from './ServiceOptionSelector'
+import AddService from './AddService'
+import DeleteService from './DeleteService'
+import EditService from './EditService'
 
 export default function ServicesControlPanel(props) {
   const [serviceTypes, setServiceTypes] = useState({add: false, edit: false, delete: false})
@@ -8,11 +11,11 @@ export default function ServicesControlPanel(props) {
   const renderForm = () => {
     switch (selectedType) {
       case 'add':
-        // return < AddService />
+        return < AddService />
       case 'delete':
-        // return < DeleteService />
+        return < DeleteService />
       case 'edit':
-        // return < EditService />
+        return < EditService />
       default:
         return <p>No selectedType</p>
     }
