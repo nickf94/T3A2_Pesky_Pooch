@@ -47,6 +47,7 @@ export default function EditService() {
 
   return (
     <>
+    <p>Edit an existing service</p>
     <div className="service-buttons">
       {services.map((service) => {
         return (<button key={service._id} onClick={() => {setSubject(service)}}>{service.name}</button>)
@@ -55,6 +56,7 @@ export default function EditService() {
 
     {subject ? (
       <form onSubmit={(e) => handleSubmit(e)}>
+        <label>Enter the updated information and submit</label>
         <fieldset>
           <label>Name of service</label>
           <input type="text" 
