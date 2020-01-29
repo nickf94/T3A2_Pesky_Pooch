@@ -31,7 +31,7 @@ export default function Services(props) {
         ): 
         (<p>No services</p>) }
       </div>
-      < ServicesControlPanel services={services} updateServices={fetchServices}/>
+      { sessionStorage.getItem('token') ? < ServicesControlPanel services={services} updateServices={fetchServices}/> : (null)}
       </>
   )
 }
