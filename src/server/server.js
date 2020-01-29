@@ -28,3 +28,6 @@ app.use('/api/services', require('./routes/api/services'))
 app.use('/api/testimonials', require('./routes/api/testimonials'))
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
+app.listen(port, () => console.log(`Server running on port ${port}`));
+
+module.exports = app; // Need this for tests to connect to server
