@@ -21,6 +21,11 @@ export default function ServicesControlPanel(props) {
     }
   }
 
+  useEffect(() => {
+    console.log("Mounted service control panel")
+    props.updateServices()
+  }, [])
+
   const setProperType = (type) => {
     setServiceTypes({add: false, edit: false, delete: false, [type.target.name]: true})
     setSelectedType(type.target.name)

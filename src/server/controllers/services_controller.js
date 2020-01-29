@@ -29,10 +29,13 @@ editService = async (req, res) => {
 }
 
 deleteService = async (req, res) => {
-  await Service.findByIdAndDelete(req.body._id)
+  await Service.findByIdAndDelete(req.headers.serviceid)
   .then(res => console.log(res))
-  .catch(err => console.log(err))
-  res.json({ deleteSuccessful: true })
+  .then(res.json({ deleteSuccessful: true }))
+  .catch(err => {
+    console.log(err)
+    res.json({ deleteSuccessful: false })
+  })
 }
 
 module.exports = {
