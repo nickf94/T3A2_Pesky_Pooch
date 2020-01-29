@@ -25,7 +25,7 @@ const getTestimonials = async (req, res) => {
   if (results) {
     res.json(results)
   } else {
-    res.send("Could not retrieve reviews")
+    res.status(500).send("Could not retrieve reviews")
   } 
 }
 
