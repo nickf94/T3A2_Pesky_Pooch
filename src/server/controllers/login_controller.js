@@ -3,16 +3,16 @@ const keys = require('../config/keys')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-loginUser = (req, res) => {
+loginUser = async (req, res) => {
 
   const email = req.body.email
   const password = req.body.password
   // Find user by email
 
-  User.findOne({ email: req.body.email }).then(user => {
+  await User.findOne({ email: req.body.email }).then(user => {
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ emailnotfound: "Email not found" });
+      return res.status(400).json({ errors: "Email not found" })
     }
     
     // If exists, check password
@@ -44,10 +44,14 @@ loginUser = (req, res) => {
       } else {
         return res
           .status(400)
-          .json({ passwordIncorrect: "Password incorrect" });
+          .json({ errors: "Password incorrect" });
       }
-    });
-  });
-};
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ errors: "Unable to process request" })
+  })
+}
 
 module.exports = { loginUser }
