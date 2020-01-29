@@ -3,7 +3,7 @@ import TestimonialsBox from '../components/TestimonialsBox';
 import '../styles/styles.scss'
 
 export const About  = () => (
-  <>
+  <React.Fragment>
     <container className="about-container">
       <div>
         <h1>About Us</h1>
@@ -15,5 +15,5 @@ export const About  = () => (
     <h2>Reviews</h2>
     <TestimonialsBox />
     </div>
-  </>
+  </React.Fragment>
 )
