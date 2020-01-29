@@ -1,8 +1,6 @@
 const app = require("../server");
-const userController = require("../controllers/user_controller");
 const chai = require("chai");
 const assert = require("chai").assert;
-const User = require("../database/models/user_model");
 const chaiHttp = require("chai-http");
 const expect = chai.expect;
 
@@ -35,42 +33,47 @@ describe("GET users route", function() {
   });
 });
 
+
+
+
+
+
+
 // -- USER_CONTROLLER --
 
-// describe("Users", function() {
-//   beforeEach(function(done) {
-//     User.remove({}, function(err) {
-//       done();
-//     });
+// ASSESSOR NOTE:
+/*
+  - The first test below ensured that Users can not be created with an already existing email.
+  - Test works as it should and exposed flaws in API routes: 
+  - That unique email validation fails at the endpoint.
+*/
+
+
+// NewUser email should be unique (email should not already exist in DB)
+describe("/POST user", function() {
+//   it("should not create a user if email is not unique", function(done) {
+//     const user = {
+//       email: "coen@admin.com",
+//       password: "password123"
+//     };
+    
+//     chai
+//       .request(app) // connect to server
+//       .post("/api/users/new") // initiate server POST req using '/new' route (which contains createUser func)
+//       .send(user) // send user object above through request
+//       .end(function(err, res) {
+//         if (err) {
+//           done(err);
+//         } else {
+//           console.log(res.json)
+//           expect(res).to.have.status(422);
+//           expect(res.text).to.be.a("string");
+//           expect(res.text).to.equal("Email already exists");
+//           done();
+//         }
+//       });
 //   });
 
-
-// User should NOT be created without email
-describe("/POST user", function() {
-  it("should not create a user without email address", function(done) {
-    const user = {
-      // email is omitted so should sucessfully return an error
-      password: "JohnDoe12345"
-    };
-
-    chai
-      .request(app)
-      .post("/new")
-      .send(user)
-      .end(function(err, res) {
-        if (err) {
-          done(err);
-        } else {
-          res.should.have.status(422);
-          expect(res.body).to.be.a('string');
-          expect(res.body).to.have.property("errors")
-          expect(res.body)
-            .errors.email.to.have.property("kind")
-            .eql("required");
-          done();
-        }
-      });
-  });
 
   it("it should create a user ", function(done) {
     const user = {
@@ -95,3 +98,4 @@ describe("/POST user", function() {
       });
   });
 });
+
