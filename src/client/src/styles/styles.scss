@@ -1,14 +1,11 @@
-$primary_purple: #B66FB3;
-$babyblue: #BBBDF6;
-$ceramic: #E5D4ED;
-$tarmac: #3C3744;
-$plum: #36083F;
-
 @import url('https://fonts.googleapis.com/css?family=Amarante');
+@import './colours.scss';
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .button {
@@ -205,14 +202,16 @@ $plum: #36083F;
   transform: scale(1.25);
 }
 
-.pagecontent-wrapper {
-  width: 100vw;
+.content-wrapper {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  height: 100vh;
+  height: 100%;
   align-items: center;
+  border: 1px solid red;
 }
 
 .pagecontent {
