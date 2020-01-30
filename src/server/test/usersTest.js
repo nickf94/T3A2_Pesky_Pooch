@@ -1,4 +1,5 @@
 const app = require("../server");
+const User = require("../database/models/user_model");
 const chai = require("chai");
 const assert = require("chai").assert;
 const chaiHttp = require("chai-http");
@@ -35,52 +36,84 @@ describe("GET users route", function() {
 
 
 
-
-
-
-
 // -- USER_CONTROLLER --
 
-// ASSESSOR NOTE:
-/*
-  - The first test below ensured that Users can not be created with an already existing email.
-  - Test works as it should and exposed flaws in API routes: 
-  - That unique email validation fails at the endpoint.
-*/
-
-
-// NewUser email should be unique (email should not already exist in DB)
-describe("/POST user", function() {
-  it("should not create a user if email is not unique", function(done) {
-    const user = {
-      email: "coen@admin.com",
-      password: "password123"
-    };
-    
-    chai
-      .request(app) // connect to server
-      .post("/api/users/new") // initiate server POST req using '/new' route (which contains createUser func)
-      .send(user) // send user object above through request
-      .end(function(err, res) {
-        if (err) {
-          done(err);
-        } else {
-          console.log(res.json)
-          expect(res).to.have.status(422);
-          expect(res.text).to.be.a("string");
-          expect(res.text).to.equal("Email is taken");
-          // expect(res.text).to.equal("error: Email is taken");
-          done();
-        }
-      });
+// Cleanup method to clear test_DB of users created
+describe("Users", () => {
+  beforeEach(done => {
+    User.remove({}, err => {
+      done();
+    });
   });
 
 
-  it("it should create a user ", function(done) {
-    const user = {
-      email: "johndoe@email.com",
-      password: "JohnDoe12345"
-    };
+  // NewUser: Email should be unique (email should not already exist in DB)
+  describe("/POST user", function() {
+    it("should not create a user if email is not unique", function(done) {
+      // Email already exists in DB therefore is not created.
+      const user = new User({
+        email: "userWithUniqueEmail@email.com",
+        password: "pass"
+      });
+
+      chai
+        .request(app)
+        .post("/api/users/new")
+        .send(user)
+        .end(function(err, res) {
+          chai
+            .request(app)
+            .post("/api/users/new")
+            .send(user)
+            .end(function(err, res) {
+              if (err) {
+                done(err);
+              } else {
+                expect(res).to.have.status(422);
+                expect(res.text).to.be.a("string");
+                expect(res.text).to.equal("Email is taken");
+                done();
+              }
+            });
+        });
+    });
+
+    it("should create a user with unique email", function(done) {
+      const user = new User({
+        email: "userWithUniqueEmail@email.com",
+        password: "JohnDoe12345"
+      });
+
+      chai
+        .request(app)
+        .post("/api/users/new")
+        .send(user)
+        .end(function(err, res) {
+          if (err) {
+            done(err);
+          } else {
+            expect(res).to.have.status(200);
+            expect(res.body).to.be.a("object");
+            expect(res.body).to.have.property("email");
+            expect(res.body).to.have.property("password");
+            done(err);
+          }
+        });
+    });
+  });
+});
+
+
+// -- USER_MODEL_AND_SCHEMA --
+
+describe("User Mongoose Schema", function() {
+  it("should have kind required for email and password properties", function(done) {
+    const user = new User({
+      // email and pass properties are omitted for this test.
+      date: "01/03/2020",
+      role: "admin"
+    });
+
     chai
       .request(app)
       .post("/api/users/new")
@@ -89,16 +122,29 @@ describe("/POST user", function() {
         if (err) {
           done(err);
         } else {
-          expect(res).to.have.status(200);
+          // expect(res).to.have.status(422);
           expect(res.body).to.be.a("object");
-          expect(res.body)
-            .to.have.property("statusMessage")
-            .eql("User successfully created");
-          expect(res.body).to.have.property("email");
-          expect(res.body).to.have.property("password");
-          done(err);
+          expect(res.body).to.have.property("date");
+          expect(res.body).to.have.property("role");
+          expect(res.body.errors.email).to.have.property('kind').eql('required');
+          expect(res.body.errors.password).to.have.property('kind').eql('required');
+          done();
         }
       });
   });
 });
+
+
+
+
+// ASSESSOR_NOTE:
+/*
+  - CreateUser_unique_email test method ensured that Users can not be created with an already existing email and works fine.
+  - ALthough it allows the new user object to pass through and fails at mongoose (email: unique) validation instead.
+  - Team members have affirmed to not fix this and leave as this, reason being that we have no front-end features allowing users
+  ... to be created. Instead we are the only ones who create users (through postman), therefore mongoose validation is adequate.
+
+  - Testing the Bcrypt password hashing method in user_controller was determined to be inadequate as we can clearly see it 
+  ... is working via the hashed credentials in the DB.
+*/
 

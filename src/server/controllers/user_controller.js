@@ -3,6 +3,7 @@ const User = require("./../database/models/user_model");
 const bcrypt = require('bcryptjs')
 
 createUser = (req, res) => {
+  //User.find().then(res => console.log(`FOO: ${res}`))
   User.findOne({ email: req.body.email })
   .then(user => {
     if (user) {
