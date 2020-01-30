@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import '../styles/eventcontrolpanel.css'
+import '../styles/eventcontrolpanel.scss'
 
 export default function EditEvent() {
   const [events, setEvents] = useState([])

@@ -29,13 +29,13 @@ class App extends Component {
     /* Renders the routes and the navbar on all pages of the app */
 
     return (
-      <React.Fragment>
+      <div className="page-wrapper">
         <Router>
           <div>
             <Navigationbar />
           </div>
           <Switch>
-            <div className="pagecontent-wrapper">
+            <div className="content-wrapper">
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/services">
@@ -49,9 +49,9 @@ class App extends Component {
               </Route>
             </div>
           </Switch>
-          <Footer />
         </Router>
-      </React.Fragment>
+        <Footer />
+      </div>
     )
   }
 }
