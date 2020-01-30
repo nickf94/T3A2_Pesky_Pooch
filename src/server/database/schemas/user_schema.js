@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   email: {
     type: String,
-    required: true,
-    unique: true, // Ensures 2 users can't log in with same E-mail.
+    required: [true, 'Email is required.'],
+    unique: true,
     trim: true
   },
   password: {
     type: String,
-    required: true,
+    required: [true, 'Password is required.'],
     trim: true
   },
   date: {
