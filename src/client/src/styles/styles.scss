@@ -8,183 +8,104 @@ $plum: #36083F;
 * {
   padding: 0;
   margin: 0;
+  text-decoraction: none;
+  list-style: none;
   box-sizing: border-box;
 }
 
-.button {
-  padding: 0.75rem 1.25rem;
-  margin-top: .8rem;
-  font-size: 1.1rem;
-  font-weight: 550;
-  color: #fff44f;
-  background-color: #111;
-  text-decoration: none;
+body {
+  font-family: 'Amarante', cursive;
+}
+
+nav {
+  background: #3C3744;
+  height: 5rem;
+  width: 100%;
+}
+
+label.logo {
+  color: white;
+  font-size: 30px;
+  line-height: 5rem;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 5rem;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 2rem;
   text-transform: uppercase;
-  display: inline-block;
-  transition: .3s;
 }
 
-.btn:hover {
-  opacity: 0.7;
+a.active, a:hover {
+  background: #1b9bff;
+  transition: .5s;
 }
 
-.menu-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.toggler {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  position: relative;
-  top: 0.5rem;
-  right: 0.5rem;
-  width: 3.8rem;
-  height: 3.8rem;
-  border-radius: 50%;
-  opacity: 0;
-  z-index: 3;
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 5rem;
+  margin-right: 40px;
   cursor: pointer;
+  display: none;;
 }
 
-.hamburger {
-  position: relative;
-  top: 0.5rem;
-  left: 0.5rem;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  background-color: rgb(182, 111, 179);
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  z-index: 2;
+#check {
+  display: none;
 }
 
-.hamburger>div {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 60%;
-  height: 3px;
-  border-radius: 1.5px;
-  background-color: #fff44f;
-  transition: .4s;
+@media (max-width: 952px){
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
 }
 
-.hamburger>div:before, .hamburger>div:after {
-  content: '';
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  height: 3px;
-  border-radius: 1.5px;
-  background-color: #fff44f;
-  transition: .4s;
-}
-
-.hamburger>div:before {
-  top: -10px;
-}
-
-.hamburger>div:after {
-  top: 10px;
-}
-
-.toggler:checked + .hamburger>div {
-  transform: rotate(135deg)
-}
-
-.toggler:checked:hover + .hamburger>div {
-  transform: rotate(225deg)
-}
-
-.toggler:checked + .hamburger>div:after, .toggler:checked + .hamburger>div:before {
-  transform: rotate(90deg);
-  top: 0;
-}
-
-.toggler:checked ~ .menu {
-  visibility: visible;
-}
-
-.toggler:checked ~ .menu > div {
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.toggler:checked ~ .menu > div > div {
-  opacity: 1;
-}
-
-.toggler:checked ~ .menu > div > div:checked {
-  visibility: hidden;
-}
-
-.menu {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  visibility: hidden;
-  transition: .6s;
-}
-
-.menu > div {
-  position: absolute;
-  width: 1600px;
-  height: 1600px;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-150%) translateY(-50%);
-  background-color: rgba(187, 189, 246, 0.9);
-  transition: .6s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu > div > div {
-  max-width: 90vw;
-  max-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-}
-
-.menu > div > div > ul > li {
-  list-style: none;
-}
-
-.menu > div > div > ul > li > a {
-  text-decoration: none;
-  margin: .5rem;
-  display: inline-block;
-  font-size: 1.2rem;
-  font-weight: 550;
-  text-transform:uppercase;
-  color: #fff;
-  transition: .3s;
-}
-
-.menu > div > div > ul > li > a:hover {
-  color: #fff44f;
+@media (max-width: 952px){
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li {
+    display: block;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover, a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
 }
 
 .contact-form {
