@@ -33,7 +33,7 @@ export default function EditService() {
     e.preventDefault()
     console.log("Submitting a service edit")
 
-    await Axios.put("http://localhost:7002/api/service/update", subject, {
+    await Axios.put("http://localhost:7002/api/services/edit", subject, {
       headers: {
         'Authorization': token
       }
@@ -45,9 +45,46 @@ export default function EditService() {
     .catch(err => console.log(err))
   }
 
-  // return (
-  //   <div>
-  //     {services.map(service => <p>{service.name}</p>)}
-  //   </div>
-  // )
+  return (
+    <>
+    <p>Edit an existing service</p>
+    <div className="service-buttons">
+      {services.map((service) => {
+        return (<button key={service._id} onClick={() => {setSubject(service)}}>{service.name}</button>)
+      })}
+    </div>
+
+    {subject ? (
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <label>Enter the updated information and submit</label>
+        <fieldset>
+          <label>Name of service</label>
+          <input type="text" 
+                 name="name" 
+                 onChange={(e) => stateReducer(e)} 
+                 value={subject.name}>
+          </input>
+        </fieldset>
+        <fieldset>
+          <label>Description of service</label>
+          <input type="text"
+                 name="description"
+                 onChange={(e) => stateReducer(e)}
+                 value={subject.description}>
+          </input>
+        </fieldset>
+        <fieldset>
+          <label>Cost of service</label>
+          <input type="number"
+                 name="cost"
+                 onChange={(e) => stateReducer(e)}
+                 value={subject.cost}>
+          </input>
+        </fieldset>
+        <button type="submit">Submit updated service</button>
+      </form>
+    ):
+    (null)}
+    </>
+  )
 }

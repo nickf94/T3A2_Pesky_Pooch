@@ -22,7 +22,9 @@ export default function AddService(props) {
   }
 
   return (
+    
     <form id="service-form" onSubmit={handleSubmit}>
+      <label>Create a new service tile!</label>
       <div className="form-group">
         <label name="name">Name:</label>
         <input type="text" value={serviceParams.name} onChange={(e) => formReducer(e)} name="name" />
