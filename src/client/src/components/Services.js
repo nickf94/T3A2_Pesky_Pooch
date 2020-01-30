@@ -18,20 +18,25 @@ export default function Services(props) {
 
   return (
     <>
+    { sessionStorage.getItem('token') ? < ServicesControlPanel services={services} updateServices={fetchServices}/> : (null)}
       <div className="services-box">
       { services ?
-        (services.map(service => {
+        (
+        <div className="services-cards">
+          { services.map(service => {
           return (
           <div className="service-card" key={service._id}>
             <p>{service.name}</p>
             <p>{service.description}</p>
             <p>{service.cost}</p>
           </div>
-          )})
+          )}) }
+        </div>
         ):
-        (<p>No services</p>) }
+        (
+        <p>No services</p>
+        ) }
       </div>
-      { sessionStorage.getItem('token') ? < ServicesControlPanel services={services} updateServices={fetchServices}/> : (null)}
       </>
   )
 }

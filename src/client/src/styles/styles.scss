@@ -223,8 +223,8 @@ $plum: #36083F;
   border-radius: 0.5rem;
 }
 
-.pagecontent > div {
-}
+// .pagecontent > div {
+// }
 
 .contact-header {
   font-size: 29px;
@@ -270,7 +270,19 @@ $plum: #36083F;
   font-size: 25px;
 }
 
-
 .services-box {
   background-color: $babyblue;
+}
+
+.services-cards {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .service-card {
+    min-width: 50%;
+    text-align: center;
+  }
 }
