@@ -1,12 +1,4 @@
-const app = require("../server");
-const User = require("../database/models/user_model");
-const chai = require("chai");
-const assert = require("chai").assert;
-const chaiHttp = require("chai-http");
-const expect = chai.expect;
-
-chai.use(chaiHttp);
-
+const { app, User, chai, assert, chaiHttp, expect } = require('../../server/config/testConfig')
 
 // -- USER_ROUTES  --
 
@@ -34,8 +26,6 @@ describe("GET users route", function() {
   });
 });
 
-
-
 // -- USER_CONTROLLER --
 
 // Cleanup method to clear test_DB of users created
@@ -47,9 +37,9 @@ describe("Users", () => {
   });
 
 
-  // NewUser: Email should be unique (email should not already exist in DB)
-  describe("/POST user", function() {
-    it("should not create a user if email is not unique", function(done) {
+  // createUser Test: Email 'unique' validation test.
+  describe("/POST user_controller Method", function() {
+    it("should not create a user if email is NOT unique", function(done) {
       // Email already exists in DB therefore is not created.
       const user = new User({
         email: "userWithUniqueEmail@email.com",
@@ -78,7 +68,8 @@ describe("Users", () => {
         });
     });
 
-    it("should create a user with unique email", function(done) {
+    // createUser Test: Successful User Creation test.
+    it("should create a user if email IS unique", function(done) {
       const user = new User({
         email: "userWithUniqueEmail@email.com",
         password: "JohnDoe12345"
@@ -104,47 +95,53 @@ describe("Users", () => {
 });
 
 
-// -- USER_MODEL_AND_SCHEMA --
+  // createUser_Test: Bcrypt 'password' validation test.
+    it("Bcrypt method should return error if password is empty", function(done) {
+      const user = new User({
+        password: ""
+      });
 
-describe("User Mongoose Schema", function() {
-  it("should have kind required for email and password properties", function(done) {
-    const user = new User({
-      // email and pass properties are omitted for this test.
-      date: "01/03/2020",
-      role: "admin"
+      chai
+        .request(app)
+        .post("/api/users/new")
+        .send(user)
+        .end(function(err, res) {
+          if (err) {
+            done(err);
+          } else {
+            expect(res).to.have.status(500);
+            expect(res.body).to.be.a("object");
+            expect(res.body)
+              .to.have.property("errors")
+              .eql("Could not save");
+            done(err);
+          }
+        });
     });
 
-    chai
-      .request(app)
-      .post("/api/users/new")
-      .send(user)
-      .end(function(err, res) {
-        if (err) {
-          done(err);
-        } else {
-          // expect(res).to.have.status(422);
-          expect(res.body).to.be.a("object");
-          expect(res.body).to.have.property("date");
-          expect(res.body).to.have.property("role");
-          expect(res.body.errors.email).to.have.property('kind').eql('required');
-          expect(res.body.errors.password).to.have.property('kind').eql('required');
-          done();
-        }
+    // createUser_Test: Email 'required' validation test
+    it("Email property should be required", function(done) {
+      const user = new User({
+        password: "password12345"
       });
-  });
-});
+
+      chai
+        .request(app)
+        .post("/api/users/new")
+        .send(user)
+        .end(function(err, res) {
+          if (err) {
+            done(err);
+          } else {
+            expect(res).to.have.status(500);
+            expect(res.body).to.be.a("object");
+            expect(res.body).to.have.property("errors").eql("Could not save");
+            done(err);
+          }
+        });
+    });
 
 
 
 
-// ASSESSOR_NOTE:
-/*
-  - CreateUser_unique_email test method ensured that Users can not be created with an already existing email and works fine.
-  - ALthough it allows the new user object to pass through and fails at mongoose (email: unique) validation instead.
-  - Team members have affirmed to not fix this and leave as this, reason being that we have no front-end features allowing users
-  ... to be created. Instead we are the only ones who create users (through postman), therefore mongoose validation is adequate.
-
-  - Testing the Bcrypt password hashing method in user_controller was determined to be inadequate as we can clearly see it 
-  ... is working via the hashed credentials in the DB.
-*/
-
+// -- USER_MODEL_AND_SCHEMA --
