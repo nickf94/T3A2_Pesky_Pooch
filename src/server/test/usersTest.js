@@ -101,4 +101,3 @@ describe("/POST user", function() {
       });
   });
 });
-
