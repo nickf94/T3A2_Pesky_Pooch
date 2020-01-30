@@ -5,18 +5,21 @@ getServices = async (req, res) => {
   if (services) {
     res.json(services)
   } else {
-    res.json({ failureToRetrieve: "could no retrieve services from database" })
+    res.status(500).json({ errors: "Unable to retrieve services from MongoDB" })
   }
 }
 
 newService = async (req, res) => {
-  const serviceParams = req.body
-  console.log(serviceParams)
-  const newService = new Service(serviceParams)
+  const newService = new Service(req.body)
   await newService.save()
-  .then(res => console.log(res))
-  .then(res.json(newService))
-  .catch(err => console.log(err)) 
+  .then(res => {
+    console.log(res)
+    res.json(newService)
+  })
+  .catch(err => {
+    res.status(500).json({ errors: "Unable to save new service in database"})
+    console.log(err)
+  }) 
 }
 
 editService = async (req, res) => {
@@ -24,15 +27,18 @@ editService = async (req, res) => {
     name: req.body.name,
     description: req.body.description,
     cost: req.body.cost
-  })
-  res.send(service)
+  }).then(res.send(service)).catch(err => res.status(500).json({ errors: "Could not update service" }))
+  
 }
 
 deleteService = async (req, res) => {
-  await Service.findByIdAndDelete(req.body._id)
+  await Service.findByIdAndDelete(req.headers.serviceid)
   .then(res => console.log(res))
-  .catch(err => console.log(err))
-  res.json({ deleteSuccessful: true })
+  .then(res.status(200).send("Successfully deleted service from MongoDB"))
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ errors: "Could not delete service from MongoDB" })
+  })
 }
 
 module.exports = {
