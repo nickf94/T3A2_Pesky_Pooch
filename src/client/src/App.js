@@ -9,6 +9,7 @@ import Navigationbar from './components/Navigationbar'
 import Footer from './components/Footer'
 
 class App extends Component {
+
   /* Use a state to collect the token and user from our login form */
 
   state = {
