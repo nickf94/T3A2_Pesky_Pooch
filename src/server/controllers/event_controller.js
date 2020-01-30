@@ -5,7 +5,7 @@ getEvents = async (req, res) => {
   if (events) {
     res.json(events)
   } else {
-    res.json({ noEventsFound: "No events found" })
+    res.status(500).json({ errors: "Unable to retrieve events from MongoDB" })
   }
 }
 
@@ -15,14 +15,20 @@ updateEvent = async (req, res) => {
     description: req.body.description,
     location: req.body.location
   })
-  res.send(event)
+  .then(res => res.send(event))
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ errors: "Unable to update event" })
+  })
 }
 
 deleteEvent = async (req, res) => {
   await Event.findByIdAndDelete(req.headers.eventid)
-  .then(res => console.log("Successfully deleted event"))
-  .catch(err => console.log(err))
-  res.json({ deleteSuccessful: true })
+  .then(res => res.send("Successfully deleted event from MongoDB"))
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ errors: "Unable to delete event from MongoDB" })  
+  })
 }
 
 newEvent = async (req, res) => {
@@ -32,8 +38,11 @@ newEvent = async (req, res) => {
     location: req.body.location
   })
   await newEvent.save()
-  .then(res.json(newEvent))
-  .catch(err => console.log(err)) 
+  .then(res.status(201).json(newEvent))
+  .catch(err => {
+    console.log(err)
+    res.status(500).json({ errors: "Could not save new event to MongoDB" })  
+  }) 
 }
 
 module.exports = {
