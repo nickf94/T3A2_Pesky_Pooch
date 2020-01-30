@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/eventcontrolpanel.css'
+import '../styles/eventcontrolpanel.scss'
 
 const OptionSelector = (props) => {
   return (
