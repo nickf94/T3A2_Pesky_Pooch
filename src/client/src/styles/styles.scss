@@ -55,6 +55,7 @@ $plum: #36083F;
 }
 
 .hamburger {
+  position: relative;
   top: 0.5rem;
   left: 0.5rem;
   width: 4rem;
@@ -62,13 +63,16 @@ $plum: #36083F;
   border-radius: 50%;
   background-color: rgb(182, 111, 179);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   z-index: 2;
 }
 
 .hamburger>div {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   width: 60%;
   height: 3px;
   border-radius: 1.5px;
@@ -79,6 +83,9 @@ $plum: #36083F;
 .hamburger>div:before, .hamburger>div:after {
   content: '';
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   width: 100%;
   height: 3px;
   border-radius: 1.5px;

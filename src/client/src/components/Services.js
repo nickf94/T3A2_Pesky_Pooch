@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
-import '../styles/styles.css'
+import '../styles/styles.scss'
 import ServicesControlPanel from './ServicesControlPanel'
 
 export default function Services(props) {
@@ -19,7 +19,7 @@ export default function Services(props) {
   return (
     <>
       <div className="services-box">
-      { services ? 
+      { services ?
         (services.map(service => {
           return (
           <div className="service-card" key={service._id}>
@@ -28,7 +28,7 @@ export default function Services(props) {
             <p>{service.cost}</p>
           </div>
           )})
-        ): 
+        ):
         (<p>No services</p>) }
       </div>
       { sessionStorage.getItem('token') ? < ServicesControlPanel services={services} updateServices={fetchServices}/> : (null)}
