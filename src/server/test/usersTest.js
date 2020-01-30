@@ -145,3 +145,10 @@ describe("Users", () => {
 
 
 // -- USER_MODEL_AND_SCHEMA --
+/*
+QUESTIONS FOR MATT - FRIJAN30th
+
+1. Is it worth testing the user model/schema when the above tests tested all validation error-handling anyways? + tested the successfull creation of a user??
+
+2. Could i put some of the above assertions inside of other 'it' blocks and reduce the amount of code? or is it good to have cleanly seperated 'it' blocks for different cases like above??
+*/
