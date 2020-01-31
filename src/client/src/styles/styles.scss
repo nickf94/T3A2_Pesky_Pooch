@@ -4,7 +4,7 @@
 * {
   padding: 0;
   margin: 0;
-  text-decoraction: none;
+  text-decoration: none;
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
@@ -74,9 +74,7 @@ a.active, a:hover {
   nav ul li a {
     font-size: 16px;
   }
-}
 
-@media (max-width: 952px){
   .checkbtn {
     display: block;
   }
@@ -104,7 +102,6 @@ a.active, a:hover {
     left: 0;
   }
 }
-
 .contact-form {
   font-size: 25px;
   display: flex;
@@ -113,7 +110,7 @@ a.active, a:hover {
   height: 650px;
   height: 100vh;
   align-items: center;
-  background: rgb(187, 189, 246);
+  background: white;
   width: 100vw;
 }
 
@@ -132,7 +129,6 @@ a.active, a:hover {
   text-align: center;
   height: 100%;
   align-items: center;
-  border: 1px solid red;
 }
 
 .pagecontent {
@@ -143,8 +139,6 @@ a.active, a:hover {
   border-radius: 0.5rem;
 }
 
-// .pagecontent > div {
-// }
 
 .contact-header {
   font-size: 29px;
@@ -182,7 +176,7 @@ a.active, a:hover {
 
 .footer {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   bottom: 0rem;

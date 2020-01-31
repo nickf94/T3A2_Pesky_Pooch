@@ -68,7 +68,7 @@ export default class loginForm extends Component {
         </p>
         <p>
           <input type="submit" value="Login user" />
-          <button type="submit" value="logout user" onChange={this.handleRemove}>Logout</button>
+          <input type="submit" value="logout user" onChange={this.handleRemove} />
         </p>
      </form>
    );

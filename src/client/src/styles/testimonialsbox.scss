@@ -1,0 +1,16 @@
+@import './colours.scss';
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-top: 0.25rem solid $tarmac;
+  border-left: 0.25rem solid $tarmac;
+  border-right: 0.25rem solid $tarmac;
+  padding: 1rem;
+
+
+  &:last-of-type {
+    border-bottom: 0.25rem solid $tarmac;
+  }
+}

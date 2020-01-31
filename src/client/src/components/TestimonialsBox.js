@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
+import "../styles/testimonialsbox.scss"
 
 export default function TestimonialsBox() {
   const [events, setEvents] = useState([])
@@ -16,7 +17,13 @@ export default function TestimonialsBox() {
 
   return (
     <div>
-      {events.map(item => <p>{item}</p>)}
+      {events.map(item => {
+        return (
+        <div className="event-card">
+          <p>{item}</p>
+        </div>
+        )
+      })}
     </div>
   )
 }
