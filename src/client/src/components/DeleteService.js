@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 
-export default function DeleteService() {
+export default function DeleteService(props) {
   const [services, setServices] = useState([])
   const [submit, setSubmit] = useState(false)
   const token = sessionStorage.getItem('token')
 
   const updateServices = async () => {
-    await Axios.get('http://localhost:7002/api/services')
+    await Axios.get('/services')
     .then(res => setServices(res.data))
     .catch(err => console.log(err))
   }
 
   const handleSubmit = async (service) => {
     if (window.confirm("Are you sure you want to delete this service?")) {
-      await Axios.delete("http://localhost:7002/api/services/delete", {
+      await Axios.delete("/services/delete", {
         headers: {
           'Authorization': token,
           'serviceid': service._id
         }})
       .then(res => {
-        updateServices()
+        props.refreshServices()
         console.log('Successfully submitted delete service request')
       })
       .catch(err => console.log(err))

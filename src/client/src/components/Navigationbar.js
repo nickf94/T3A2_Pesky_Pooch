@@ -12,8 +12,8 @@ export default class NavigationBar extends Component {
   }
 
   toggleClass = (event) => {
-    const currentState = this.state.active;
-    this.setState({ active: !currentState });
+    const currentState = this.state.active
+    this.setState({ active: !currentState })
   }
 
   onLogin = (token, user) => {
@@ -21,8 +21,6 @@ export default class NavigationBar extends Component {
     sessionStorage.setItem("user", user)
     this.setState({ token, user })
   }
-
-
 
   render() {
   return(

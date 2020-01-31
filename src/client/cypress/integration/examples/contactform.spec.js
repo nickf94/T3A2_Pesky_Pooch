@@ -1,7 +1,7 @@
 describe("Test Contact Form", () => {
   it("Should go to the contact page", () => {
     cy.viewport(1024, 768);
-    cy.visit("localhost:3000/");
+    cy.visit("https://localhost:3000/");
     cy.get(".hamburger").click();
     cy.contains("Contact").click();
     cy.url().should("include", "/contact");

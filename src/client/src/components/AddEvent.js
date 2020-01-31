@@ -13,7 +13,7 @@ export default function AddEvent() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let token = sessionStorage.getItem('token')
-    await axios.post("http://localhost:7002/api/events/new", eventParams, {
+    await axios.post("/events/new", eventParams, {
     headers: {
     'Authorization': token
     }})

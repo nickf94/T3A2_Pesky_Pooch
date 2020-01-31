@@ -11,11 +11,11 @@ export default function ServicesControlPanel(props) {
   const renderForm = () => {
     switch (selectedType) {
       case 'add':
-        return < AddService />
+        return < AddService refreshServices={props.updateServices}/>
       case 'delete':
-        return < DeleteService />
+        return < DeleteService refreshServices={props.updateServices}/>
       case 'edit':
-        return < EditService />
+        return < EditService refreshServices={props.updateServices}/>
       default:
         return <p>No selectedType</p>
     }
