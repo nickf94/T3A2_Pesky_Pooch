@@ -2,7 +2,7 @@ const { app, User, chai, assert, chaiHttp, expect } = require('../../server/conf
 
 // -- USER_ROUTES  --
 
-// User.get('/test') route
+// User.get('/test') route - SUCCESS
 describe("GET users route", function() {
   it("should respond with string data type and expected string value", function(done) {
     chai
@@ -26,7 +26,7 @@ describe("GET users route", function() {
   });
 });
 
-// -- USER_CONTROLLER --
+// -- USER_CONTROLLER/MODEL/SCHEMA --
 
 // Cleanup method to clear test_DB of users created
 describe("Users", () => {
@@ -37,7 +37,7 @@ describe("Users", () => {
   });
 
 
-  // createUser Test: Email 'unique' validation test.
+  // createUser Test: Email 'unique' validation test. - SUCCESS
   describe("/POST user_controller Method", function() {
     it("should not create a user if email is NOT unique", function(done) {
       // Email already exists in DB therefore is not created.
@@ -68,8 +68,8 @@ describe("Users", () => {
         });
     });
 
-    // createUser Test: Successful User Creation test.
-    it("should create a user if email IS unique", function(done) {
+    // createUser Test: Successful User Creation test. - SUCCESS
+    it("should create a user if email IS unique and required properties provided", function(done) {
       const user = new User({
         email: "userWithUniqueEmail@email.com",
         password: "JohnDoe12345"
@@ -85,6 +85,7 @@ describe("Users", () => {
           } else {
             expect(res).to.have.status(200);
             expect(res.body).to.be.a("object");
+            expect(err).to.be.null;
             expect(res.body).to.have.property("email");
             expect(res.body).to.have.property("password");
             done(err);
@@ -95,7 +96,7 @@ describe("Users", () => {
 });
 
 
-  // createUser_Test: Bcrypt 'password' validation test.
+  // createUser_Test: Bcrypt 'password' validation test. - SUCCESS
     it("Bcrypt method should return error if password is empty", function(done) {
       const user = new User({
         password: ""
@@ -119,7 +120,7 @@ describe("Users", () => {
         });
     });
 
-    // createUser_Test: Email 'required' validation test
+    // createUser_Test: Email 'required' validation test - SUCCESS
     it("Email property should be required", function(done) {
       const user = new User({
         password: "password12345"
@@ -140,15 +141,3 @@ describe("Users", () => {
           }
         });
     });
-
-
-
-
-// -- USER_MODEL_AND_SCHEMA --
-/*
-QUESTIONS FOR MATT - FRIJAN30th
-
-1. Is it worth testing the user model/schema when the above tests tested all validation error-handling anyways? + tested the successfull creation of a user??
-
-2. Could i put some of the above assertions inside of other 'it' blocks and reduce the amount of code? or is it good to have cleanly seperated 'it' blocks for different cases like above??
-*/

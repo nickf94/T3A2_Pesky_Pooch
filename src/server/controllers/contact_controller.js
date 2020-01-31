@@ -16,15 +16,15 @@ createContact = async (req, res) => {
   await contact.save()
     .then(contact => res.status(201).send(contact))
     .catch(err => {
-      console.log(err)
-      res.status(500).json({ errors: "Unable to save new contact in MongoDB" })
+      // console.log(err)
+      res.status(500).json({ errors: "Unable to save new contact" })
     })
 }
 
 getContacts = async (req, res) => {
   await Contact.find()
     .then(contacts => res.json(contacts))
-    .catch(err => res.status(500).json({ errors: 'Unable to retrieve contacts from MongoDB' }))
+    .catch(err => res.status(500).json({ errors: 'Unable to retrieve contacts' }))
 }
 
 module.exports = {
