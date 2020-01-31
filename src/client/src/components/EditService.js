@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 
-export default function EditService() {
+export default function EditService(props) {
   const [services, setServices] = useState([])
   const [subject, setSubject] = useState(null)
   const [submit, setSubmit] = useState(false)
   const token = sessionStorage.getItem('token')
 
   const updateServices = async () => {
-    await Axios.get('http://localhost:7002/api/services')
+    await Axios.get('services')
     .then(res => setServices(res.data))
     .catch(err => console.log(err))
   }
@@ -19,7 +19,7 @@ export default function EditService() {
 
   useEffect(() => {
     if (submit) {
-      updateServices()
+      props.refreshServices()
       setSubmit(false)
     }
   }, [submit])
@@ -33,7 +33,7 @@ export default function EditService() {
     e.preventDefault()
     console.log("Submitting a service edit")
 
-    await Axios.put("http://localhost:7002/api/services/edit", subject, {
+    await Axios.put("services/edit", subject, {
       headers: {
         'Authorization': token
       }
@@ -41,6 +41,7 @@ export default function EditService() {
     .then(res => {
       setSubmit(true)
       setSubject(null)
+      props.updateServices()
     })
     .catch(err => console.log(err))
   }

@@ -11,24 +11,24 @@ getServices = async (req, res) => {
 
 newService = async (req, res) => {
   const newService = new Service(req.body)
-  await newService.save()
-  .then(res => {
-    console.log(res)
-    res.json(newService)
+  newService.save()
+  .then(params => {
+    res.json({newService})
   })
   .catch(err => {
-    res.status(500).json({ errors: "Unable to save new service in database"})
+    res.json({ errors: "Unable to save new service in database"})
     console.log(err)
   }) 
 }
 
 editService = async (req, res) => {
+  console.log(req.body)
   const service = await Service.findByIdAndUpdate(req.body._id, {
     name: req.body.name,
     description: req.body.description,
     cost: req.body.cost
-  }).then(res.send(service)).catch(err => res.status(500).json({ errors: "Could not update service" }))
-  
+  })
+  service ? res.json({ service }) : res.json({ errors: "Could not update service" })
 }
 
 deleteService = async (req, res) => {
