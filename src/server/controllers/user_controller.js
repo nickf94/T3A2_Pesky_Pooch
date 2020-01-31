@@ -3,10 +3,11 @@ const User = require("./../database/models/user_model");
 const bcrypt = require('bcryptjs')
 
 createUser = (req, res) => {
+  //User.find().then(res => console.log(`FOO: ${res}`))
   User.findOne({ email: req.body.email })
   .then(user => {
     if (user) {
-      return res.status(422).json({ error: "Email is taken" })
+      return res.status(422).send("Email is taken")
     } else {
       const newUser = new User({
         email: req.body.email,

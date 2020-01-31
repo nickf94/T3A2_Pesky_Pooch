@@ -54,9 +54,6 @@ constructor(props) {
   render() {
     return(
       <container className="contactform">
-        <div className="contact-header">
-          <p>Pesky Pooch</p>
-        </div>
         <form className="contact-form" onSubmit={this.onFormSubmit}>
 
           <label>Send us a message</label>
