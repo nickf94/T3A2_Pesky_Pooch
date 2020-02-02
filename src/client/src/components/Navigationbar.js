@@ -18,11 +18,11 @@ export default function NavigationBar() {
         <label>Pesky Pooch</label>
       </div>
     <ul>
-        <li><Link to="/" onClick={toggleClass}>Home</Link></li>
-        <li><Link to="/about" onClick={toggleClass}>About</Link></li>
-        <li><Link to="/services" onClick={toggleClass}>Services</Link></li>
-        <li><Link to="/contact"onClick={toggleClass}>Contact</Link></li>
-        <li><Link to="/login"onClick={toggleClass}>Login</Link></li>
+        <Link to="/" onClick={toggleClass}><li>Home</li></Link>
+        <Link to="/about" onClick={toggleClass}><li>About</li></Link>
+        <Link to="/services" onClick={toggleClass}><li>Services</li></Link>
+        <Link to="/contact"onClick={toggleClass}><li>Contact</li></Link>
+        <Link to="/login"onClick={toggleClass}><li>Login</li></Link>
       </ul>
     </nav>
   )
