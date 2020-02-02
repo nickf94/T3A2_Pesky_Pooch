@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/eventcontrolpanel.scss'
 
-export default function AddEvent() {
+export default function AddEvent(props) {
   const [eventParams, setEventParams] = useState({name: '', description: '', location: ''})
 
   const formReducer = (event) => {
@@ -19,6 +19,7 @@ export default function AddEvent() {
     }})
     .then(res => console.log(res))
     .catch(err => console.log(err))
+    props.updateServicesEvents()
   }
 
   return (

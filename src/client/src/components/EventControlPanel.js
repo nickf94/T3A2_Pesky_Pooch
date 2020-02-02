@@ -5,18 +5,18 @@ import AddEvent from './AddEvent'
 import DeleteEvent from './DeleteEvent'
 import '../styles/eventcontrolpanel.scss'
 
-export default function EventControlPanel() {
+export default function EventControlPanel(props) {
   const [eventTypes, setEventTypes] = useState({add: false, edit: false, delete: false})
   const [selectedType, setSelectedType] = useState(null)
 
   const renderForm = () => {
     switch (selectedType) {
       case 'add':
-        return < AddEvent />
+        return < AddEvent updateServicesEvents={props.updateServicesEvents} />
       case 'delete':
-        return <DeleteEvent />
+        return <DeleteEvent updateServicesEvents={props.updateServicesEvents}/>
       case 'edit':
-        return < EditEvent />
+        return < EditEvent updateServicesEvents={props.updateServicesEvents}/>
       default:
         return <p>No selectedType</p>
     }

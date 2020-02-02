@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import '../styles/eventcontrolpanel.scss'
 
-export default function EditEvent() {
+export default function EditEvent(props) {
   const [events, setEvents] = useState([])
   const [subject, setSubject] = useState(null)
   const [submit, setSubmit] = useState(false)
@@ -43,6 +43,7 @@ export default function EditEvent() {
       setSubject(null)
     })
     .catch(err => console.log(err))
+    props.updateServicesEvents()
   }
 
   useEffect(() => {
