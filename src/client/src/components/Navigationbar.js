@@ -14,6 +14,7 @@ export default class NavigationBar extends Component {
   toggleClass = (event) => {
     const currentState = this.state.active
     this.setState({ active: !currentState })
+    document.getElementById('check').checked = false
   }
 
   onLogin = (token, user) => {
