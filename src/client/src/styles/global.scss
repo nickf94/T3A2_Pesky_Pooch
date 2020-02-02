@@ -32,6 +32,13 @@
   align-items: center;
   height: 5rem;
   background: $babyblue;
+
+  p {
+    background: rgb(60, 55, 68);
+    border-radius: 0.5rem;
+    color: $ceramic;
+    padding: 1rem;
+  }
 }
 
 .services-container {
@@ -83,7 +90,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
-  border: 1px solid red;
 
   .event-card {
     text-align: center;
@@ -112,6 +118,7 @@
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2rem;
+  color: rgb(255, 255, 255);
 }
 
 .event-buttons {
@@ -147,6 +154,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $babyblue;
+  padding: 1rem;
 
   button {
     padding: 1rem;
@@ -155,20 +164,19 @@
   }
 
   .login-form {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
     fieldset {
-      width: 75%;
+      width: 50%;
       margin: auto;
       display: flex;
       flex-direction: column;
       padding: 1rem;
       border: none;
-      border: 1px solid red;
 
       * {
         margin: auto;
@@ -266,6 +274,11 @@
   }
 }
 
+.services-text {
+  width: 100%;
+  border: 1px solid red;
+}
+
 .text-wrapper {
   padding: 1rem;
   height: 100%;
@@ -274,4 +287,32 @@
   * {
     margin-bottom: 0.5rem;
   }
+}
+
+@media only screen and (max-width: 952px) {
+  .form-container {
+    .login-form {
+      width: 100%;
+
+      fieldset {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        label {
+          width: stretch;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        input {
+          width: stretch;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+  
 }

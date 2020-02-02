@@ -42,10 +42,14 @@ export default function ServicesPage(props) {
           ) : (
           <div>
             <h1 className="page-title">Services page</h1>
+            <div className="services-text">
+              <p>Bottom line.</p>
+            </div>
             < Services renderChanges={fetchServices} allServices={services}/>
           </div>
           )
         }  
+        
         <div className="events">
           { (events.length >= 1) ? (events.map(event => {
           return (

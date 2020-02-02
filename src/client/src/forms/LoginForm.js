@@ -50,7 +50,7 @@ export default class loginForm extends Component {
     return this.state.submit ? (
       <Redirect to="/" />
     ) : (
-      <div className="form-container">
+      <container className="form-container">
       <form onSubmit={this.onFormSubmit} className="login-form">
         <fieldset>
           <label name="email">Email</label>
@@ -74,7 +74,7 @@ export default class loginForm extends Component {
           (<input type="submit" value="Login user" />)}
         </fieldset>
      </form>
-     </div>
+     </container>
    );
   }
 }

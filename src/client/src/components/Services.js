@@ -14,9 +14,9 @@ export default function Services(props) {
       <div className="services-container">
       { props.allServices ?
         (
-        <>
-          <p>All current services</p>
+        <> 
           <div className="services">
+            <p>All current services</p>
             { props.allServices.map(service => {
             return (
             <div className="service-card" key={service._id}>

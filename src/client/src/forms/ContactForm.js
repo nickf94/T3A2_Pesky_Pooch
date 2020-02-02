@@ -54,9 +54,6 @@ constructor(props) {
     return(
       <container classname="form-container">
         <form className="contact-form" onSubmit={this.onFormSubmit}>
-
-          <label className="page-title">Send us a message</label>
-
           <fieldset>
             <label>Email:</label>
             <input type="text" value={this.state.email} onChange={this.onEmailChange.bind(this)} />

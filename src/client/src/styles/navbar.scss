@@ -39,7 +39,8 @@ nav {
         justify-content: center;
 
         &:active, &:hover {
-          background: #1b9cff67;
+          // background: #1b9cff67;
+          background: rgba(60, 55, 68, 0.438);;
           transition: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) all;
         }
       }
@@ -56,6 +57,10 @@ nav {
   color: #B66FB3;
   width: 25%;
   height: 100%;
+  
+  * {
+    cursor: pointer;
+  }
 
   label {
     font-size: 2rem;
@@ -84,7 +89,7 @@ nav {
 //   }
 // }
 
-@media (max-width: 952px){
+@media only screen and (max-width: 952px){
 
   nav {
 
