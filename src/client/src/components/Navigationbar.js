@@ -33,11 +33,11 @@ export default class NavigationBar extends Component {
         <label>Pesky Pooch</label>
       </div>
     <ul>
-        <li><Link className="active" to="/" onClick={this.toggleClass}>Home</Link></li>
-        <li><Link className="active" to="/about" onClick={this.toggleClass}>About</Link></li>
-        <li><Link className="active" to="/services" onClick={this.toggleClass}>Services</Link></li>
-        <li><Link className="active" to="/contact"onClick={this.toggleClass}>Contact</Link></li>
-        <li><Link className="active" to="/login"onClick={this.toggleClass}>Login</Link></li>
+        <li><Link to="/" onClick={this.toggleClass}>Home</Link></li>
+        <li><Link to="/about" onClick={this.toggleClass}>About</Link></li>
+        <li><Link to="/services" onClick={this.toggleClass}>Services</Link></li>
+        <li><Link to="/contact"onClick={this.toggleClass}>Contact</Link></li>
+        <li><Link to="/login"onClick={this.toggleClass}>Login</Link></li>
       </ul>
     </nav>
     )
