@@ -58,10 +58,52 @@
       text-align: center;
       padding: 0.5rem;
       background: $babyblue;
+      border: 0.25rem solid $otherblue;
+      border-radius: 0.5rem;
 
-      p {
+      * {
         padding: 1rem;
+        border-bottom: 0.25rem solid $otherblue;
       }
+
+      .service-desc {
+        font-size: 1rem
+      }
+
+      .service-cost {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.events {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  border: 1px solid red;
+
+  .event-card {
+    text-align: center;
+    padding: 0.5rem;
+    background: $babyblue;
+    border: 0.25rem solid $otherblue;
+    border-radius: 0.5rem;
+    width: 45%;
+
+    * {
+      padding: 1rem;
+      border-bottom: 0.25rem solid $otherblue;
+    }
+
+    .event-desc {
+      font-size: 1rem
+    }
+
+    .event-loc {
+      font-size: 2rem;
     }
   }
 }
@@ -112,6 +154,42 @@
     border-radius: 0.25rem;
   }
 
+  .login-form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    fieldset {
+      width: 75%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      border: none;
+      border: 1px solid red;
+
+      * {
+        margin: auto;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+      }
+
+      label {
+        width: 50%;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      input {
+        width: 80%;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+
   .contact-form {
     width: 100vw;
     display: flex;
@@ -142,6 +220,7 @@
 
       input {
         width: 80%;
+        padding: 0.5rem 0;
       }
 
       textarea {
@@ -180,7 +259,7 @@
     * {
       font-size: 1.5rem;
     }
-    
+
     &:last-of-type {
       border-bottom: 0.25rem solid $tarmac;
     }

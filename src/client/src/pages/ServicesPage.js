@@ -48,7 +48,13 @@ export default function ServicesPage(props) {
         }  
         <div className="events">
           { (events.length >= 1) ? (events.map(event => {
-          return <p>{event.name}</p>
+          return (
+          <div className="event-card">
+            <h3>{event.name}</h3>
+            <p className="event-desc">{event.description}</p>
+            <p className="event-loc">{event.location}</p>
+          </div>
+          )
         })) : (<p>No current events</p>)}
         </div>
         

@@ -6,7 +6,7 @@ export default function TestimonialsBox() {
   const [testimonials, setTestimonials] = useState([])
 
   const fetchTestimonials = async () => {
-    await Axios.get("http://localhost:7002/api/testimonials")
+    await Axios.get(`${process.env.BASE_URL}testimonials`)
     .then(res => {
       filterTestimonials(res.data)
     })

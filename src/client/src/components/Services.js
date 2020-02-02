@@ -20,9 +20,9 @@ export default function Services(props) {
             { props.allServices.map(service => {
             return (
             <div className="service-card" key={service._id}>
-              <p>{service.name}</p>
-              <p>{service.description}</p>
-              <p>{service.cost}</p>
+              <h3>{service.name}</h3>
+              <p className="service-desc">{service.description}</p>
+              <p className="service-cost">{service.cost}</p>
             </div>
             )}) }
           </div>

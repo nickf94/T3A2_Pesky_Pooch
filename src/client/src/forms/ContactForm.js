@@ -38,7 +38,7 @@ constructor(props) {
       message
     }
 
-    axios.post("http://localhost:7002/api/contact/", params)
+    axios.post(`${process.env.BASE_URL}contact`, params)
     .then((res) => {
       console.log(res)
       document.getElementById("contact-submit").classList.toggle('successful')
