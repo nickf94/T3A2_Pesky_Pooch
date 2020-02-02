@@ -2,28 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/navbar.scss'
 
-export default class NavigationBar extends Component {
-  constructor(props) {
-    super(props);
-    // this.addActiveClass = this.addActiveClass.bind(this);
-    this.state = {
-      active: true,
-    };
-  }
+export default function NavigationBar() {
 
-  toggleClass = (event) => {
-    const currentState = this.state.active
-    this.setState({ active: !currentState })
+  const toggleClass = () => {
     document.getElementById('check').checked = false
   }
 
-  onLogin = (token, user) => {
-    sessionStorage.setItem("token", token)
-    sessionStorage.setItem("user", user)
-    this.setState({ token, user })
-  }
-
-  render() {
   return(
     <nav>
       <input type="checkbox" id="check"></input>
@@ -34,13 +18,12 @@ export default class NavigationBar extends Component {
         <label>Pesky Pooch</label>
       </div>
     <ul>
-        <li><Link to="/" onClick={this.toggleClass}>Home</Link></li>
-        <li><Link to="/about" onClick={this.toggleClass}>About</Link></li>
-        <li><Link to="/services" onClick={this.toggleClass}>Services</Link></li>
-        <li><Link to="/contact"onClick={this.toggleClass}>Contact</Link></li>
-        <li><Link to="/login"onClick={this.toggleClass}>Login</Link></li>
+        <li><Link to="/" onClick={toggleClass}>Home</Link></li>
+        <li><Link to="/about" onClick={toggleClass}>About</Link></li>
+        <li><Link to="/services" onClick={toggleClass}>Services</Link></li>
+        <li><Link to="/contact"onClick={toggleClass}>Contact</Link></li>
+        <li><Link to="/login"onClick={toggleClass}>Login</Link></li>
       </ul>
     </nav>
-    )
-  }
+  )
 }
