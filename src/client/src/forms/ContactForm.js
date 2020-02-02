@@ -55,7 +55,7 @@ constructor(props) {
       <container classname="form-container">
         <form className="contact-form" onSubmit={this.onFormSubmit}>
 
-          <label>Send us a message</label>
+          <label className="page-title">Send us a message</label>
 
           <fieldset>
             <label>Email:</label>
