@@ -22,16 +22,18 @@ export default function ServicesPage(props) {
       <div>
         { props.user ? (
           <div>
+            <h1 className="page-title">Services page</h1>
             <h1>Welcome, admin!</h1>
             < EventControlPanel setParentEvents={props.setEvents} />
+            < Services renderChanges={fetchServices} allServices={services}/>
           </div>
           ) : (
           <div>
-            <h1>Services page</h1>
+            <h1 className="page-title">Services page</h1>
+            < Services renderChanges={fetchServices} allServices={services}/>
           </div>
           )
-        }
-        < Services renderChanges={fetchServices} allServices={services}/>
+        }  
       </div>
     </>
   )
