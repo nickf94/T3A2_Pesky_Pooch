@@ -1,32 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/styles.scss'
+import '../styles/navbar.scss'
 
 export default function NavigationBar() {
-    return(
-    <html>
-    <body>
-      <div class="menu-container">
-        <input type="checkbox" class="toggler" />
-        <div class="hamburger">
-          <div></div>
-        </div>
-        <div class="menu">
-          <div>
-            <div>
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/services">Services</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
+  const toggleClass = () => {
+    document.getElementById('check').checked = false
+  }
+
+  return(
+    <nav>
+      <input type="checkbox" id="check"></input>
+      <label for="check" className="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <div className="logo">
+        <label>Pesky Pooch</label>
       </div>
-
-
-    </body>
-    </html>
+    <ul>
+        <Link to="/" onClick={toggleClass}><li>Home</li></Link>
+        <Link to="/about" onClick={toggleClass}><li>About</li></Link>
+        <Link to="/services" onClick={toggleClass}><li>Services</li></Link>
+        <Link to="/contact"onClick={toggleClass}><li>Contact</li></Link>
+        <Link to="/login"onClick={toggleClass}><li>Login</li></Link>
+      </ul>
+    </nav>
   )
 }

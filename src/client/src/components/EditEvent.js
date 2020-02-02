@@ -1,15 +1,15 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-import '../styles/eventcontrolpanel.css'
+import '../styles/eventcontrolpanel.scss'
 
-export default function EditEvent() {
+export default function EditEvent(props) {
   const [events, setEvents] = useState([])
   const [subject, setSubject] = useState(null)
   const [submit, setSubmit] = useState(false)
   const token = sessionStorage.getItem('token')
 
   const fetchEvents = async () => {
-    await axios.get("http://localhost:7002/api/events", {
+    await axios.get("/events", {
       headers: {
         'Authorization': token
       }})
@@ -32,7 +32,7 @@ export default function EditEvent() {
     e.preventDefault()
     console.log("Submitting an event edit")
 
-    await axios.put("http://localhost:7002/api/events/update", subject, {
+    await axios.put("/events/update", subject, {
       headers: {
         'Authorization': token
       },
@@ -43,6 +43,7 @@ export default function EditEvent() {
       setSubject(null)
     })
     .catch(err => console.log(err))
+    props.updateServicesEvents()
   }
 
   useEffect(() => {
@@ -64,9 +65,9 @@ export default function EditEvent() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <fieldset>
           <label>Name of event</label>
-          <input type="text" 
-                 name="name" 
-                 onChange={(e) => stateReducer(e)} 
+          <input type="text"
+                 name="name"
+                 onChange={(e) => stateReducer(e)}
                  value={subject.name}>
           </input>
         </fieldset>

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import '../styles/eventcontrolpanel.css'
+import '../styles/eventcontrolpanel.scss'
 
-export default function DeleteEvent() {
+export default function DeleteEvent(props) {
   const [events, setEvents] = useState([])
   const [submit, setSubmit] = useState(false)
   const token = sessionStorage.getItem('token')
@@ -31,6 +31,7 @@ export default function DeleteEvent() {
         console.log('Successfully submitted delete event request')
       })
       .catch(err => console.log(err))
+      props.updateServicesEvents()
     }
   }
 

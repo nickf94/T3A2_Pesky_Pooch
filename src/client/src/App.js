@@ -6,8 +6,11 @@ import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
 import Navigationbar from './components/Navigationbar'
+import Footer from './components/Footer'
+import './styles/global.scss'
 
 class App extends Component {
+
   /* Use a state to collect the token and user from our login form */
 
   state = {
@@ -28,13 +31,11 @@ class App extends Component {
     /* Renders the routes and the navbar on all pages of the app */
 
     return (
-      <React.Fragment>
+      <div className="page-wrapper">
         <Router>
-          <div>
-            <Navigationbar />
-          </div>
+          < Navigationbar />
           <Switch>
-            <div className="pagecontent-wrapper">
+            <div className="content-wrapper">
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/services">
@@ -49,7 +50,8 @@ class App extends Component {
             </div>
           </Switch>
         </Router>
-      </React.Fragment>
+        <Footer />
+      </div>
     )
   }
 }

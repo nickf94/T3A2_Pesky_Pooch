@@ -13,15 +13,20 @@ createContact = async (req, res) => {
     message: req.body.message
   })
 
+  console.log(contact)
+
   await contact.save()
-    .then(contact => res.json({ contactdelivered: true })) //res.json({ contact }))
-    .catch(err => res.status(404).json({ contactdelivered: false })) //.json({ error: 'Unable to send this contact message!'}))
+    .then(contact => res.status(201).send(contact))
+    .catch(err => {
+      // console.log(err)
+      res.status(500).json({ errors: "Unable to save new contact" })
+    })
 }
 
 getContacts = async (req, res) => {
   await Contact.find()
     .then(contacts => res.json(contacts))
-    .catch(err => res.status(404).json({ nocontactsfound: 'No contacts found'}))
+    .catch(err => res.status(500).json({ errors: 'Unable to retrieve contacts' }))
 }
 
 module.exports = {
