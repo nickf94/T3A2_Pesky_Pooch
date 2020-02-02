@@ -17,7 +17,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     float: right;
-    margin-right: 20px;
 
     * {
       text-decoration: none;
@@ -40,7 +39,8 @@ nav {
         justify-content: center;
 
         &:active, &:hover {
-          background: #1b9bff;
+          background: #1b9cff67;
+          transition: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) all;
         }
       }
     }
@@ -63,11 +63,9 @@ nav {
 }
 
 .checkbtn {
-  font-size: 30px;
   color: white;
   float: right;
   line-height: 5rem;
-  margin-right: 40px;
   cursor: pointer;
   display: none;
 }
@@ -76,15 +74,15 @@ nav {
   display: none;
 }
 
-@media (max-width: 952px){
-  label.logo {
-    font-size: 30px;
-    padding-left: 50px;
-  }
-  nav ul li a {
-    font-size: 16px;
-  }
-}
+// @media (max-width: 952px){
+//   label.logo {
+//     font-size: 30px;
+//     padding-left: 50px;
+//   }
+//   nav ul li a {
+//     font-size: 16px;
+//   }
+// }
 
 @media (max-width: 952px){
   .checkbtn {
@@ -100,17 +98,14 @@ nav {
   }
 
   nav {
-    ul {
-      flex-direction: column;
-      height: stretch;
-    }
-  }
+
   ul {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
     width: 100%;
+    height: 80%;
     background: rgb(60, 55, 68);
     top: 5rem;
     left: -100%;
@@ -131,5 +126,6 @@ nav {
   #check:checked ~ ul {
     width: 100%;
     left: 0%;
+  }
   }
 }
