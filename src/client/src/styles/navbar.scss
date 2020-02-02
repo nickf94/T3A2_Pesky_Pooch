@@ -1,24 +1,7 @@
-$primary_purple: #B66FB3;
-$babyblue: #BBBDF6;
-$ceramic: #E5D4ED;
-$tarmac: #3C3744;
-$plum: #36083F;
-
-@import url('https://fonts.googleapis.com/css?family=Amarante');
-* {
-  padding: 0;
-  margin: 0;
-  text-decoraction: none;
-  list-style: none;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Amarante', cursive;
-}
+@import './colours.scss';
 
 nav {
-  background: #BBBDF6;
+  background: $babyblue;
   height: 5rem;
   width: 100%;
 }
@@ -38,8 +21,8 @@ nav ul {
 
 nav ul li {
   display: inline-block;
-  line-height: 5rem;
   margin: 0 5px;
+  height: 100%;
 }
 
 nav ul li a {

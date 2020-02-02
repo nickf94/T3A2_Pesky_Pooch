@@ -4,7 +4,7 @@ import ContactForm from '../forms/ContactForm'
 class ContactPage extends Component {
   render() {
     return(
-      <div>
+      <div className="form-container">
       <ContactForm />
       </div>
     )

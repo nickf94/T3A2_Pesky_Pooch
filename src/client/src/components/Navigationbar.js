@@ -29,7 +29,9 @@ export default class NavigationBar extends Component {
       <label for="check" className="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label className="logo">Pesky Pooch</label>
+      <div className="logo">
+        <label>Pesky Pooch</label>
+      </div>
     <ul>
         <li><Link className="active" to="/" onClick={this.toggleClass}>Home</Link></li>
         <li><Link className="active" to="/about" onClick={this.toggleClass}>About</Link></li>

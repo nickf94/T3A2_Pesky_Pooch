@@ -1,6 +1,5 @@
 import React from 'react';
 import TestimonialsBox from '../components/TestimonialsBox';
-import '../styles/styles.scss'
 
 export const About  = () => (
   <React.Fragment>
@@ -12,7 +11,6 @@ export const About  = () => (
       </div>
     </container>
     <div>
-    <h2>Reviews</h2>
     <TestimonialsBox />
     </div>
   </React.Fragment>
