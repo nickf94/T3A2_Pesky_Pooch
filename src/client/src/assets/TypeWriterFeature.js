@@ -1,4 +1,4 @@
-export class TypeWriter {
+class TypeWriter {
   //A constructor is just a method that runs when the object is 'initialized/manifested/put-into-action/' by the a class(TypeWriter)
   constructor(txtElement, words, wait = 1500) {
     //txtElement is the html-span, 'words' will come from the data-words html attribute!

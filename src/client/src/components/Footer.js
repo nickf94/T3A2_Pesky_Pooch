@@ -4,10 +4,9 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <p>
-          ©2020 <b>Pesky Pooch</b> All rights reserved &nbsp;
-          <i className="fab fa-facebook" />
-        </p>
+        <p className="admin-login">Admin Login</p>
+        <p>©2020 <b>Pesky Pooch</b> All rights reserved</p>
+        <p className="social-icons"><i className="fab fa-facebook" /></p>
       </footer>
     );
   }
