@@ -9,7 +9,7 @@ const checkToken = (req, res, next) => {
       // Remove Bearer from string
       token = token.slice(7, token.length);
     }
-    jwt.verify(token, config.secretOrKey, (err, decoded) => {
+    jwt.verify(token, process.env.SECRETORKEY, (err, decoded) => {
       if (err) {
         return res.status(401).json({
           success: false,
