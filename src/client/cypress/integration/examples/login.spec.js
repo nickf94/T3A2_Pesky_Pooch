@@ -1,7 +1,7 @@
 describe("Test login", () => {
   it("Should go to the login page", () => {
     cy.viewport(1024, 768);
-    cy.visit(process.env.BASE_URL || "localhost:3000");
+    cy.visit(process.env.BASE_URL || "/");
     cy.contains("Login").click();
     cy.url().should("include", "/login")
   });
