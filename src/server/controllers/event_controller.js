@@ -10,11 +10,7 @@ getEvents = async (req, res) => {
 }
 
 updateEvent = async (req, res) => {
-  const event = await Event.findByIdAndUpdate(req.body._id, {
-    name: req.body.name,
-    description: req.body.description,
-    location: req.body.location
-  })
+  const event = await Event.findByIdAndUpdate(req.params.id, req.body)
   .then(res => res.send(event))
   .catch(err => {
     console.log(err)
