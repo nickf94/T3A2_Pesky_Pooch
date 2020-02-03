@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/navbar.scss'
+import logo from '../assets/pesky-pooch-icon.png';
 
 export default function NavigationBar() {
 
@@ -15,7 +16,7 @@ export default function NavigationBar() {
         <i class="fas fa-bars"></i>
       </label>
       <div className="logo">
-        <Link to="/" onClick={toggleClass}><label>Pesky Pooch</label></Link>
+        <Link to="/" onClick={toggleClass}><label>Pesky <img className="brand-logo" src={logo} alt="Logo"></img>Pooch</label></Link>
       </div>
     <ul>
         <Link to="/" onClick={toggleClass}><li>Home</li></Link>
