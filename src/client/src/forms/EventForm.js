@@ -20,7 +20,7 @@ export default class EventForm extends Component {
     // HEROKU APP URL: https://peskypoochapi.herokuapp.com
     let token = sessionStorage.getItem('token')
     console.log(token)
-    axios.post("http://localhost:7002/api/events/new", params, {
+    axios.post(`${process.env.BASE_URL}events/new`, params, {
     headers: {
     'Authorization': token
     }})

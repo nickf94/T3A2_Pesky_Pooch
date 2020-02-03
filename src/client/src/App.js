@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
 import Navigationbar from './components/Navigationbar'
 import Footer from './components/Footer'
+import './styles/global.scss'
 
 class App extends Component {
 
@@ -32,9 +33,7 @@ class App extends Component {
     return (
       <div className="page-wrapper">
         <Router>
-          <div>
-            <Navigationbar />
-          </div>
+          < Navigationbar />
           <Switch>
             <div className="content-wrapper">
               <Route exact path="/" component={Home} />

@@ -1,40 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import Axios from 'axios'
-import '../styles/styles.scss'
 import ServicesControlPanel from './ServicesControlPanel'
 
 export default function Services(props) {
-  const [services, setServices] = useState(null)
+  const [services, setServices] = useState(props.allServices)
 
-  const fetchServices = async () => {
-    await Axios.get('http://localhost:7002/api/services')
-    .then(res => setServices(res.data))
-    .catch(err => console.log(err))
-  }
-
-   useEffect(() => {
-    fetchServices()
+  useEffect(() => {
+    props.renderChanges()
   }, [])
 
   return (
     <>
-    { sessionStorage.getItem('token') ? < ServicesControlPanel services={services} updateServices={fetchServices}/> : (null)}
-      <div className="services-box">
-      { services ?
+    { sessionStorage.getItem('token') ? < ServicesControlPanel services={props.allServices} updateServices={props.renderChanges}/> : (null)}
+      <div className="services-container">
+      { props.allServices ?
         (
-        <div className="services-cards">
-          { services.map(service => {
-          return (
-          <div className="service-card" key={service._id}>
-            <p>{service.name}</p>
-            <p>{service.description}</p>
-            <p>{service.cost}</p>
+        <> 
+          <div className="services">
+            <p>All current services</p>
+            { props.allServices.map(service => {
+            return (
+            <div className="service-card" key={service._id}>
+              <h3>{service.name}</h3>
+              <p className="service-desc">{service.description}</p>
+              <p className="service-cost">{service.cost}</p>
+            </div>
+            )}) }
           </div>
-          )}) }
-        </div>
+        </>
         ):
         (
-        <p>No services</p>
+        <p>There are currently no regularly available services at Pesky Pooch right now, sorry!</p>
         ) }
       </div>
       </>

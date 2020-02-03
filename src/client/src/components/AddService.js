@@ -13,16 +13,17 @@ export default function AddService(props) {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let token = sessionStorage.getItem('token')
-    await axios.post("http://localhost:7002/api/services/new", serviceParams, {
+    await axios.post('services/new', serviceParams, {
     headers: {
     'Authorization': token
     }})
-    .then(res => console.log(res))
+    .then(res => {
+      props.refreshServices()
+    })
     .catch(err => console.log(err))
   }
 
   return (
-    
     <form id="service-form" onSubmit={handleSubmit}>
       <label>Create a new service tile!</label>
       <div className="form-group">

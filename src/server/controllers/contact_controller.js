@@ -13,6 +13,8 @@ createContact = async (req, res) => {
     message: req.body.message
   })
 
+  console.log(contact)
+
   await contact.save()
     .then(contact => res.status(201).send(contact))
     .catch(err => {

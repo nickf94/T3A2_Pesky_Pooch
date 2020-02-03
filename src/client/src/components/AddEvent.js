@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/eventcontrolpanel.scss'
 
-export default function AddEvent() {
+export default function AddEvent(props) {
   const [eventParams, setEventParams] = useState({name: '', description: '', location: ''})
 
   const formReducer = (event) => {
@@ -13,12 +13,13 @@ export default function AddEvent() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let token = sessionStorage.getItem('token')
-    await axios.post("http://localhost:7002/api/events/new", eventParams, {
+    await axios.post("/events/new", eventParams, {
     headers: {
     'Authorization': token
     }})
     .then(res => console.log(res))
     .catch(err => console.log(err))
+    props.updateServicesEvents()
   }
 
   return (

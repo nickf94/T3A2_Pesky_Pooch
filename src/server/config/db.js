@@ -13,7 +13,8 @@ const connectDB = async (environment) => {
       }`,
       {
         useNewUrlparser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify: false
       }
     )
     console.log('MongoDB Atlas is connected');

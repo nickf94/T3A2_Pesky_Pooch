@@ -10,8 +10,12 @@ getEvents = async (req, res) => {
 }
 
 updateEvent = async (req, res) => {
-  const event = await Event.findByIdAndUpdate(req.params.id, req.body)
-  .then(res => res.send(event))
+  const event = await Event.findByIdAndUpdate(req.body._id, {
+    name: req.body.name,
+    description: req.body.description,
+    location: req.body.location
+  })
+  .then(res => res.status(200))
   .catch(err => {
     console.log(err)
     res.status(500).json({ errors: "Unable to update event" })

@@ -27,7 +27,7 @@ loginUser = async (req, res) => {
         // Sign JWT token with long expiry date and attach current user
         jwt.sign(
           payload,
-          keys.secretOrKey,
+          process.env.SECRETORKEY,
           {
             expiresIn: 10000
           },

@@ -6,7 +6,7 @@ class LoginPage extends Component {
 
     return(
       <div>
-        <h1>Login a user</h1>
+        <h1 className="page-title">Login a user</h1>
         <LoginForm onLogin={this.props.onLogin} />
       </div>
     )
