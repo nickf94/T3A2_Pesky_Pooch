@@ -1,4 +1,8 @@
 import app from '../server'
+const authorize = require('../middleware/authorize')
+const multer = require('multer')
+const storage = multer.memoryStorage();
+const upload = multer({ storage })
 
 app.use('/api/events/new', authorize.checkToken)
 app.use('/api/events/update', authorize.checkToken)

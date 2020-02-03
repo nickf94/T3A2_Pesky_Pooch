@@ -37,6 +37,7 @@ newEvent = async (req, res) => {
     description: req.body.description,
     location: req.body.location
   })
+  
   await newEvent.save()
   .then(res.status(201).json(newEvent))
   .catch(err => {
