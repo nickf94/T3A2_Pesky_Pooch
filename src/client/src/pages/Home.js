@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import '../styles/home.scss'
 
 export const Home  = () => (
   <React.Fragment>
-    <div className="homepage">
+    <div className="bg-image">
       <div className="text-wrapper">
         <h1 className="page-title">Home</h1>
         <p>Who are we at Pesky Pooch?</p>

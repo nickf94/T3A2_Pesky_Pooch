@@ -1,0 +1,24 @@
+@import './colours.scss';
+
+$background-opacity: 0.25;
+
+
+.bg-image {
+    background-image: url(../assets/pesky_pooch_home_background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    height: 80vh;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba(#444, 0);
+    }
+}
