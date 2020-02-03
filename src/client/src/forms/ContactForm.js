@@ -39,7 +39,7 @@ constructor(props) {
       message
     }
 
-    axios.post("http://localhost:7002/api/contact/", params)
+    axios.post(`${process.env.BASE_URL}contact`, params)
     .then((res) => {
       console.log(res)
       document.getElementById("contact-submit").classList.toggle('successful')
@@ -55,9 +55,6 @@ constructor(props) {
     return(
       <container classname="form-container">
         <form className="contact-form" onSubmit={this.onFormSubmit}>
-
-          <label className="page-title">Send us a message</label>
-
           <fieldset>
             <label>Email:</label>
             <input type="text" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
