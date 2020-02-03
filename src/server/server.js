@@ -35,46 +35,6 @@ app.use('/api/services', require('./routes/api/services'))
 app.use('/api/testimonials', require('./routes/api/testimonials'))
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
-// Connect to mongo database
+// Need this for tests to connect to server
 
-mongoose.connect('',
-{
-  useNewUrlParser: true
-});
-
-mongoose.connection;
-
-// Handling cors errors
-
-app.use((req, res, next) => {
-
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', '*');
-
-  if(req.method === 'OPTIONS'){
-    res.headers('Access Control-Allow-Methods', 'POST, PUT, GET, DELTE');
-
-    return res.status(200).json({})
-  }
-
-  next();
-})
-
-// Error Handling
-
-app.use((req, res, next) => {
-  const error = new Error('Not found')
-  error.status = 404
-  next(error)
-})
-
-app.use((error, req, res, next) => {
-  res.status(error.sttus || 500)
-  res.json({
-    error: {
-      message: error.message
-    }
-  })
-})
-
-module.exports = app; // Need this for tests to connect to server
+module.exports = app
