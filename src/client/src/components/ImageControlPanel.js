@@ -6,19 +6,25 @@ export default function ImageControlPanel() {
   const [currentImage, setCurrentImage] = useState(null)
 
   const setImage = (e) => {
-    setCurrentImage(e.target.value)
-    console.log(typeof(currentImage))
+    setCurrentImage(e.target.files[0])
   }
 
   const handleUpload = (event) => {
     event.preventDefault()
-    axios.post("http://localhost:7002/imageUpload", {data: currentImage}).then(data => console.log(data))
+    let formData = new FormData();
+    formData.append('image', currentImage);
+    console.log(formData)
+    axios.post("http://localhost:7002/imageUpload", formData, {
+      headers: { 'content-type': 'multipart/form-data' },
+    })
+    .then(data => console.log(data))
   }
+
   return (
     <div>
       <h1>Hello, world!</h1>
-      <form onSubmit={event => handleUpload(event)}>
-        <input type="file" accept="image/png, image/jpeg" onInput={event => setImage(event)} />
+      <form onSubmit={event => handleUpload(event)} enctype="multipart/form-data">
+        <input name="image" type="file" accept="image/png, image/jpeg" onInput={event => setImage(event)} />
         <button>Upload</button>
       </form>
     </div>
