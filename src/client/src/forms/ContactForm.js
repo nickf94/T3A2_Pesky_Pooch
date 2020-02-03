@@ -53,21 +53,21 @@ constructor(props) {
   render() {
     return(
       <container classname="form-container">
-        <form className="contact-form" onSubmit={this.onFormSubmit}>
+        <form data-cy="contact-form" className="contact-form" onSubmit={this.onFormSubmit}>
           <fieldset>
             <label>Email:</label>
-            <input type="text" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+            <input data-cy="email" type="text" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
           </fieldset>
           <fieldset>
             <label>Title:</label>
-            <input type="text" value={this.state.title} onChange={this.onTitleChange.bind(this)} />
+            <input data-cy="title" type="text" value={this.state.title} onChange={this.onTitleChange.bind(this)} />
           </fieldset>
           <fieldset>
             <label>Message:</label>
-            <textarea value={this.state.message} onChange={this.onMessageChange.bind(this)} />
+            <textarea data-cy="text" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
           </fieldset>
 
-          <button type="submit" className="btn-primary" id="contact-submit">Submit</button>
+          <button data-cy="submit" type="submit" className="btn-primary" id="contact-submit">Submit</button>
 
         </form>
       </container>
