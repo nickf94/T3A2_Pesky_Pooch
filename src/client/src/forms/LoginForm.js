@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import '../styles/styles.scss'
 
 
 export default class loginForm extends Component {
@@ -49,7 +50,7 @@ export default class loginForm extends Component {
     return this.state.submit ? (
       <Redirect to="/" />
     ) : (
-      <form onSubmit={this.onFormSubmit}>
+      <form className="login-form" onSubmit={this.onFormSubmit}>
         <p>
           <label htmlFor="email">Email</label>
           <input
