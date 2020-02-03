@@ -17,8 +17,8 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 app.post("/imageUpload", (req, res) => {
-  console.log(req)
-  res.send(200)
+  console.log(req.body.data)
+  res.status(200)
 } )
 app.use('/api/events/new', authorize.checkToken)
 app.use('/api/events/update', authorize.checkToken)
