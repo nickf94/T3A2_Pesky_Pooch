@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import '../styles/styles.scss'
 
 export default class ContactForm extends Component {
   /* takes in props that passes conditions into a state */
@@ -39,7 +38,7 @@ constructor(props) {
       message
     }
 
-    axios.post("http://localhost:7002/api/contact/", params)
+    axios.post(`${process.env.BASE_URL}contact`, params)
     .then((res) => {
       console.log(res)
       document.getElementById("contact-submit").classList.toggle('successful')
@@ -53,22 +52,19 @@ constructor(props) {
 
   render() {
     return(
-      <container className="contactform">
+      <container classname="form-container">
         <form className="contact-form" onSubmit={this.onFormSubmit}>
-
-          <label>Send us a message</label>
-
-          <fieldset className="form-group">
+          <fieldset>
             <label>Email:</label>
-            <input type="email" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+            <input type="text" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
           </fieldset>
-          <fieldset className="form-group">
+          <fieldset>
             <label>Title:</label>
-            <input type="title" value={this.state.title} onChange={this.onTitleChange.bind(this)} />
+            <input type="text" value={this.state.title} onChange={this.onTitleChange.bind(this)} />
           </fieldset>
-          <fieldset className="form-group">
+          <fieldset>
             <label>Message:</label>
-            <textarea rows="3" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
+            <textarea value={this.state.message} onChange={this.onMessageChange.bind(this)} />
           </fieldset>
 
           <button type="submit" className="btn-primary" id="contact-submit">Submit</button>

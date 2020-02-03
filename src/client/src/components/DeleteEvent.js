@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import '../styles/eventcontrolpanel.scss'
 
-export default function DeleteEvent() {
+export default function DeleteEvent(props) {
   const [events, setEvents] = useState([])
   const [submit, setSubmit] = useState(false)
   const token = sessionStorage.getItem('token')
 
   const fetchEvents = async () => {
-    await axios.get("http://localhost:7002/api/events", {
+    await axios.get(`${process.env.BASE_URL}events`, {
       headers: {
         'Authorization': token
       }})
@@ -21,7 +21,7 @@ export default function DeleteEvent() {
 
   const handleSubmit = async (eventId) => {
     if (window.confirm("Are you sure you want to delete this event?")) {
-      await axios.delete("http://localhost:7002/api/events/delete", {
+      await axios.delete(`${process.env.BASE_URL}events/delete`, {
         headers: {
           'Authorization': token,
           "eventId": eventId
@@ -31,6 +31,7 @@ export default function DeleteEvent() {
         console.log('Successfully submitted delete event request')
       })
       .catch(err => console.log(err))
+      props.updateServicesEvents()
     }
   }
 

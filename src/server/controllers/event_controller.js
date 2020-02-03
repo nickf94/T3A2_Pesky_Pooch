@@ -15,7 +15,7 @@ updateEvent = async (req, res) => {
     description: req.body.description,
     location: req.body.location
   })
-  .then(res => res.send(event))
+  .then(res => res.status(200))
   .catch(err => {
     console.log(err)
     res.status(500).json({ errors: "Unable to update event" })
