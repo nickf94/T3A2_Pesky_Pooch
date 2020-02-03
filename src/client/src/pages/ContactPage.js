@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ContactForm from '../forms/ContactForm'
-import '../styles/global.scss'
 
 class ContactPage extends Component {
   render() {
