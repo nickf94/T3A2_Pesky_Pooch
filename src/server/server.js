@@ -11,10 +11,15 @@ const environment = process.argv[2] || "TEST"
 const morgan = require('morgan')
 const authorize = require('./middleware/authorize')
 connectDB(environment)
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(morgan('dev'))
 
+app.post("/imageUpload", (req, res) => {
+  console.log(req)
+  res.send(200)
+} )
 app.use('/api/events/new', authorize.checkToken)
 app.use('/api/events/update', authorize.checkToken)
 app.use('/api/events/delete', authorize.checkToken)

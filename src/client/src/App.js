@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage'
 import Navigationbar from './components/Navigationbar'
 import Footer from './components/Footer'
 import './styles/global.scss'
+import ImageControlPanel from './components/ImageControlPanel'
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
 
     return (
       <div className="page-wrapper">
+        <ImageControlPanel />
         <Router>
           < Navigationbar />
           <Switch>
