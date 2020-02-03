@@ -1,4 +1,5 @@
 const Event = require('../database/models/event_model')
+const cloudinaryUpload = require('../middleware/cloudinaryUpload')
 
 getEvents = async (req, res) => {
   const events = await Event.find()
@@ -37,7 +38,11 @@ newEvent = async (req, res) => {
     description: req.body.description,
     location: req.body.location
   })
-  
+
+  if (req.file) {
+    newEvent.thumbnail = await cloudinaryUpload(req.file)
+  }
+
   await newEvent.save()
   .then(res.status(201).json(newEvent))
   .catch(err => {
