@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 export default function AddService(props) {
-  
+
   const [serviceParams, setServiceParams] = useState({name: '', description: '', cost: ''})
-  
+
   const formReducer = (event) => {
     let newParams = {...serviceParams, [event.target.name]: event.target.value}
     setServiceParams(newParams)

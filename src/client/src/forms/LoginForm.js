@@ -51,9 +51,6 @@ export default class loginForm extends Component {
     return this.state.submit ? (
       <Redirect to="/" />
     ) : (
-      <form className="login-form" onSubmit={this.onFormSubmit}>
-        <p>
-          <label htmlFor="email">Email</label>
       <container className="form-container">
       <form onSubmit={this.onFormSubmit} className="login-form">
         <fieldset>
