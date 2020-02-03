@@ -8,7 +8,7 @@ export default function DeleteEvent(props) {
   const token = sessionStorage.getItem('token')
 
   const fetchEvents = async () => {
-    await axios.get("http://localhost:7002/api/events", {
+    await axios.get(`${process.env.BASE_URL}events`, {
       headers: {
         'Authorization': token
       }})
@@ -21,7 +21,7 @@ export default function DeleteEvent(props) {
 
   const handleSubmit = async (eventId) => {
     if (window.confirm("Are you sure you want to delete this event?")) {
-      await axios.delete("http://localhost:7002/api/events/delete", {
+      await axios.delete(`${process.env.BASE_URL}events/delete`, {
         headers: {
           'Authorization': token,
           "eventId": eventId

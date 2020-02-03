@@ -32,6 +32,13 @@
   align-items: center;
   height: 5rem;
   background: $babyblue;
+
+  p {
+    background: rgb(60, 55, 68);
+    border-radius: 0.5rem;
+    color: $ceramic;
+    padding: 1rem;
+  }
 }
 
 .services-container {
@@ -58,10 +65,51 @@
       text-align: center;
       padding: 0.5rem;
       background: $babyblue;
+      border: 0.25rem solid $otherblue;
+      border-radius: 0.5rem;
 
-      p {
+      * {
         padding: 1rem;
+        border-bottom: 0.25rem solid $otherblue;
       }
+
+      .service-desc {
+        font-size: 1rem
+      }
+
+      .service-cost {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.events {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+
+  .event-card {
+    text-align: center;
+    padding: 0.5rem;
+    background: $babyblue;
+    border: 0.25rem solid $otherblue;
+    border-radius: 0.5rem;
+    width: 45%;
+
+    * {
+      padding: 1rem;
+      border-bottom: 0.25rem solid $otherblue;
+    }
+
+    .event-desc {
+      font-size: 1rem
+    }
+
+    .event-loc {
+      font-size: 2rem;
     }
   }
 }
@@ -70,6 +118,7 @@
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2rem;
+  color: rgb(255, 255, 255);
 }
 
 .event-buttons {
@@ -105,11 +154,48 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $babyblue;
+  padding: 1rem;
 
   button {
     padding: 1rem;
     margin: 0.25rem;
     border-radius: 0.25rem;
+  }
+
+  .login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    fieldset {
+      width: 50%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      border: none;
+
+      * {
+        margin: auto;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+      }
+
+      label {
+        width: 50%;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      input {
+        width: 80%;
+        padding: 0.5rem 0;
+      }
+    }
   }
 
   .contact-form {
@@ -142,6 +228,7 @@
 
       input {
         width: 80%;
+        padding: 0.5rem 0;
       }
 
       textarea {
@@ -180,11 +267,16 @@
     * {
       font-size: 1.5rem;
     }
-    
+
     &:last-of-type {
       border-bottom: 0.25rem solid $tarmac;
     }
   }
+}
+
+.services-text {
+  width: 100%;
+  border: 1px solid red;
 }
 
 .text-wrapper {
@@ -195,4 +287,32 @@
   * {
     margin-bottom: 0.5rem;
   }
+}
+
+@media only screen and (max-width: 952px) {
+  .form-container {
+    .login-form {
+      width: 100%;
+
+      fieldset {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        label {
+          width: stretch;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        input {
+          width: stretch;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+  
 }

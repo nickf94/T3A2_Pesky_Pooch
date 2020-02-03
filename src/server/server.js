@@ -15,7 +15,6 @@ const morgan = require('morgan')
 const authorize = require('./middleware/authorize')
 connectDB(environment)
 
-
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(morgan('dev'))

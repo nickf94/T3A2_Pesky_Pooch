@@ -45,32 +45,36 @@ export default class loginForm extends Component {
 
   /* form for the login screen */
   render() {
+    
     const { email, password } = this.state;
     return this.state.submit ? (
       <Redirect to="/" />
     ) : (
-      <form onSubmit={this.onFormSubmit}>
-        <p>
-          <label htmlFor="email">Email</label>
+      <container className="form-container">
+      <form onSubmit={this.onFormSubmit} className="login-form">
+        <fieldset>
+          <label name="email">Email</label>
           <input
             type="email"
             value={email}
             onChange={event => this.onInputChange("email", event)}
           />
-        </p>
-        <p>
-          <label htmlFor="email">Password</label>
+        </fieldset>
+        <fieldset>
+          <label name="password">Password</label>
           <input
             type="password"
             value={password}
             onChange={event => this.onInputChange("password", event)}
           />
-        </p>
-        <p>
-          <input type="submit" value="Login user" />
-          <input type="submit" value="logout user" onChange={this.handleRemove} />
-        </p>
+        </fieldset>
+        <fieldset>
+          { (sessionStorage.getItem('token')) ? 
+          (<input type="submit" value="logout user" onChange={this.handleRemove} />):
+          (<input type="submit" value="Login user" />)}
+        </fieldset>
      </form>
+     </container>
    );
   }
 }

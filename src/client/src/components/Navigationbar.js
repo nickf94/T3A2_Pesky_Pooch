@@ -15,7 +15,7 @@ export default function NavigationBar() {
         <i class="fas fa-bars"></i>
       </label>
       <div className="logo">
-        <label>Pesky Pooch</label>
+        <Link to="/" onClick={toggleClass}><label>Pesky Pooch</label></Link>
       </div>
     <ul>
         <Link to="/" onClick={toggleClass}><li>Home</li></Link>
