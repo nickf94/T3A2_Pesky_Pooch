@@ -10,7 +10,7 @@ export default function NavigationBar() {
 
   return(
     <nav>
-      <input type="checkbox" id="check"></input>
+      <input className="nav" type="checkbox" id="check"></input>
       <label for="check" className="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
@@ -21,7 +21,7 @@ export default function NavigationBar() {
         <Link to="/" onClick={toggleClass}><li>Home</li></Link>
         <Link to="/about" onClick={toggleClass}><li>About</li></Link>
         <Link to="/services" onClick={toggleClass}><li>Services</li></Link>
-        <Link to="/contact"onClick={toggleClass}><li>Contact</li></Link>
+        <Link to="/contact"data-cy="contact" onClick={toggleClass}><li>Contact</li></Link>
         <Link to="/login" data-cy="login"onClick={toggleClass}><li>Login</li></Link>
       </ul>
     </nav>
