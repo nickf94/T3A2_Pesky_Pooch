@@ -23,6 +23,7 @@ export default function AddEvent(props) {
     let token = sessionStorage.getItem('token')
     console.log(formRef.current)
     let formData = new FormData(formRef.current)
+    console.log(formData.description)
     await axios.post("/events/new", formData, {
       headers: {
       'Authorization': token
@@ -38,11 +39,11 @@ export default function AddEvent(props) {
        {console.log(eventParams)}
       <div className="form-group">
         <label name="name">Name:</label>
-        <input type="name" value={eventParams.name} onChange={(e) => formReducer(e)} name="name" />
+        <input type="text" value={eventParams.name} onChange={(e) => formReducer(e)} name="name" />
       </div>
       <div className="form-group">
         <label name="location">Location:</label>
-        <input type="location" value={eventParams.location} onChange={(e) => formReducer(e)} name="location"/>
+        <input type="text" value={eventParams.location} onChange={(e) => formReducer(e)} name="location"/>
       </div>
       <div className="form-group">
         <label name="description">Description:</label>

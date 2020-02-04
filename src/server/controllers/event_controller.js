@@ -44,31 +44,23 @@ newEvent = async (req, res) => {
      then it will have been processed by Multer and is now available in req.file  */
 
   if (req.file) {
+    console.log(req.file)
     // If this file exists, handle it
     // First, using dataUri, parse the stream into a file and use this file content
-    const file = dataUri(req).content;
+    const file = dataUri(req).content
     // Then, this is uploaded using the previously retrieved and configured cloudinary upload method
     await uploader.upload(file).then((result) => {
       /* If successful, a URL will be returned and a new thumbnail field is 
       attached to the Event model for saving */
       const image = result.url
       newEvent.thumbnail = image
-  }).catch((err) => res.status(400).json({
-    /* If unsuccessful, an error will be returned, which is 
-    logged and returned to the client with an error message */
-    message: 'Something went wrong while processing your request!',
-    data: {
-      err
-    }
-    }))
+    }).catch(err => console.log(err))
   }
-
   /* At this point, the event can be saved as it has been set */
   await newEvent.save()
   .then((event) => {
     // If successful, return the event to the client
-    res.status(201).json(newEvent)
-    console.log(event)
+    res.status(201).json(event)
   })
   .catch(err => {
     // If unsuccessful, console log and return the error to the client

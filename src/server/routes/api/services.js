@@ -7,7 +7,7 @@ const upload = multer({ storage })
 
 router.get('/test', (req, res) => res.send('Test Services API route'))
 router.get('/', servicesController.getServices)
-router.post('/new', upload.single('image'), servicesController.newService)
+router.post('/new', servicesController.newService)
 router.put('/edit', servicesController.editService)
 router.delete('/delete', servicesController.deleteService)
 module.exports = router

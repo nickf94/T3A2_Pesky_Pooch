@@ -22,8 +22,10 @@ app.use(express.json({
 app.use(morgan('dev'))
 
 app.use(express.static(path.resolve(__dirname, 'src/public')));
-app.use('*', cloudinaryConfig);
-app.get('/*', (req, res) => res.sendFile(path.resolve(__dirname, '../public/index.html')));
+app.use('/', cloudinaryConfig);
+app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, '../client/public/index.html')));
+// app.get('/api/events/new', (req, res) => res.sendFile(path.resolve(__dirname, '../public/index.html')));
+// app.get('/api/services/new', (req, res) => res.sendFile(path.resolve(__dirname, '../public/index.html')))
 
 app.use('/api/events/new', authorize.checkToken, multerUploads)
 app.use('/api/events/update', authorize.checkToken)
