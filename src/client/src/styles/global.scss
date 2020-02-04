@@ -23,6 +23,7 @@
 .content-wrapper {
   min-height: 74vh;
   background: $ceramic;
+
 }
 
 .footer {
@@ -208,7 +209,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    
+
     fieldset {
       width: 75%;
       margin: auto;
@@ -261,14 +262,14 @@
     text-align: center;
     margin: 1rem;
   }
-  
+
   .review-card {
     width: 90%;
     border: 0.25rem solid $tarmac;
     border-bottom: none;
     padding: 1rem;
     text-align: center;
-    
+
     * {
       font-size: 1.5rem;
     }
@@ -294,4 +295,32 @@
   }
 }
 
+
+
+@media only screen and (max-width: 952px) {
+  .form-container {
+    .login-form {
+      width: 100%;
+
+      fieldset {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        label {
+          width: stretch;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        input {
+          width: stretch;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
 @import './mobile.scss';
