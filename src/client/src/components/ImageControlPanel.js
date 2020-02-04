@@ -6,7 +6,7 @@ export default function ImageControlPanel(props) {
   const [currentImage, setCurrentImage] = useState(null)
 
   const setImage = (e) => {
-    // setCurrentImage(e.target.files[0])
+    setCurrentImage(e.target.files[0])
     props.setThumbnail(e.target.files[0])
   }
 

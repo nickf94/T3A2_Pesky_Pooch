@@ -5,12 +5,11 @@ const multer = require('multer')
 const storage = multer.memoryStorage();
 const upload = multer({ storage })
 
-
 router.get('/test', (req, res) => res.send('Test Event API route'))
 router.get('/', eventController.getEvents)
 router.delete('/delete', eventController.deleteEvent)
 router.put('/update', eventController.updateEvent)
 
-router.post('/new', upload.single('image'), eventController.newEvent)
+router.post('/new', eventController.newEvent)
 
 module.exports = router

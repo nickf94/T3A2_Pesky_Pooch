@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import '../styles/eventcontrolpanel.scss'
 import ImageControlPanel from './ImageControlPanel'
-
 
 export default function AddEvent(props) {
   const [eventParams, setEventParams] = useState({name: '', description: '', location: '', thumbnail: null})
@@ -17,15 +16,13 @@ export default function AddEvent(props) {
     setEventParams(newParams)
   }
 
+  const formRef = useRef(null)
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     let token = sessionStorage.getItem('token')
-    let formData = new FormData();
-    if (eventParams.thumbnail) {
-      formData.append('image', eventParams.thumbnail);
-      formData.append('params', eventParams)
-    }
-    console.log(formData)
+    console.log(formRef.current)
+    let formData = new FormData(formRef.current)
     await axios.post("/events/new", formData, {
       headers: {
       'Authorization': token
@@ -37,7 +34,7 @@ export default function AddEvent(props) {
   }
 
   return (
-     <form id="event-form" onSubmit={handleSubmit}>
+     <form ref={formRef} id="event-form" onSubmit={handleSubmit}>
        {console.log(eventParams)}
       <div className="form-group">
         <label name="name">Name:</label>

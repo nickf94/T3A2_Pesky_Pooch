@@ -1,5 +1,23 @@
 const Event = require('../database/models/event_model')
-const cloudinaryUpload = require('../middleware/cloudinaryUpload')
+const { uploader, cloudinaryConfig } = require('./cloudinaryConfig')
+const { multerUploads, dataUri } = require('./multerStuff')
+
+// const parseImage = (file) => dUri.format(path.extname(file.originalname).toString(), file.buffer)
+
+// const cloudUpload = require('../middleware/cloudinaryUpload')
+
+// import { config, uploader } from 'cloudinary'
+// const cloudinaryConfig = (req, res, next) => {
+//   config({
+//       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//       api_key: process.env.CLOUDINARY_API_KEY,
+//       api_secret: process.env.CLOUDINARY_API_SECRET,
+//     });
+//   next();
+// }
+
+
+
 
 getEvents = async (req, res) => {
   const events = await Event.find()
@@ -38,10 +56,18 @@ newEvent = async (req, res) => {
     description: req.body.description,
     location: req.body.location
   })
-  const uniqId = newEvent._id
 
   if (req.file) {
-    await cloudinaryUpload(req.file)
+    const file = dataUri(req).content;
+    await uploader.upload(file).then((result) => {
+      const image = result.url
+      newEvent.thumbnail = image
+  }).catch((err) => res.status(400).json({
+    message: 'something went wrong while processing your request',
+    data: {
+      err
+    }
+    }))
   }
 
   await newEvent.save()
@@ -49,7 +75,6 @@ newEvent = async (req, res) => {
     res.status(201).json(newEvent)
     console.log(event)
   })
-  // .then(console.log(Event.findById()))
   .catch(err => {
     console.log(err)
     res.status(500).json({ errors: "Could not save new event to MongoDB" })  
