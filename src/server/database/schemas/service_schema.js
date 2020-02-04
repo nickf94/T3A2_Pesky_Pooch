@@ -13,6 +13,9 @@ const ServiceSchema = new Schema({
   cost: {
     type: Number,
     required: true
+  },
+  thumbnail: {
+    type: String
   }
 })
 

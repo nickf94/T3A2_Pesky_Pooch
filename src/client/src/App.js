@@ -33,16 +33,16 @@ class App extends Component {
     return (
       <div className="page-wrapper">
         <Router>
-          < Navigationbar />
+          <Navigationbar />
           <Switch>
             <div className="content-wrapper">
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/services">
-                < ServicesPage user={this.state.user} />
+                <ServicesPage user={this.state.user} />
               </Route>
-              <Route exact path="/contact" >
-              < ContactPage user={this.state.user} />
+              <Route exact path="/contact">
+                <ContactPage user={this.state.user} />
               </Route>
               <Route exact path="/login">
                 <LoginPage onLogin={this.onLogin} />
@@ -52,7 +52,7 @@ class App extends Component {
         </Router>
         <Footer />
       </div>
-    )
+    );
   }
 }
 

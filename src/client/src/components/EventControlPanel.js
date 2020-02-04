@@ -4,6 +4,7 @@ import EditEvent from './EditEvent'
 import AddEvent from './AddEvent'
 import DeleteEvent from './DeleteEvent'
 import '../styles/eventcontrolpanel.scss'
+import ImageControlPanel from './ImageControlPanel';
 
 export default function EventControlPanel(props) {
   const [eventTypes, setEventTypes] = useState({add: false, edit: false, delete: false})
@@ -30,7 +31,6 @@ export default function EventControlPanel(props) {
   return (
     <>
       <p className="admin-banner">You have been authorized as an admin.</p>
-
       < EventOptionSelector
         setProperType={setProperType}
       />

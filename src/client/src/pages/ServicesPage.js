@@ -57,6 +57,7 @@ export default function ServicesPage(props) {
             <h3>{event.name}</h3>
             <p className="event-desc">{event.description}</p>
             <p className="event-loc">{event.location}</p>
+            { event.thumbnail ? (<img className="thumbnail" width="100px" src={event.thumbnail}></img>) : (null)}
           </div>
           )
         })) : (<p>No current events</p>)}

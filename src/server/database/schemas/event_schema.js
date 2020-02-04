@@ -13,6 +13,9 @@ const EventSchema = new Schema({
   location: {
     type: String,
     required: true
+  },
+  thumbnail: {
+    type: String
   }
 })
 

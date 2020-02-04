@@ -1,0 +1,69 @@
+// -------- Media Queries ------- //
+
+// -- Mobile Phones -- /
+@media screen and (max-width: 500px) {
+  // global_styles
+  .content-wrapper {
+    min-height: 100vh;
+  }
+  // about_page
+  main {
+    padding: 2rem;
+  }
+  .about-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+// -- Tablets & Small Laptops -- //
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-info {
+    grid-template-areas:
+      "about-block1"
+      "about-block2"
+      "about-block3";
+    grid-template-columns: 1fr;
+  }
+}
+
+// -- InBetween Size For Full coverage -- //
+@media only screen and (max-width: 952px) {
+  // login-form
+  .form-container {
+    .login-form {
+      width: 100%;
+
+      fieldset {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        label {
+          width: stretch;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        input {
+          width: stretch;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+
+// -- Desktops & Laptops -- //
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+}
+
+// -- Widescreens -- /
+@media screen and (min-width: 1171px) {
+}

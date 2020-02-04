@@ -51,10 +51,11 @@ export default class loginForm extends Component {
       <Redirect to="/" />
     ) : (
       <container className="form-container">
-      <form onSubmit={this.onFormSubmit} className="login-form">
+      <form data-cy="login-form" onSubmit={this.onFormSubmit} className="login-form">
         <fieldset>
           <label name="email">Email</label>
           <input
+            data-cy="email"
             type="email"
             value={email}
             onChange={event => this.onInputChange("email", event)}
@@ -63,6 +64,7 @@ export default class loginForm extends Component {
         <fieldset>
           <label name="password">Password</label>
           <input
+            data-cy="password"
             type="password"
             value={password}
             onChange={event => this.onInputChange("password", event)}
@@ -70,8 +72,8 @@ export default class loginForm extends Component {
         </fieldset>
         <fieldset>
           { (sessionStorage.getItem('token')) ?
-          (<input type="submit" value="logout user" onChange={this.handleRemove} />):
-          (<input type="submit" value="Login user" />)}
+          (<input data-cy="logoutbutton" type="submit" value="logout user" onChange={this.handleRemove} />):
+          (<input data-cy="loginbutton" type="submit" value="Login user" />)}
         </fieldset>
      </form>
      </container>
