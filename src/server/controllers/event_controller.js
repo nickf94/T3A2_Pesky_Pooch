@@ -2,23 +2,6 @@ const Event = require('../database/models/event_model')
 const { uploader, cloudinaryConfig } = require('./cloudinaryConfig')
 const { multerUploads, dataUri } = require('./multerStuff')
 
-// const parseImage = (file) => dUri.format(path.extname(file.originalname).toString(), file.buffer)
-
-// const cloudUpload = require('../middleware/cloudinaryUpload')
-
-// import { config, uploader } from 'cloudinary'
-// const cloudinaryConfig = (req, res, next) => {
-//   config({
-//       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-//       api_key: process.env.CLOUDINARY_API_KEY,
-//       api_secret: process.env.CLOUDINARY_API_SECRET,
-//     });
-//   next();
-// }
-
-
-
-
 getEvents = async (req, res) => {
   const events = await Event.find()
   if (events) {
@@ -57,25 +40,38 @@ newEvent = async (req, res) => {
     location: req.body.location
   })
 
+  /* Having been passed through Multer middleware, if a file was present in the request,
+     then it will have been processed by Multer and is now available in req.file  */
+
   if (req.file) {
+    // If this file exists, handle it
+    // First, using dataUri, parse the stream into a file and use this file content
     const file = dataUri(req).content;
+    // Then, this is uploaded using the previously retrieved and configured cloudinary upload method
     await uploader.upload(file).then((result) => {
+      /* If successful, a URL will be returned and a new thumbnail field is 
+      attached to the Event model for saving */
       const image = result.url
       newEvent.thumbnail = image
   }).catch((err) => res.status(400).json({
-    message: 'something went wrong while processing your request',
+    /* If unsuccessful, an error will be returned, which is 
+    logged and returned to the client with an error message */
+    message: 'Something went wrong while processing your request!',
     data: {
       err
     }
     }))
   }
 
+  /* At this point, the event can be saved as it has been set */
   await newEvent.save()
   .then((event) => {
+    // If successful, return the event to the client
     res.status(201).json(newEvent)
     console.log(event)
   })
   .catch(err => {
+    // If unsuccessful, console log and return the error to the client
     console.log(err)
     res.status(500).json({ errors: "Could not save new event to MongoDB" })  
   }) 
