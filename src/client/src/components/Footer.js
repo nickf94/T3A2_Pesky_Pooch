@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 export default class Footer extends Component {
   render() {
-    return(
+    return (
       <footer className="footer">
-          <p>Copyright Pesky Pooch ©2020</p>
-          <i className="fab fa-facebook" />
+        <p className="admin-login">Admin Login</p>
+        <p>©2020 <b>Pesky Pooch</b> Training Ltd.</p>
+        <p className="social-icons"><i className="fab fa-facebook" /></p>
       </footer>
-    )
+    );
   }
 }
