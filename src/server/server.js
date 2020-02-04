@@ -5,7 +5,7 @@ const upload = multer({ storage })
 const express = require('express')
 const connectDB = require('./config/db')
 const cors = require('cors')
-require('dotenv').config()
+
 const app = express()
 const passport = require("passport");
 const morgan = require('morgan')
@@ -21,7 +21,11 @@ app.use(express.urlencoded({
 app.use(express.json({
   limit: '50mb'
 }))
+
 app.use(morgan('dev'))
+
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
-module.exports = app; // Need this for tests to connect to server
+// Need this for tests to connect to server
+
+module.exports = app
