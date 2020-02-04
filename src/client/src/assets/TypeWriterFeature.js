@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from 'react'
+
 class TypeWriter {
   //A constructor is just a method that runs when the object is 'initialized/manifested/put-into-action/' by the a class(TypeWriter)
-  constructor(txtElement, words, wait = 1500) {
+  constructor(txtElement, words, wait = 1000) {
     //txtElement is the html-span, 'words' will come from the data-words html attribute!
     this.txtElement = txtElement;
     this.words = words;
@@ -75,17 +77,18 @@ class TypeWriter {
   }
 }
 
-// Init On DOM Load!! || initializes my typewriter effect!
-document.addEventListener("DOMContentLoaded", init);
+export default function TypeWriterFeature(props) {
+  useEffect(() => {
+    // Initialise/update the TypeWriter on each render
+    const txtElement = document.querySelector(".txt-type");
+    // i need to "parse" my html text with the JSON method so that it is actually treated as an array and not just a string!!
+    const words = JSON.parse(txtElement.getAttribute("data-words")); //gets my txtElement(text written in html) that is wrapped inside of my data-words custom attribute that i specified!!
+    const wait = txtElement.getAttribute("data-wait");
+    // INITIALIZE THE TYPEWRITER
+    new TypeWriter(txtElement, words, wait);
+  }, [])
 
-//-------------------------------------------------------------------------------------------------
-// Init the effect/function
-function init() {
-  const txtElement = document.querySelector(".txt-type");
-  // i need to "parse" my html text with the JSON method so that it is actually treated as an array and not just a string!!
-  const words = JSON.parse(txtElement.getAttribute("data-words")); //gets my txtElement(text written in html) that is wrapped inside of my data-words custom attribute that i specified!!
-  const wait = txtElement.getAttribute("data-wait");
-
-  // INITIALIZE THE TYPEWRITER
-  new TypeWriter(txtElement, words, wait);
+  return (
+    null
+  )
 }
