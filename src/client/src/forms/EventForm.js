@@ -45,26 +45,26 @@ export default class EventForm extends Component {
 
   render() {
     return(
-      <form id="event-form" onSubmit={this.onFormSubmit}>
+      <form data-cy="event-form" id="event-form" onSubmit={this.onFormSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <div>
-            <input type="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
+            <input data-cy="name" type="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
           </div>
       </div>
         <div className="form-group">
           <label htmlFor="location">Location:</label>
           <div>
-            <input type="location" value={this.state.location} onChange={this.onLocationChange.bind(this)} />
+            <input data-cy="location" type="location" value={this.state.location} onChange={this.onLocationChange.bind(this)} />
           </div>
       </div>
         <div className="form-group">
           <label htmlfor="description">Description:</label>
           <div>
-            <textarea value={this.state.description} onChange={this.onDescriptionChange.bind(this)} />
+            <textarea data-cy="text" value={this.state.description} onChange={this.onDescriptionChange.bind(this)} />
           </div>
         </div>
-          <button type="submit" className="btn-primary">Submit</button>
+          <button data-cy="submit" type="submit" className="btn-primary">Submit</button>
       </form>
     );
   }
