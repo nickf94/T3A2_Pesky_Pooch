@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import EventControlPanel from '../components/EventControlPanel';
 import Services from '../components/Services';
 import Axios from 'axios'
+import '../styles/services.scss'
 
 export default function ServicesPage(props) {
   const [services, setServices] = useState([])
@@ -51,14 +52,17 @@ export default function ServicesPage(props) {
         }  
         
         <div className="events">
+          <h2>All regular Pesky Pooch events</h2>
           { (events.length >= 1) ? (events.map(event => {
           return (
-          <div className="event-card">
-            <h3>{event.name}</h3>
-            <p className="event-desc">{event.description}</p>
-            <p className="event-loc">{event.location}</p>
-            { event.thumbnail ? (<img className="thumbnail" width="100px" src={event.thumbnail}></img>) : (null)}
-          </div>
+          <>   
+            <div className="event-card">
+              <h3>{event.name}</h3>
+              <p className="event-desc">{event.description}</p>
+              <p className="event-loc">{event.location}</p>
+              { event.thumbnail ? (<img className="thumbnail" src={event.thumbnail}></img>) : (null)}
+            </div>
+          </>
           )
         })) : (<p>No current events</p>)}
         </div>
