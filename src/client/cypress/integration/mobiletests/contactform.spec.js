@@ -2,7 +2,7 @@ let fixtures = {};
 
 beforeEach(() => {
   cy.viewport(550, 750);
-  cy.get('ul').find('li')
+  cy.get('ul').children('.a').contains("Home").click();
   cy.visit("/");
   cy.contains("Home").click();
   cy.fixture("contact.json").then((message) => {

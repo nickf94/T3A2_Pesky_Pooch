@@ -29,5 +29,6 @@ describe("Test contact form", () => {
     cy.get("[data-cy=title]").type(fixtures.contact.title);
     cy.get("[data-cy=text]").type(fixtures.contact.text);
     cy.get("[data-cy=submit]").click();
+    cy.submit();
   })
 });

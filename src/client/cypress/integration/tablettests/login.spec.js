@@ -28,5 +28,6 @@ describe("Test login", () => {
     cy.get("[data-cy=email]").type(fixtures.registeredUser.email);
     cy.get("[data-cy=password]").type(fixtures.registeredUser.password);
     cy.get("[data-cy=loginbutton]").click();
+    cy.submit();
   });
 });
