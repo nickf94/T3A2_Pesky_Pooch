@@ -11,7 +11,7 @@ export default function NavigationBar() {
   return(
     <nav>
       <input type="checkbox" id="check"></input>
-      <label for="check" className="checkbtn">
+      <label data-cy="burger-btn" for="check" className="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
       <div className="logo">
