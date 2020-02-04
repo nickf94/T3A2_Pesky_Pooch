@@ -31,7 +31,6 @@ export default function EventControlPanel(props) {
   return (
     <>
       <p className="admin-banner">You have been authorized as an admin.</p>
-      < ImageControlPanel />
       < EventOptionSelector
         setProperType={setProperType}
       />
