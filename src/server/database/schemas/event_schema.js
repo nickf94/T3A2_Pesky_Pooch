@@ -15,7 +15,7 @@ const EventSchema = new Schema({
     required: true
   },
   thumbnail: {
-    type: String,
+    type: String
   }
 })
 

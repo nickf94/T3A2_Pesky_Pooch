@@ -38,13 +38,18 @@ newEvent = async (req, res) => {
     description: req.body.description,
     location: req.body.location
   })
+  const uniqId = newEvent._id
 
   if (req.file) {
-    newEvent.thumbnail = await cloudinaryUpload(req.file)
+    await cloudinaryUpload(req.file)
   }
 
   await newEvent.save()
-  .then(res.status(201).json(newEvent))
+  .then((event) => {
+    res.status(201).json(newEvent)
+    console.log(event)
+  })
+  // .then(console.log(Event.findById()))
   .catch(err => {
     console.log(err)
     res.status(500).json({ errors: "Could not save new event to MongoDB" })  
