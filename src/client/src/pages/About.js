@@ -46,9 +46,9 @@ export const About = () => (
         </div>
 
         <div>
-          <TestimonialsBox />
         </div>
       </div>
     </main>
+    < TestimonialsBox />
   </React.Fragment>
 );
