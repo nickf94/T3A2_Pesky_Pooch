@@ -1,0 +1,47 @@
+@import './colours.scss';
+
+.services-box {
+  background-color: $babyblue;
+
+  .services-cards {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .service-card {
+      min-width: 50%;
+      text-align: center;
+    }
+  }
+}
+
+.events {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  h2 {
+    width: 100%;
+    padding: 1rem;
+    background-color: $plum;
+    color: $ceramic;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .event-card {
+    max-width: 50%;
+    min-width: 25%;
+    height: fit-content;
+  }
+}
+
+.thumbnail {
+  height: 20vh;
+  width: auto;
+}

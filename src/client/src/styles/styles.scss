@@ -63,6 +63,7 @@ a.active, a:hover {
   display: none;
 }
 
+
 @media (max-width: 952px){
   label.logo {
     font-size: 30px;
@@ -176,22 +177,5 @@ a.active, a:hover {
 
   i {
     font-size: 2rem;
-  }
-}
-
-.services-box {
-  background-color: $babyblue;
-}
-
-.services-cards {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  .service-card {
-    min-width: 50%;
-    text-align: center;
   }
 }
