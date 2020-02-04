@@ -10,17 +10,6 @@ export default function ImageControlPanel(props) {
     props.setThumbnail(e.target.files[0])
   }
 
-  // const handleUpload = (event) => {
-  //   event.preventDefault()
-  //   let formData = new FormData();
-  //   formData.append('image', currentImage);
-  //   console.log(formData)
-  //   axios.post("http://localhost:7002/imageUpload", formData, {
-  //     headers: { 'content-type': 'multipart/form-data' },
-  //   })
-  //   .then(data => console.log(data))
-  // }
-
   return (
     <>
       <input name="image" type="file" accept="image/png, image/jpeg" onInput={event => setImage(event)} />
