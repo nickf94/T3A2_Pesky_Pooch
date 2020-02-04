@@ -19,6 +19,7 @@ app.use(express.urlencoded({
 app.use(express.json({
   limit: '50mb'
 }))
+
 app.use(morgan('dev'))
 
 app.use(express.static(path.resolve(__dirname, 'src/public')));
@@ -44,4 +45,6 @@ app.use('/api/testimonials', require('./routes/api/testimonials'))
 
 app.listen(port, () => console.log(`Server running on port ${port}`))
 
-module.exports = app; // Need this for tests to connect to server
+// Need this for tests to connect to server
+
+module.exports = app

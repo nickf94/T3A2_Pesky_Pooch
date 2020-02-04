@@ -8,7 +8,7 @@ const upload = multer({ storage })
 router.get('/test', (req, res) => res.send('Test Event API route'))
 router.get('/', eventController.getEvents)
 router.delete('/delete', eventController.deleteEvent)
-router.put('/update', eventController.updateEvent)
+router.put('/update/:id', eventController.updateEvent)
 
 router.post('/new', eventController.newEvent)
 
