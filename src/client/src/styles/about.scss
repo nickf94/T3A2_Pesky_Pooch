@@ -1,0 +1,74 @@
+@import "./colours.scss";
+
+// -- Headers -- //
+.about-title {
+  font-size: 180%;
+  font-weight: 300;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+
+
+  // custom_underline
+  background: linear-gradient(to right, $primary_purple, $primary_purple) no-repeat;
+  background-size: 150px 2px;
+  background-position: center bottom;
+}
+
+.about-subtitle {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+  color: $tarmac;
+}
+
+// -- Page-Content -- //
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "about-block1 about-block2 about-block3";
+  grid-template-columns: repeat(3, 1fr);
+
+      i {
+      color: $primary_purple;
+      font-size: 350%;
+      display: block;
+      margin-bottom: 1rem; 
+      }
+
+  .about-keywords {
+    color: $primary_purple;
+    font-weight: bold;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2;
+    font-weight: 300;
+    font-size: 110%;
+
+      .about-block1 {
+        grid-area: about-block1;
+      }
+
+      .about-block2 {
+        grid-area: about-block2;
+      }
+
+      .about-block3 {
+        grid-area: about-block3;
+      }
+
+      .about-block1 .about-block2 .about-block3 {
+        padding: 0.5rem;
+      }
+    }
+  }

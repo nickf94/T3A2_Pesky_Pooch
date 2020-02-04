@@ -5,7 +5,7 @@ export default class Footer extends Component {
     return (
       <footer className="footer">
         <p className="admin-login">Admin Login</p>
-        <p>©2020 <b>Pesky Pooch</b> All rights reserved</p>
+        <p>©2020 <b>Pesky Pooch</b> Training Ltd.</p>
         <p className="social-icons"><i className="fab fa-facebook" /></p>
       </footer>
     );
