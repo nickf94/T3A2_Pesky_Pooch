@@ -38,7 +38,7 @@ constructor(props) {
       message
     }
 
-    axios.post(`${process.env.BASE_URL}contact`, params)
+    axios.post(`/contact`, params)
     .then((res) => {
       console.log(res)
       document.getElementById("contact-submit").classList.toggle('successful')
