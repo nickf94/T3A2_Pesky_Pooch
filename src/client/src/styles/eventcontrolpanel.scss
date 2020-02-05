@@ -7,7 +7,7 @@ $plum: #36083F;
 .event-option-selector {
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
 
 
@@ -23,22 +23,26 @@ $plum: #36083F;
   display: flex !important;
   flex-direction: row;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
 
   form {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     label {
-      width: 25vw;
+      width: 25%;
     }
 
     input {
-      width: 50vw;
+      width: 50%;
     }
 
     textarea {
-      width: 50vw;
+      width: 50%;
     }
   }
+}
+
+.admin-banner {
+  margin-bottom: 1rem;
 }
