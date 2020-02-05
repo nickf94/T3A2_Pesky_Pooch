@@ -54,6 +54,7 @@
     letter-spacing: 2;
     font-weight: 300;
     font-size: 110%;
+    align-items: center;
 
       .about-block1 {
         grid-area: about-block1;
@@ -70,5 +71,14 @@
       .about-block1 .about-block2 .about-block3 {
         padding: 0.5rem;
       }
+    }
+  }
+
+  .about-block {
+    i {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
