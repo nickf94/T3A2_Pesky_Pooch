@@ -10,9 +10,6 @@
   text-decoration: none;
 }
 
-body {
-  font-family: 'Amarante', cursive;
-}
 
 nav {
   background: #3C3744;
@@ -65,6 +62,7 @@ a.active, a:hover {
 #check {
   display: none;
 }
+
 
 @media (max-width: 952px){
   label.logo {
@@ -179,22 +177,5 @@ a.active, a:hover {
 
   i {
     font-size: 2rem;
-  }
-}
-
-.services-box {
-  background-color: $babyblue;
-}
-
-.services-cards {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  .service-card {
-    min-width: 50%;
-    text-align: center;
   }
 }

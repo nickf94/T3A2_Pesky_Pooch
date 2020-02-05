@@ -6,7 +6,7 @@ export default function TestimonialsBox() {
   const [testimonials, setTestimonials] = useState([])
 
   const fetchTestimonials = async () => {
-    await Axios.get(`${process.env.BASE_URL}testimonials`)
+    await Axios.get(`/testimonials`)
     .then(res => {
       filterTestimonials(res.data)
     })
@@ -28,7 +28,6 @@ export default function TestimonialsBox() {
       { (testimonials.length >= 1) ? <h2>What people think of Pesky Pooch</h2> : null }
       {testimonials.map(item => {
         return (
-
           <div className="review-card">
             <em><p>{item}</p></em>
           </div>
