@@ -18,7 +18,6 @@ export default function TestimonialsBox() {
       return (item.includes('See more')) ? (item.slice(0, item.length - 9)) : (item)
     }))
   }
-
   useEffect(() => {
     fetchTestimonials()
   }, [])
