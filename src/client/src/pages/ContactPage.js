@@ -10,7 +10,7 @@ class ContactPage extends Component {
       <h1 className="page-title">Get in contact!</h1>
       <div className="media-links">
         <p>Find me through my social media</p>
-        <Link to="https://www.facebook.com/PeskyPooch/"><i className="fab fa-facebook facebook" /></Link>
+        <a href="https://www.facebook.com/PeskyPooch/"><i className="fab fa-facebook facebook" /></a>
       </div>
       <p id="contactlabel">Or send me an email using this handy form</p>
       <ContactForm />
