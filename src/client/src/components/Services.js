@@ -11,14 +11,12 @@ export default function Services(props) {
 
   return (
     <>
-    { sessionStorage.getItem('token') ? < ServicesControlPanel services={props.allServices} updateServices={props.renderChanges}/> : (null)}
       <div className="services-container">
-      { props.allServices ?
-        (
+        { props.allServices ? (
         <> 
-          <p>All current services</p>
-          <div className="services">
-            
+          <h3>All current services</h3>
+
+          <div className="services">      
             { props.allServices.map(service => {
             return (
             <div className="service-card" key={service._id}>
@@ -27,14 +25,16 @@ export default function Services(props) {
               <p className="service-cost">{service.cost}</p>
               { service.thumbnail ? (<img className="thumbnail" width="100px" src={service.thumbnail}></img>) : (null)}
             </div>
-            )}) }
+            )}) 
+            }
           </div>
         </>
         ):
         (
-        <p>There are currently no regularly available services at Pesky Pooch right now, sorry!</p>
-        ) }
+        <p>Loading...</p>
+        ) 
+        }
       </div>
-      </>
+    </>
   )
 }
