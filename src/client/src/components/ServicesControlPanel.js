@@ -33,8 +33,6 @@ export default function ServicesControlPanel(props) {
 
   return (
     <>
-      <p className="admin-banner">You have been authorized as an admin.</p>
-      
       < ServiceOptionSelector 
         setProperType={setProperType}
       />
