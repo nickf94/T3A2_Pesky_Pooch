@@ -43,6 +43,23 @@
   &.social-icons {
     align-self: flex-end;
   }
+
+   a {
+      color: white;
+      border-radius: 1rem;
+      text-transform: uppercase;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight:  bold;
+
+      &:active, &:hover {
+        // background: #1b9cff67;
+        background: rgba(60, 55, 68, 0.438);;
+        transition: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) all;
+      }
+  }
 }
 
 .services-container {
@@ -210,6 +227,15 @@
     align-items: center;
     justify-content: space-evenly;
 
+    button {
+      padding: 1rem;
+      margin: 0.25rem;
+      border-radius: 0.5rem;
+      background: $plum;
+      color: rgb(255, 255, 255);
+      border: none;
+    }
+
     fieldset {
       width: 75%;
       margin: auto;
@@ -229,6 +255,9 @@
         width: 50%;
         font-size: 1.5rem;
         margin-bottom: 1rem;
+        background: $plum;
+        color: rgb(255, 255, 255);
+        padding: 0.5rem;
       }
 
       input {
@@ -294,8 +323,6 @@
     margin-bottom: 0.5rem;
   }
 }
-
-
 
 @media only screen and (max-width: 952px) {
   .form-container {
