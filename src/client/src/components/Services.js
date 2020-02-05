@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ServicesControlPanel from './ServicesControlPanel'
-
+import '../styles/services.scss'
 
 export default function Services(props) {
   const [services, setServices] = useState(props.allServices)

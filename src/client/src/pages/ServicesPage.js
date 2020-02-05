@@ -51,21 +51,23 @@ export default function ServicesPage(props) {
           </div>
           < Services renderChanges={fetchServices} allServices={services}/>
         </div> 
-        
-        <div className="events">
-          <h2>All regular Pesky Pooch events</h2>
-          { (events.length >= 1) ? (events.map(event => {
-          return (
-          <>   
-            <div className="event-card">
-              <h3>{event.name}</h3>
-              <p className="event-desc">{event.description}</p>
-              <p className="event-loc">{event.location}</p>
-              { event.thumbnail ? (<img className="thumbnail" src={event.thumbnail}></img>) : (null)}
-            </div>
-          </>
-          )
-        })) : (<p>No current events</p>)}
+        <div className="events-container">
+          <h2 id="events-title">All regular Pesky Pooch events</h2>
+          <div className="events">
+            
+            { (events.length >= 1) ? (events.map(event => {
+            return (
+            <>   
+              <div className="event-card">
+                <h3>{event.name}</h3>
+                <p className="event-desc">{event.description}</p>
+                <p className="event-loc">{event.location}</p>
+                { event.thumbnail ? (<img className="thumbnail" src={event.thumbnail}></img>) : (null)}
+              </div>
+            </>
+            )
+          })) : (<p>No current events</p>)}
+          </div>
         </div>
         
       </div>
