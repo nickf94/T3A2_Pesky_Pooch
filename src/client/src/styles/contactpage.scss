@@ -1,0 +1,32 @@
+@import './colours.scss';
+
+.media-links {
+  background: $ceramic;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: fit-content;
+  width: 75%;
+  padding: 0.5rem;
+  
+  * {
+    font-size: 2rem;
+    color: #3b5998;
+  }
+
+  p {
+    color: $plum;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+#contactlabel {
+  color: $plum;
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+}
